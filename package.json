@@ -1,0 +1,59 @@
+{
+  "name": "devsite",
+  "private": true,
+  "description": "Source code for freesewing.dev",
+  "version": "0.1.0",
+  "author": "Joost De Cock <joost@decock.org> (https://github.com/joostdecock)",
+  "homepage": "https://freesewing.org/",
+  "dependencies": {
+    "@freesewing/components": "alpha",
+    "@freesewing/css-theme": "alpha",
+    "@freesewing/i18n": "alpha",
+    "@freesewing/mui-theme": "alpha",
+    "@freesewing/pattern-info": "alpha",
+    "@freesewing/utils": "alpha",
+    "@material-ui/core": "^3.9.3",
+    "@material-ui/icons": "^3.0.2",
+    "@material-ui/lab": "^3.0.0-alpha.30",
+    "gatsby": "^2.3.16",
+    "gatsby-image": "^2.0.37",
+    "gatsby-plugin-manifest": "^2.0.28",
+    "gatsby-plugin-offline": "^2.0.25",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sass": "^2.0.11",
+    "gatsby-plugin-sharp": "^2.0.32",
+    "gatsby-source-filesystem": "^2.0.29",
+    "gatsby-transformer-sharp": "^2.1.17",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0",
+    "react-intl": "^2.8.0",
+    "typeface-roboto-condensed": "0.0.54"
+  },
+  "devDependencies": {
+    "sharp": "^0.22.1",
+    "node-sass": "^4.11.0",
+    "open-color": "^1.6.3",
+    "prettier": "^1.17.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freesewing/website"
+  },
+  "bugs": {
+    "url": "https://github.com/freesewing/website"
+  }
+}
