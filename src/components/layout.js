@@ -8,6 +8,9 @@ import withLanguage from "./withLanguage";
 import { Navbar, Footer } from "@freesewing/components";
 import { versions } from "@freesewing/pattern-info";
 import * as themes from "@freesewing/mui-theme";
+import Menu from "./menu";
+import TocIcon from "@material-ui/icons/UnfoldMore";
+import MenuIcon from "@material-ui/icons/Menu";
 import DarkModeIcon from "@material-ui/icons/Brightness3";
 import LanguageIcon from "@material-ui/icons/Translate";
 import SearchIcon from "@material-ui/icons/Search";
@@ -16,11 +19,18 @@ import "typeface-roboto-condensed";
 
 const Layout = props => {
   const [theme, setTheme] = useState("light");
+  const [toc, setToc] = useState(false);
+  const [menu, setMenu] = useState(false);
+
+  console.log(props);
+
   // Methods
   const toggleDarkMode = () => {
     if (theme === "light") setTheme("dark");
     else setTheme("light");
   };
+  const toggleMenu = () => setMenu(!menu);
+  const toggleToc = () => setToc(!toc);
 
   // Vars
   const version = versions.aaron;
@@ -71,22 +81,54 @@ const Layout = props => {
         text: <DarkModeIcon className="nav-icon moon" />,
         title: "Toggle dark mode"
       }
+    },
+    mleft: {
+      menu: {
+        type: "button",
+        onClick: toggleMenu,
+        text: <MenuIcon className="nav-icon" />,
+        title: "Menu"
+      },
+      language: {
+        type: "link",
+        href: "/languages",
+        text: <LanguageIcon className="nav-icon" />,
+        title: "account.languageTitle"
+      },
+    },
+    mright: {
+      dark: {
+        type: "button",
+        onClick: toggleDarkMode,
+        text: <DarkModeIcon className="nav-icon moon" />,
+        title: "Toggle dark mode"
+      },
+      toc: {
+        type: "button",
+        onClick: toggleToc,
+        text: <TocIcon className="nav-icon" />,
+        title: "Toggle dark mode"
+      },
     }
   };
 
   // Render
+  let wrapperClasses = theme === "light"
+    ? "theme-wrapper light"
+    : "theme-wrapper dark";
+  if (toc) wrapperClasses += " show-toc";
+  if (menu) wrapperClasses += " show-menu";
+
   return (
     <MuiThemeProvider theme={createMuiTheme(themes[theme])}>
-      <div className={ theme === "light"
-        ? "theme-wrapper light"
-        : "theme-wrapper dark"
-      }>
+      <div className={wrapperClasses}>
         {props.navbar
-          ? <Navbar navs={navs} />
+          ? <Navbar navs={navs} home="/" />
           : <div></div>
         }
+        <Menu />
         {props.children}
-        <div>FIXME: Footer {theme}</div>
+        <Footer />
       </div>
     </MuiThemeProvider>
   );

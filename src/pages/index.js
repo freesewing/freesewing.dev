@@ -23,32 +23,54 @@ const IndexPage = props => {
     },
     logo: {
       position: "absolute",
-      top: "74px",
-      right: "calc(50% - 200px)",
+      top: "15px",
+      right: "calc(50% - 175px)",
       opacity: 0.1,
       overflow: "hidden",
     },
+    slogan: {
+      marginBottom: "3rem",
+    },
     button: {
-      margin: "0.5rem"
-    }
+      margin: "0.5rem",
+      width: "180px",
+    },
+    boxes: {
+      display: "flex",
+      flexDirection: "row",
+      flexWrap: "wrap",
+      justifyContent: "space-evenly",
+      padding: "2rem 0",
+    },
+    box: {
+      padding: "1rem",
+      maxWidth: "25%",
+      minWidth: "314px",
+    },
+    slab: {
+      margin: "1rem auto 0",
+      padding: "2rem 20% 4rem",
+    },
+    right: {
+      textAlign: "right",
+    },
   }
 
   const lang = process.env.GATSBY_LANG;
   return (
     <Layout>
       <div style={styles.container}>
-        <div style={styles.logo}>
-          <Logo size={400} />
-        </div>
-        <div style={styles.header}>
-          <h1><a style={styles.link} href={`https://${lang}.freesewing.org/`}>FreeSewing</a></h1>
-          <h2><FormattedMessage id="dev.slogan"/></h2>
-          <h2>A JavaScript library for made-to-measure sewing patterns</h2>
+        <div style={styles.header} className="altbg">
+          <div style={styles.logo}>
+            <Logo size={350} />
+          </div>
+          <h1>FreeSewing</h1>
+          <h2 className="bare" style={styles.slogan}><FormattedMessage id="dev.slogan" defaultMessage="A JavaScript library for made-to-measure sewing patterns" /></h2>
           <Button
             size="large"
             color="primary"
             style={styles.button}
-            href="/docs" variant="contained"
+            href="/start" variant="contained"
           >Get started</Button>
           <Button
             size="large"
@@ -61,24 +83,60 @@ const IndexPage = props => {
         (*) <b>Note</b>: This site is part of our FreeSewing 2.x efforts. It is a work in progress
           </p>
         </div>
-        <div>
-          <div>
-            <h2><FormattedMessage id="dev.hitTheGroundRunning"/></h2>
-            <code>npm init freesewing pattern</code>
-            <p>Yada yada one-liner, workbench, blah</p>
+        <div style={styles.boxes}>
+          <div style={styles.box}>
+            <h2><FormattedMessage id="dev.getStartedInSeconds" defaultMessage="Get started in seconds"/></h2>
+            <p>
+              All you need to jump-start your development
+              is one command:
+            </p>
+            <div className="gatsby-highlight">
+              <pre className="language-bash">
+              <code className="language-bash">
+                <br />
+                npm init freesewing-pattern@beta
+                <br />&nbsp;
+              </code>
+              </pre>
+            </div>
+            <p>You can try it out right now, or learn more about what to expect.</p>
+            <Button variant="outlined">Learn more</Button>
           </div>
-          <div>
-            <h2><FormattedMessage id="dev.renderToSvgOrReact"/></h2>
-            <p>Yada yada SVG blah React</p>
+          <div style={styles.box}>
+            <h2><FormattedMessage id="dev.renderToSvgOrReact" defaultMessage="Render to SVG or React"/></h2>
+            <p>Patterns are rendered in SVG, giving you flawless quality at every zoom level, and the ability to export to a number of formats including PDF.</p>
+            <p>Or use our React component to further integrate patterns into your front-end.
+    </p>
+            <Button variant="outlined">Learn more</Button>
           </div>
-          <div>
-            <h2><FormattedMessage id="dev.discoverTheEcosystem"/></h2>
-            <p>Yada yada SVG blah all of the packages and repos</p>
+          <div style={styles.box}>
+            <h2><FormattedMessage id="dev.discoverTheEcosystem" defaultMessage="Discover the ecosystem"/></h2>
+            <p>There's more to FreeSewing than our core library.</p>
+            <p>Discover our collection of patterns, plugins, and other tools.</p>
+            <Button variant="outlined">Learn more</Button>
           </div>
         </div>
+        <div className="altbg" style={styles.slab}>
+            <h2 className="bare"><FormattedMessage id="dev.getStartedInSeconds" defaultMessage="Learn by example"/></h2>
+            <p>Tutorial yada yada</p>
+            <Button variant="outlined">Learn more</Button>
+        </div>
+
+        <div style={{...styles.slab, ...styles.right}}>
+            <h2 className="bare"><FormattedMessage id="dev.getStartedInSeconds" defaultMessage="Where to get help"/></h2>
+            <p>FreeSewing is a 100% communal project.</p>
+            <Button variant="outlined">Learn more</Button>
+        </div>
+
+        <div className="altbg" style={styles.slab}>
+            <h2 className="bare"><FormattedMessage id="dev.getStartedInSeconds" defaultMessage="Support FreeSewing"/></h2>
+            <p>FreeSewing is a 100% communal project.</p>
+            <Button variant="outlined">Learn more</Button>
+        </div>
+
       </div>
     </Layout>
   );
 }
 
-export default IndexPage
+export default IndexPage;

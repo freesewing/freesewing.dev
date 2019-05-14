@@ -4,6 +4,35 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+		{
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/markdown/dev`,
+      },
+		},
+		{
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+		},
+    {
+      resolve: 'gatsby-mdx',
+      options: {
+        extensions: ['.mdx', '.md'],
+			  gatsbyRemarkPlugins: [
+      		{
+        		resolve: "gatsby-remark-images",
+        		options: {
+        		  maxWidth: 1035,
+        		  sizeByPixelDensity: true
+        		}
+      		}
+      	]
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
