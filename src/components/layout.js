@@ -14,15 +14,13 @@ import MenuIcon from "@material-ui/icons/Menu";
 import DarkModeIcon from "@material-ui/icons/Brightness3";
 import LanguageIcon from "@material-ui/icons/Translate";
 import SearchIcon from "@material-ui/icons/Search";
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import "@freesewing/css-theme";
 import "typeface-roboto-condensed";
 
 const Layout = props => {
   const [theme, setTheme] = useState("light");
-  const [toc, setToc] = useState(false);
   const [menu, setMenu] = useState(false);
-
-  console.log(props);
 
   // Methods
   const toggleDarkMode = () => {
@@ -30,7 +28,7 @@ const Layout = props => {
     else setTheme("light");
   };
   const toggleMenu = () => setMenu(!menu);
-  const toggleToc = () => setToc(!toc);
+  const closeNav = () => setMenu(false);
 
   // Vars
   const version = versions.aaron;
@@ -105,7 +103,7 @@ const Layout = props => {
       },
       toc: {
         type: "button",
-        onClick: toggleToc,
+        onClick: props.toggleToc,
         text: <TocIcon className="nav-icon" />,
         title: "Toggle dark mode"
       },
@@ -116,7 +114,7 @@ const Layout = props => {
   let wrapperClasses = theme === "light"
     ? "theme-wrapper light"
     : "theme-wrapper dark";
-  if (toc) wrapperClasses += " show-toc";
+  if (props.toc) wrapperClasses += " show-toc";
   if (menu) wrapperClasses += " show-menu";
 
   return (
@@ -126,9 +124,9 @@ const Layout = props => {
           ? <Navbar navs={navs} home="/" />
           : <div></div>
         }
-        <Menu />
-        {props.children}
-        <Footer />
+        <Menu closeNav={closeNav}/>
+        {React.cloneElement(props.children, { closeNav })}
+        <Footer language={props.language}/>
       </div>
     </MuiThemeProvider>
   );

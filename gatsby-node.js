@@ -36,7 +36,6 @@ const getFileList = function(graphql, language, markdown) {
             markdown[slug] = {path, language: lang};
         }
       }
-      console.log('now resolving file list promise');
       resolve(true);
     });
   })
@@ -99,17 +98,65 @@ const getMdx = function(graphql, language, markdown, titles) {
   return Promise.all(promises);
 };
 
+const isChild = function (topic, page) {
+  let chunks = page.split("/");
+  if (chunks.length === 3 && chunks[1] === topic) return true;
+  else return false;
+}
+
+const getTopics = function(markdown) {
+  let list = { };
+  for (let topic of topics) {
+    let pageSlug = "/"+topic;
+    if (typeof markdown[pageSlug] === "undefined")
+      throw new Error(`No page for topic ${topic} at ${pageSlug}`);
+    list[topic] = {
+      title: markdown[pageSlug].node.node.frontmatter.title,
+      children: {},
+    }
+    let children = {};
+    for (let page in markdown) {
+      if (isChild(topic, page)) {
+        let title = markdown[page].node.node.frontmatter.title;
+        if (typeof markdown[page].node.node.frontmatter.order !== "undefined")
+          title = markdown[page].node.node.frontmatter.order + title;
+        children[title] = page;
+      }
+    }
+    let childrenOrder = Object.keys(children);
+    childrenOrder.sort();
+    for (let c of childrenOrder) {
+      let link = children[c];
+      list[topic].children[link] = markdown[link].node.node.frontmatter.title;
+    }
+  }
+
+  return list;
+}
+
+const getTopic = function(page) {
+  let chunks = page.split("/");
+  let t = topics.indexOf(chunks[1]);
+  if (t === -1) return false;
+  else return topics[t];
+}
+
 const createMdx = function(graphql, language, markdown, titles, createPage) {
   let promises = [];
   let template = path.resolve("src/components/page-template.js");
+  let topicsToc = getTopics(markdown);
 	for (let i in markdown) {
+    let topic = getTopic(i);
 		promises.push(new Promise((resolve, reject) => {
       createPage({
         path: i,
         component: template,
         context: {
           node: markdown[i].node.node,
-          //titles,
+          markdown,
+          topic,
+          topics,
+          topicsToc,
           crumbs: breadcrumbs(i, titles),
           language: markdown[i].language,
           slug: i

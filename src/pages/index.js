@@ -93,9 +93,7 @@ const IndexPage = props => {
             <div className="gatsby-highlight">
               <pre className="language-bash">
               <code className="language-bash">
-                <br />
                 npm init freesewing-pattern@beta
-                <br />&nbsp;
               </code>
               </pre>
             </div>
