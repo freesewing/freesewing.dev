@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import { Logo } from "@freesewing/components";
 import Button from "@material-ui/core/Button";
 import Layout from "../components/layout"
@@ -56,7 +55,6 @@ const IndexPage = props => {
     },
   }
 
-  const lang = process.env.GATSBY_LANG;
   return (
     <Layout>
       <div style={styles.container}>

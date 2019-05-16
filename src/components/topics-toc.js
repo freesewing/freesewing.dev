@@ -1,18 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import TableOfContents from "./TableOfContents";
 import ExpandedIcon from "@material-ui/icons/KeyboardArrowDown";
 import CollapsedIcon from "@material-ui/icons/KeyboardArrowRight";
 import { Link } from "gatsby";
 
 const TopicsToc = props => {
-  const [expanded, setExpanded] = useState([]);
-  const toggleTopic = topic => {
-    let shown = expanded.slice(0);
-    let index = shown.indexOf(topic);
-    if (index === -1) shown.push(topic);
-    else shown.splice(index, 1);
-    setExpanded(shown);
-  };
 
   let items = [];
   let children = false;
@@ -21,22 +13,25 @@ const TopicsToc = props => {
       key: t,
       className: "topic",
     }
+    let toc = null;
+    let tocComponent = <TableOfContents toc={props.toc} slug={props.slug}/>
     if (t === props.topic) {
       liProps.className += " active";
       children = [];
       for (let c in props.topicsToc[t].children) {
-        let grandchildren = null;
-        if (c === props.slug) grandchildren = <TableOfContents toc={props.toc} slug={props.slug}/>
+        if (c === props.slug) toc = tocComponent
+        else toc = null;
         children.push(<li key={c} className={c === props.slug ? "active" : ""}>
           <Link to={c}>
             {props.topicsToc[t].children[c]}
           </Link>
-          {grandchildren}
+          {toc}
         </li>);
       }
       if (children) children = <ul className="topics l1">{children}</ul>
       else children = null;
     } else children = null;
+    if (!children && props.topic === t) children = <TableOfContents toc={props.toc} slug={props.slug}/>
     items.push(<li {...liProps}>
         <Link to={"/"+t} className="topic">
       { t === props.topic
@@ -45,6 +40,13 @@ const TopicsToc = props => {
       }
           {props.topicsToc[t].title}
         </Link>
+      { props.slug.split("/").length === 2
+        && props.topic === t
+        && props.toc.items
+        && props.toc.items.length > 0
+        ? <ul className="topics l1"><li>{tocComponent}</li></ul>
+        : null
+      }
         {children}
       </li>);
   }

@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 //import { Helmet } from "react-helmet";
 import { MuiThemeProvider } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core";
-import { FormattedMessage } from "react-intl";
 import withLanguage from "./withLanguage";
 import { Navbar, Footer } from "@freesewing/components";
 import { versions } from "@freesewing/pattern-info";
@@ -14,7 +13,6 @@ import MenuIcon from "@material-ui/icons/Menu";
 import DarkModeIcon from "@material-ui/icons/Brightness3";
 import LanguageIcon from "@material-ui/icons/Translate";
 import SearchIcon from "@material-ui/icons/Search";
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import "@freesewing/css-theme";
 import "typeface-roboto-condensed";
 
@@ -36,8 +34,8 @@ const Layout = props => {
     left: {
       docs: {
         type: "link",
-        href: "/docs",
-        text: "app.docs"
+        href: "/start",
+        text: "app.gettingStarted"
       },
       tutorial: {
         type: "link",
@@ -46,13 +44,8 @@ const Layout = props => {
       },
       blog: {
         type: "link",
-        href: "/blog",
-        text: "app.blog"
-      },
-      community: {
-        type: "link",
-        href: "/community",
-        text: "app.community"
+        href: "/api",
+        text: "app.apiReference"
       },
     },
     right: {

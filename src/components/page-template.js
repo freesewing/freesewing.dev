@@ -7,7 +7,6 @@ import { withTheme } from '@material-ui/core/styles';
 
 const PageTemplate = props => {
   const [toc, setToc] = useState(false);
-  let theme = props.theme.palette.type;
 
   const toggleToc = () => setToc(!toc);
   const closeNav = () => setToc(false);
