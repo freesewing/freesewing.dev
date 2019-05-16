@@ -49,11 +49,6 @@ const Layout = props => {
       },
     },
     right: {
-      version: {
-        type: "link",
-        href: "https://github.com/freesewing",
-        text: "v" + version
-      },
       search: {
         type: "link",
         href: "/search",

@@ -18,8 +18,6 @@ const PageTemplate = props => {
     },
   }
 
-  console.log('page', props);
-
   return (
     <Layout toc={toc} toggleToc={toggleToc}>
       <div className="fs-sa">
