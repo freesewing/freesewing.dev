@@ -1,8 +1,5 @@
 import React from "react"
-import Button from "@material-ui/core/Button";
 import Layout from "../components/layout"
-import { FormattedMessage } from "react-intl";
-import { languages } from "@freesewing/i18n";
 
 const SearchPage = props => {
 

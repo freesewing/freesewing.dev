@@ -5,7 +5,6 @@ import { MuiThemeProvider } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core";
 import withLanguage from "./withLanguage";
 import { Navbar, Footer } from "@freesewing/components";
-import { versions } from "@freesewing/pattern-info";
 import * as themes from "@freesewing/mui-theme";
 import Menu from "./menu";
 import TocIcon from "@material-ui/icons/UnfoldMore";
@@ -29,7 +28,6 @@ const Layout = props => {
   const closeNav = () => setMenu(false);
 
   // Vars
-  const version = versions.aaron;
   const navs = {
     left: {
       docs: {
