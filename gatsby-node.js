@@ -71,7 +71,7 @@ const getMdx = function(graphql, language, markdown, titles) {
  		  		edges {
  		  			node {
  		      		id
- 		      		frontmatter { title }
+ 		      		frontmatter { title, order }
  		      		code { body }
  		      		excerpt
  		      		tableOfContents
