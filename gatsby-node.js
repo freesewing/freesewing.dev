@@ -118,8 +118,11 @@ const getTopics = function(markdown) {
     for (let page in markdown) {
       if (isChild(topic, page)) {
         let title = markdown[page].node.node.frontmatter.title;
-        if (typeof markdown[page].node.node.frontmatter.order !== "undefined")
-          title = markdown[page].node.node.frontmatter.order + title;
+        if (typeof markdown[page].node.node.frontmatter.order !== "undefined") {
+          let order = markdown[page].node.node.frontmatter.order !== "undefined";
+          if (order !== null)
+            title = markdown[page].node.node.frontmatter.order + title;
+        }
         children[title] = page;
       }
     }
