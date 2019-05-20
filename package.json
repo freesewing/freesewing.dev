@@ -8,11 +8,15 @@
   "repository": "https://github.com/freesewing.org/devsite",
   "dependencies": {
     "@freesewing/components": "2.0.0-beta.3",
+    "@freesewing/core": "2.0.0-beta.3",
     "@freesewing/css-theme": "2.0.0-beta.3",
+    "@freesewing/examples": "2.0.0-beta.3",
     "@freesewing/i18n": "2.0.0-beta.3",
     "@freesewing/models": "2.0.0-beta.3",
     "@freesewing/mui-theme": "2.0.0-beta.3",
     "@freesewing/pattern-info": "2.0.0-beta.3",
+    "@freesewing/plugin-bundle": "2.0.0-beta.3",
+    "@freesewing/rendertest": "2.0.0-beta.3",
     "@freesewing/utils": "2.0.0-beta.3",
     "@material-ui/core": "3.9.3",
     "@material-ui/icons": "3.0.2",
@@ -44,6 +48,7 @@
     "react-intl": "2.8.0",
     "react-youtube": "^7.9.0",
     "styled-components": "^4.2.0",
+    "typeface-permanent-marker": "0.0.72",
     "typeface-roboto-condensed": "0.0.54"
   },
   "devDependencies": {

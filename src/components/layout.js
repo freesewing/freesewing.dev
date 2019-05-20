@@ -14,6 +14,7 @@ import LanguageIcon from "@material-ui/icons/Translate";
 import SearchIcon from "@material-ui/icons/Search";
 import "@freesewing/css-theme";
 import "typeface-roboto-condensed";
+import "typeface-permanent-marker";
 
 const Layout = props => {
   const [theme, setTheme] = useState("light");

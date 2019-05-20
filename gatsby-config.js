@@ -17,6 +17,10 @@ module.exports = {
     {
       resolve: `gatsby-mdx`,
       options: {
+        globalScope: `
+          import { Note, Tip, Warning } from "@freesewing/components";
+          export default { Note, Tip, Warning };
+        `,
         extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
           {
