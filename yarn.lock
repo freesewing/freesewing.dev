@@ -1138,10 +1138,10 @@
   dependencies:
     open-color "1.6.3"
 
-"@freesewing/examples@2.0.0-beta.3":
-  version "2.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/@freesewing/examples/-/examples-2.0.0-beta.3.tgz#17dac30344f8725d9e1775d4456101a7792ca57f"
-  integrity sha512-o6NGTTVDJ9yaAuwfu8qKAWLeE6jWe5cRSQqlqNQNDbvrtYbIYcDO7j+MrokSSKNWyktTmovtSUjIqw/EMqV3WA==
+"@freesewing/examples@2.0.0-beta.4":
+  version "2.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@freesewing/examples/-/examples-2.0.0-beta.4.tgz#fedd5606c92d2f755192ae61e5aaf245e20ad20b"
+  integrity sha512-k+1pDPPQ44DfJWuVY3xKjEgMg4KZy+TeK6VH4dVGtbyZDU3l5LYvCmj3ZYqd68K7KWHGclnIfO3lxaFsP/CTAQ==
 
 "@freesewing/i18n@2.0.0-beta.3":
   version "2.0.0-beta.3"
@@ -3588,7 +3588,7 @@ css-selector-tokenizer@^0.7.0:
     fastparse "^1.1.1"
     regexpu-core "^1.0.0"
 
-css-to-react-native@^2.2.2:
+css-to-react-native@2.3.1, css-to-react-native@^2.2.2:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/css-to-react-native/-/css-to-react-native-2.3.1.tgz#cf0f61e0514846e2d4dc188b0886e29d8bef64a2"
   integrity sha512-yO+oEx1Lf+hDKasqQRVrAvzMCz825Huh1VMlEEDlRWyAhFb/FWb6I0KpEF1PkyKQ7NEdcx9d5M2ZEWgJAsgPvQ==
