@@ -72,10 +72,10 @@ const IndexPage = props => {
           >Get started</Button>
           <Button
             size="large"
-            color="primary"
+            color="secondary"
             style={styles.button}
             href="/tutorial"
-            variant="outlined"
+            variant="contained"
           >Tutorial</Button>
           <p>
         (*) <b>Note</b>: This site is part of our FreeSewing 2.x efforts. It is a work in progress

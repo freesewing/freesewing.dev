@@ -9,7 +9,6 @@ import { Blockquote, Example } from "@freesewing/components";
 
 const PageTemplate = props => {
   const [toc, setToc] = useState(false);
-
   const toggleToc = () => setToc(!toc);
   const closeNav = () => setToc(false);
 
@@ -19,7 +18,7 @@ const PageTemplate = props => {
       margin: 'auto',
     },
   }
-
+console.log('page props', props);
   const components = {
     Note: ({ children }) => { return <Blockquote type="note">{children}</Blockquote>},
     Tip: ({ children }) => { return <Blockquote type="tip">{children}</Blockquote>},
@@ -28,7 +27,13 @@ const PageTemplate = props => {
   }
 
   return (
-    <Layout toc={toc} toggleToc={toggleToc}>
+    <Layout
+      toc={toc}
+      toggleToc={toggleToc}
+      pageToc={props.pageContext.node.tableOfContents || false}
+      topics={props.pageContext.topics}
+      topicsToc={props.pageContext.topicsToc}
+    >
       <div className="fs-sa">
         <section>
           <article style={styles.body}>
