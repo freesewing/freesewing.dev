@@ -41,7 +41,7 @@ console.log('layout props', props);
       docs: {
         type: "link",
         href: "/start",
-        text: "app.gettingStarted"
+        text: "app.getStarted"
       },
       tutorial: {
         type: "link",
