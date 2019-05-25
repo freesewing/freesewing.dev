@@ -18,7 +18,6 @@ const PageTemplate = props => {
       margin: 'auto',
     },
   }
-console.log('page props', props);
   const components = {
     Note: ({ children }) => { return <Blockquote type="note">{children}</Blockquote>},
     Tip: ({ children }) => { return <Blockquote type="tip">{children}</Blockquote>},

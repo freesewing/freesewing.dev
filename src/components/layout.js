@@ -22,7 +22,6 @@ import { Link } from "gatsby";
 const Layout = props => {
   const [theme, setTheme] = useState("light");
   const [menu, setMenu] = useState(false);
-console.log('layout props', props);
   // Methods
   const toggleDarkMode = () => {
     if (theme === "light") setTheme("dark");
