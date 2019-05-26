@@ -7,10 +7,15 @@ const topics = [
   "start",
   "concepts",
   "advanced",
+  "do",
   "api",
+  "config",
+  "settings",
   "plugins",
   "packages",
-  "repos"
+  "repos",
+  "editor",
+  "translator"
 ];
 
 const getFileList = function(graphql, language, markdown) {

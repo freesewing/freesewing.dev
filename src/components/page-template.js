@@ -6,6 +6,7 @@ import TopicsToc from "./topics-toc";
 import Breadcrumbs from "./breadcrumbs";
 import { withTheme } from '@material-ui/core/styles';
 import { Blockquote, Example } from "@freesewing/components";
+import { FormattedMessage } from "react-intl";
 
 const PageTemplate = props => {
   const [toc, setToc] = useState(false);
@@ -24,7 +25,7 @@ const PageTemplate = props => {
     Warning: ({ children }) => { return <Blockquote type="warning">{children}</Blockquote>},
     Example,
   }
-
+console.log(props);
   return (
     <Layout
       toc={toc}
@@ -46,6 +47,22 @@ const PageTemplate = props => {
                 {props.pageContext.node.code.body}
               </MDXRenderer>
             </MDXProvider>
+            <div style={{
+              textAlign: "right",
+              margin: "3rem 0",
+              borderTop: "1px solid #ccc",
+              padding: "0.25rem 0",
+              fontSize: "90%",
+              display: "flex",
+              flexDirection: "row",
+              alignContent: "center",
+              justifyContent: "space-between",
+            }}>
+              {props.pageContext.slug+"/"+props.pageContext.language+".md"}
+              <a href={"https://github.com/freesewing/markdown/edit/develop/dev"+props.pageContext.slug+"/"+props.pageContext.language+".md"}>
+                <FormattedMessage id="app.editThisPage" />
+              </a>
+            </div>
           </article>
         </section>
         <aside>
@@ -65,4 +82,4 @@ const PageTemplate = props => {
   );
 }
 
-export default withTheme()(PageTemplate);
+export default withTheme(PageTemplate);
