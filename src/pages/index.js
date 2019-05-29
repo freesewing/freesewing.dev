@@ -1,5 +1,5 @@
 import React from "react"
-import { Logo } from "@freesewing/components";
+import Logo from "@freesewing/components/Logo";
 import Button from "@material-ui/core/Button";
 import Layout from "../components/layout"
 import { FormattedMessage } from "react-intl";
@@ -63,13 +63,6 @@ const IndexPage = props => {
       padding: "1rem",
       maxWidth: "25%",
       minWidth: "314px",
-    },
-    slab: {
-      margin: "1rem auto 0",
-      padding: "2rem 20% 4rem",
-    },
-    right: {
-      textAlign: "right",
     },
     primaryButton: {
       background: "#fff",

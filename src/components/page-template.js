@@ -5,8 +5,11 @@ import Layout from "./layout";
 import TopicsToc from "./topics-toc";
 import Breadcrumbs from "./breadcrumbs";
 import { withTheme } from '@material-ui/core/styles';
-import { Blockquote, Example } from "@freesewing/components";
+import Blockquote from "@freesewing/components/Blockquote";
+import Example from "@freesewing/components/Example";
 import { FormattedMessage } from "react-intl";
+import PrevNextBase from "./PrevNext";
+import { Link } from "gatsby";
 
 const PageTemplate = props => {
   const [toc, setToc] = useState(false);
@@ -24,8 +27,36 @@ const PageTemplate = props => {
     Tip: ({ children }) => { return <Blockquote type="tip">{children}</Blockquote>},
     Warning: ({ children }) => { return <Blockquote type="warning">{children}</Blockquote>},
     Example,
+    PrevNext: (inlineProps) => { return <PrevNextBase markdown={props.pageContext.markdown} {...inlineProps} /> }
   }
-console.log(props);
+
+  const renderLink = side => {
+    const slug = props.pageContext.slug;
+    let to = false;
+    let title = false;
+    let pos = props.pageContext.content.slugs.indexOf(slug);
+    if (side === "next") pos++;
+    else pos--;
+    if (props.pageContext.content.slugs[pos] !== "undefined") {
+      to = props.pageContext.content.slugs[pos];
+      title = props.pageContext.content.titles[to];
+    }
+    if (!to) return <span>&nbsp;</span>
+
+    return <Link to={to} style={{textAlign: (side === "prev" ? 'left' : 'right')}}>
+      {side === "prev"
+        ? <span>&laquo;&nbsp;</span>
+        : null
+      }
+      {title}
+      {side === "next"
+        ? <span>&nbsp;&raquo;</span>
+        : null
+      }
+    </Link>
+  }
+
+
   return (
     <Layout
       toc={toc}
@@ -47,19 +78,14 @@ console.log(props);
                 {props.pageContext.node.code.body}
               </MDXRenderer>
             </MDXProvider>
-            <div style={{
-              textAlign: "right",
-              margin: "3rem 0",
-              borderTop: "1px solid #ccc",
-              padding: "0.25rem 0",
-              fontSize: "90%",
-              display: "flex",
-              flexDirection: "row",
-              alignContent: "center",
-              justifyContent: "space-between",
-            }}>
-              {props.pageContext.slug+"/"+props.pageContext.language+".md"}
-              <a href={"https://github.com/freesewing/markdown/edit/develop/dev"+props.pageContext.slug+"/"+props.pageContext.language+".md"}>
+            <div>
+              <div className="prev-next">
+                {renderLink("prev")}
+                {renderLink("next")}
+              </div>
+              <a
+                style={{textAlign: "center", display: 'block', fontSize: '85%'}}
+                href={"https://github.com/freesewing/markdown/edit/develop/dev"+props.pageContext.slug+"/"+props.pageContext.language+".md"}>
                 <FormattedMessage id="app.editThisPage" />
               </a>
             </div>

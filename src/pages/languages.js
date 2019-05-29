@@ -1,7 +1,7 @@
 import React from "react"
 import Button from "@material-ui/core/Button";
 import Layout from "../components/layout"
-import { Robot } from "@freesewing/components";
+import Robot from "@freesewing/components/Robot";
 import { languages } from "@freesewing/i18n";
 
 const LanguagePage = props => {

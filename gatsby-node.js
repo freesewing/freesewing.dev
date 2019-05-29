@@ -5,12 +5,11 @@ const path = require("path");
 
 const topics = [
   "start",
+  "tutorial",
   "concepts",
   "advanced",
   "do",
   "api",
-  "config",
-  "settings",
   "plugins",
   "packages",
   "repos",
@@ -149,10 +148,26 @@ const getTopic = function(page) {
   else return topics[t];
 }
 
+const flattenTopicsToc = function(topicsToc) {
+  let slugs = [];
+  let titles = {};
+  for (let topic of topics) {
+    slugs.push("/"+topic);
+    titles["/"+topic] = topicsToc[topic].title;
+    for (let child in topicsToc[topic].children) {
+      slugs.push(child);
+      titles[child] = topicsToc[topic].children[child];
+    }
+  }
+
+  return { slugs, titles };
+}
+
 const createMdx = function(graphql, language, markdown, titles, createPage) {
   let promises = [];
   let template = path.resolve("src/components/page-template.js");
   let topicsToc = getTopics(markdown);
+  let content = flattenTopicsToc(topicsToc);
 	for (let i in markdown) {
     let topic = getTopic(i);
 		promises.push(new Promise((resolve, reject) => {
@@ -165,6 +180,7 @@ const createMdx = function(graphql, language, markdown, titles, createPage) {
           topic,
           topics,
           topicsToc,
+          content,
           crumbs: breadcrumbs(i, titles),
           language: markdown[i].language,
           slug: i

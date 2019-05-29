@@ -17,10 +17,12 @@ module.exports = {
     {
       resolve: `gatsby-mdx`,
       options: {
-        globalScope: `
-          import { Note, Tip, Warning } from "@freesewing/components";
-          export default { Note, Tip, Warning };
-        `,
+        //globalScope: `
+        //  import Blockquote from "@freesewing/components/Blockquote";
+        //  export default {
+        //    Blockquote,
+        //  };
+        //`,
         extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
           {
