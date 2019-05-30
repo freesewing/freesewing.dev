@@ -8,13 +8,14 @@ import { withTheme } from '@material-ui/core/styles';
 import Blockquote from "@freesewing/components/Blockquote";
 import Example from "@freesewing/components/Example";
 import { FormattedMessage } from "react-intl";
-import PrevNextBase from "./PrevNext";
 import { Link } from "gatsby";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const PageTemplate = props => {
   const [toc, setToc] = useState(false);
   const toggleToc = () => setToc(!toc);
   const closeNav = () => setToc(false);
+  const mobile = useMediaQuery("(max-width:599px)");
 
   const styles = {
     body: {
@@ -27,7 +28,6 @@ const PageTemplate = props => {
     Tip: ({ children }) => { return <Blockquote type="tip">{children}</Blockquote>},
     Warning: ({ children }) => { return <Blockquote type="warning">{children}</Blockquote>},
     Example,
-    PrevNext: (inlineProps) => { return <PrevNextBase markdown={props.pageContext.markdown} {...inlineProps} /> }
   }
 
   const renderLink = side => {
@@ -56,6 +56,14 @@ const PageTemplate = props => {
     </Link>
   }
 
+  const menu = <TopicsToc
+    slug={props.pageContext.slug}
+    topicsToc={props.pageContext.topicsToc}
+    topics={props.pageContext.topics}
+    order={props.pageContext.topicsOrder}
+    topic={props.pageContext.topic}
+    toc={props.pageContext.node.tableOfContents}
+  />
 
   return (
     <Layout
@@ -64,6 +72,8 @@ const PageTemplate = props => {
       pageToc={props.pageContext.node.tableOfContents || false}
       topics={props.pageContext.topics}
       topicsToc={props.pageContext.topicsToc}
+      menu={menu}
+      mobile={mobile}
     >
       <div className="fs-sa">
         <section>
@@ -91,18 +101,12 @@ const PageTemplate = props => {
             </div>
           </article>
         </section>
+        { mobile ? null : (
         <aside>
           <div className="sticky" onClick={closeNav}>
-            <TopicsToc
-              slug={props.pageContext.slug}
-              topicsToc={props.pageContext.topicsToc}
-              topics={props.pageContext.topics}
-              order={props.pageContext.topicsOrder}
-              topic={props.pageContext.topic}
-              toc={props.pageContext.node.tableOfContents}
-            />
+            {menu}
           </div>
-        </aside>
+        </aside> )}
       </div>
     </Layout>
   );

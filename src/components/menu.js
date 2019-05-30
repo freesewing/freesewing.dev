@@ -1,7 +1,6 @@
 import React from "react";
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { FormattedMessage } from "react-intl";
-import Switch from '@material-ui/core/Switch';
 import LightModeIcon from "@material-ui/icons/Brightness3";
 import DarkModeIcon from "@material-ui/icons/WbSunny";
 import HomeIcon from "@material-ui/icons/Home";
@@ -50,7 +49,6 @@ const Menu = props => {
     light: <LightModeIcon style={styles.icon} />,
     dark: <DarkModeIcon style={styles.icon} />
   }
-  const links = data.allSitePage.edges;
 
   return (
     <div style={styles.menu}>

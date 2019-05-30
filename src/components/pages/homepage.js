@@ -1,13 +1,20 @@
 import React from "react"
-import Logo from "@freesewing/components/Logo";
 import Button from "@material-ui/core/Button";
-import Layout from "../components/layout"
+import Layout from "../layout"
 import { FormattedMessage } from "react-intl";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import TopicsToc from "../topics-toc";
 
 const IndexPage = props => {
   const mobile = useMediaQuery("(max-width:599px)");
   const tablet = useMediaQuery("(min-width: 600px) and (max-width: 959px)");
+
+  const menu = <TopicsToc
+    slug={props.pageContext.slug}
+    topicsToc={props.pageContext.topicsToc}
+    topics={props.pageContext.topics}
+    order={props.pageContext.topicsOrder}
+  />
 
   const styles = {
     container: {
@@ -86,7 +93,12 @@ const IndexPage = props => {
   }
 
   return (
-    <Layout navbar={false}>
+    <Layout
+      topics={props.pageContext.topics}
+      topicsToc={props.pageContext.topicsToc}
+      menu={menu}
+      mobile={mobile}
+    >
       <div style={styles.container}>
         <div style={styles.headerWrapper}>
           <div style={styles.header}>
@@ -96,14 +108,12 @@ const IndexPage = props => {
               <Button
                 size="large"
                 color="secondary"
-                style={styles.button}
                 href="/start" variant="contained"
                 style={styles.primaryButton}
               >Get started</Button>
               <Button
                 size="large"
                 color="secondary"
-                style={styles.button}
                 href="/tutorial"
                 variant="outlined"
                 style={styles.secondaryButton}

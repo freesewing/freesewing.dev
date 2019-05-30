@@ -6,10 +6,9 @@ import { createMuiTheme } from "@material-ui/core";
 import withLanguage from "./withLanguage";
 import Navbar from "@freesewing/components/Navbar";
 import Footer from "@freesewing/components/Footer";
-import Logo from "@freesewing/components/Logo";
 import * as themes from "@freesewing/mui-theme";
-import Menu from "./menu";
-import TocIcon from "@material-ui/icons/UnfoldMore";
+import IconButton from "@material-ui/core/IconButton";
+import HomeIcon from "@material-ui/icons/Home";
 import MenuIcon from "@material-ui/icons/Menu";
 import DarkModeIcon from "@material-ui/icons/Brightness3";
 import LanguageIcon from "@material-ui/icons/Translate";
@@ -19,7 +18,6 @@ import "@freesewing/css-theme";
 import "typeface-roboto-condensed";
 import "typeface-permanent-marker";
 import Fab from '@material-ui/core/Fab';
-import { Link } from "gatsby";
 
 const Layout = props => {
   const [theme, setTheme] = useState("light");
@@ -81,26 +79,14 @@ const Layout = props => {
   let wrapperClasses = theme === "light"
     ? "theme-wrapper light"
     : "theme-wrapper dark";
-  if (props.toc) wrapperClasses += " show-toc";
   if (menu) wrapperClasses += " show-menu";
 
   return (
     <MuiThemeProvider theme={createMuiTheme(themes[theme])}>
       <div className={wrapperClasses}>
-        {props.navbar
+        {props.mobile
           ? (
             <React.Fragment>
-            { props.pageToc ? (
-              <Fab
-                color="primary"
-                className="fab secondary only-xs"
-                aria-label="Table of contents"
-                onClick={props.toggleToc}>
-                { props.toc
-                  ? <CloseIcon fontSize="inherit" />
-                  : <TocIcon fontSize="inherit" />
-                }
-              </Fab> ) : null }
               <Fab
                 color="primary"
                 className="fab primary only-xs"
@@ -111,15 +97,23 @@ const Layout = props => {
                   : <MenuIcon fontSize="inherit" />
                 }
               </Fab>
-              <Navbar navs={navs} home="/" className="not-xs"/>
+              <Navbar navs={navs} home="/" />
             </React.Fragment>
           )
           : <div></div>
         }
-        <div className="menu only-xs" onClick={closeNav}>
-          <Menu closeNav={closeNav} toggleDarkMode={toggleDarkMode} theme={theme} />
-        </div>
         {React.cloneElement(props.children, { closeNav })}
+        { props.mobile ? (
+          <div className="menu" onClick={closeNav}>
+            {props.menu}
+            <p style={{marginTop: "2rem"}}>
+              <IconButton href="/" color="primary" variant="contained"><HomeIcon /></IconButton>
+              <IconButton href="/search" color="primary" variant="contained"><SearchIcon /></IconButton>
+              <IconButton href="/languages" color="primary" variant="contained"><LanguageIcon /></IconButton>
+              <IconButton onClick={toggleDarkMode} color="primary" variant="contained"><DarkModeIcon /></IconButton>
+            </p>
+          </div>
+        ) : null }
         <Footer language={props.language}/>
       </div>
     </MuiThemeProvider>

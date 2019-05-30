@@ -9,9 +9,6 @@ const Packages = props => {
 		  }
 		}`);
 
-  const links = data.allSitePage.edges;
-  const count = Object.keys(links).length;
-
   return (
       <ul className="links">
         {data.allSitePage.edges.map(e => {

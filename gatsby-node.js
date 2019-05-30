@@ -1,21 +1,10 @@
 const path = require("path");
-//const config = require("./gatsby-node-config");
-//const utils = require("./gatsby-node-utils");
-//const queries = require("./gatsby-node-queries");
-
-const topics = [
-  "start",
-  "tutorial",
-  "concepts",
-  "advanced",
-  "do",
-  "api",
-  "plugins",
-  "packages",
-  "repos",
-  "editor",
-  "translator"
-];
+const topics = require("./topics");
+const pages = {
+  "/": "homepage",
+  "/search": "search",
+  "/languages": "languages"
+}
 
 const getFileList = function(graphql, language, markdown) {
   return new Promise((resolve, reject) => {
@@ -189,7 +178,23 @@ const createMdx = function(graphql, language, markdown, titles, createPage) {
     	resolve(true);
  	  }));
   }
-
+  for (let i in pages) {
+		promises.push(new Promise((resolve, reject) => {
+      createPage({
+        path: i,
+        component: path.resolve("src/components/pages/"+pages[i]+".js"),
+        context: {
+          markdown,
+          topics,
+          topicsToc,
+          content,
+          crumbs: breadcrumbs(i, titles),
+          slug: i
+        }
+      });
+    	resolve(true);
+ 	  }));
+  }
   return Promise.all(promises);
 };
 
