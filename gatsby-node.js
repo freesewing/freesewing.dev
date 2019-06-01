@@ -1,5 +1,5 @@
 const path = require("path");
-const topics = require("./topics");
+const topics = require("./src/topics");
 const pages = {
   "/": "homepage",
   "/search": "search",

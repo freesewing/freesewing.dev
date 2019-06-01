@@ -8,6 +8,7 @@ module.exports = [
   "plugins",
   "packages",
   "repos",
+  "contributor",
   "editor",
   "translator"
 ];

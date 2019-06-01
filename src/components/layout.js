@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { MuiThemeProvider } from "@material-ui/core";
 import { createMuiTheme } from "@material-ui/core";
 import withLanguage from "./withLanguage";
+import withStorage from "@freesewing/components/withStorage";
 import Navbar from "@freesewing/components/Navbar";
 import Footer from "@freesewing/components/Footer";
 import * as themes from "@freesewing/mui-theme";
@@ -20,12 +21,19 @@ import "typeface-permanent-marker";
 import Fab from '@material-ui/core/Fab';
 
 const Layout = props => {
-  const [theme, setTheme] = useState("light");
+  console.log(props);
+  const [theme, setTheme] = useState(props.storageData.theme || "light");
   const [menu, setMenu] = useState(false);
   // Methods
   const toggleDarkMode = () => {
-    if (theme === "light") setTheme("dark");
-    else setTheme("light");
+    if (theme === "light") {
+      setTheme("dark");
+      props.updateStorageData("dark", "theme");
+    } else {
+      setTheme("light");
+      props.updateStorageData("light", "theme");
+    }
+    console.log('dark mode toggled');
   };
   const toggleMenu = () => {
     setMenu(!menu);
@@ -100,7 +108,7 @@ const Layout = props => {
               <Navbar navs={navs} home="/" />
             </React.Fragment>
           )
-          : <div></div>
+          : <Navbar navs={navs} home="/" />
         }
         {React.cloneElement(props.children, { closeNav })}
         { props.mobile ? (
@@ -130,4 +138,9 @@ Layout.defaultProps = {
   footer: true,
 }
 
-export default withLanguage(Layout, process.env.GATSBY_LANG);
+export default withStorage(
+  withLanguage(
+    Layout,
+    process.env.GATSBY_LANG
+  ), "freesewing.dev"
+);

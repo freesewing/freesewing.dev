@@ -1,10 +1,15 @@
+//const queries = require("./src/algolia")
+//require("dotenv").config()
+
 module.exports = {
   plugins: [
-    //{
-    //  resolve: 'gatsby-source-filesystem',
+		//{
+    //  resolve: `gatsby-plugin-algolia`,
     //  options: {
-    //    path: `${__dirname}/src/pages`,
-    //    name: 'pages',
+    //    appId: process.env.GATSBY_ALGOLIA_APP_ID,
+    //    apiKey: process.env.ALGOLIA_ADMIN_KEY,
+    //    queries,
+    //    chunkSize: 10000,
     //  },
     //},
     {
@@ -17,19 +22,12 @@ module.exports = {
     {
       resolve: `gatsby-mdx`,
       options: {
-        //globalScope: `
-        //  import Blockquote from "@freesewing/components/Blockquote";
-        //  export default {
-        //    Blockquote,
-        //  };
-        //`,
         extensions: ['.mdx', '.md'],
         gatsbyRemarkPlugins: [
           {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 1035,
-              sizeByPixelDensity: true,
             },
           },
           {
