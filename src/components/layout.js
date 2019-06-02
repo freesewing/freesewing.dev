@@ -33,7 +33,6 @@ const Layout = props => {
       setTheme("light");
       props.updateStorageData("light", "theme");
     }
-    console.log('dark mode toggled');
   };
   const toggleMenu = () => {
     setMenu(!menu);
@@ -83,6 +82,12 @@ const Layout = props => {
     },
   };
 
+  const styles = {
+    menuIcons: {
+      margin: "2rem 0 100px 0",
+      textAlign: "center",
+    }
+  }
   // Render
   let wrapperClasses = theme === "light"
     ? "theme-wrapper light"
@@ -114,11 +119,11 @@ const Layout = props => {
         { props.mobile ? (
           <div className="menu" onClick={closeNav}>
             {props.menu}
-            <p style={{marginTop: "2rem"}}>
+            <p style={styles.menuIcons}>
               <IconButton href="/" color="primary" variant="contained"><HomeIcon /></IconButton>
               <IconButton href="/search" color="primary" variant="contained"><SearchIcon /></IconButton>
               <IconButton href="/languages" color="primary" variant="contained"><LanguageIcon /></IconButton>
-              <IconButton onClick={toggleDarkMode} color="primary" variant="contained"><DarkModeIcon /></IconButton>
+              <IconButton onClick={toggleDarkMode} color="primary" variant="contained"><DarkModeIcon style={{transform: "rotate(26deg)"}}/></IconButton>
             </p>
           </div>
         ) : null }
