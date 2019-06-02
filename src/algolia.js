@@ -13,7 +13,6 @@ const query = `{
 }`
 
 const flatten = arr => arr.map( node => {
-  console.log(node);
   return {
     path: "/" + node.node.parent.relativePath.slice(0, -5),
     body: node.node.rawBody,

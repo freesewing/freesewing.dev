@@ -21,7 +21,6 @@ import "typeface-permanent-marker";
 import Fab from '@material-ui/core/Fab';
 
 const Layout = props => {
-  console.log(props);
   const [theme, setTheme] = useState(props.storageData.theme || "light");
   const [menu, setMenu] = useState(false);
   // Methods
