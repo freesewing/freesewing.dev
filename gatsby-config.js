@@ -12,6 +12,13 @@ module.exports = {
     //    chunkSize: 10000,
     //  },
     //},
+		{
+    	resolve: `gatsby-plugin-nprogress`,
+    	options: {
+    	  color: "#37b24d",
+    	  //showSpinner: false,
+    	},
+  	},
     {
       resolve: 'gatsby-source-filesystem',
       options: {
