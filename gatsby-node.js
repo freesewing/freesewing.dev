@@ -1,9 +1,23 @@
 const path = require("path");
-const topics = require("./src/topics");
+const topics = require("./src/config/topics");
+
+const rootComponent = path.resolve("src/components/app/index.js");
+
+const redirects = {
+  //"/contact": "/docs/about/contact",
+}
+
 const pages = {
-  "/": "homepage",
-  "/search": "search",
-  "/languages": "languages"
+  single: {
+    "/": "app.home",
+    "/language": "account.language",
+    "/search": "app.search",
+  },
+  multiple: {
+    //"/login/callback": {
+    //  matchPath: "/login/callback/*",
+    //},
+  }
 }
 
 const getFileList = function(graphql, language, markdown) {
@@ -12,7 +26,7 @@ const getFileList = function(graphql, language, markdown) {
       allFile(filter: {
         sourceInstanceName: {eq: "markdown"},
         extension: {eq: "md"},
-        name: {in: ["${language}","en"]}
+        name: {eq: "${language}"}
       }) { edges { node { relativeDirectory, name, absolutePath }}}
     }`;
     graphql(query).then(res => {
@@ -47,7 +61,7 @@ const breadcrumbs = function(baseSlug, titles) {
   let up = parentCrumb(baseSlug, titles);
   let count = 0;
   while (up && count < 20) {
-    crumbs.push(up);
+    crumbs.unshift(up);
     up = parentCrumb(up.slug, titles);
     count++;
   }
@@ -57,14 +71,18 @@ const breadcrumbs = function(baseSlug, titles) {
 
 const getMdx = function(graphql, language, markdown, titles) {
   let promises = [];
-	for (let i in markdown) {
+  let slugs = Object.keys(markdown);
+  slugs.sort();
+	for (let slug of slugs) {
+    let fm = 'title, order';
+
 		promises.push(new Promise((resolve, reject) => {
  		  let query = `{
- 		  	allMdx(filter: {fileAbsolutePath: {eq: "${markdown[i].path}"} }) {
+ 		  	allMdx(filter: {fileAbsolutePath: {eq: "${markdown[slug].path}"} }) {
  		  		edges {
  		  			node {
  		      		id
- 		      		frontmatter { title, order }
+ 		      		frontmatter { ${fm} }
  		      		code { body }
  		      		excerpt
  		      		tableOfContents
@@ -80,8 +98,8 @@ const getMdx = function(graphql, language, markdown, titles) {
     	    console.log("More than one edge found:", query, res);
     	    reject();
     	  } else {
-					markdown[i].node = res.data.allMdx.edges[0];
-          titles[i] = markdown[i].node.node.frontmatter.title;
+					markdown[slug].node = res.data.allMdx.edges[0];
+          titles[slug] = markdown[slug].node.node.frontmatter.title;
     	    resolve(true);
 				}
     	});
@@ -91,40 +109,65 @@ const getMdx = function(graphql, language, markdown, titles) {
   return Promise.all(promises);
 };
 
-const isChild = function (topic, page) {
-  let chunks = page.split("/");
-  if (chunks.length === 3 && chunks[1] === topic) return true;
+const isDescendant = function (topic, slug, level=1) {
+  let chunks = slug.split("/");
+  if (chunks.length === (level + 2) && chunks[1] === topic) {
+    if (level === 1) return true;
+    if (level === 2) return "/"+topic+"/"+chunks[2];
+    if (level === 3) return "/"+topic+"/"+chunks[2]+"/"+chunks[3];
+  }
   else return false;
+}
+
+const isChild = function (base, slug) {
+  if (slug.slice(0, base.length) !== base) return false;
+  let chunks = {
+    base: base.split("/"),
+    slug: slug.split("/")
+  }
+  if (chunks.base.length + 1 === chunks.slug.length) return true;
+
+  return false;
+}
+
+const getSortTitle = function (mdx) {
+  let title = mdx.node.node.frontmatter.title;
+  if (typeof mdx.node.node.frontmatter.linktitle !== "undefined")
+    title = mdx.node.node.frontmatter.title;
+  let order = null;
+  if (typeof mdx.node.node.frontmatter.order !== "undefined")
+    order = mdx.node.node.frontmatter.order;
+  if (typeof mdx.node.node.frontmatter.date !== "undefined")
+    order = mdx.node.node.frontmatter.date;
+  if (order !== null) title = order + title;
+
+  return title;
+}
+
+const getTitle = function (mdx) {
+  if (typeof mdx.node.node.frontmatter.linktitle !== "undefined")
+    return mdx.node.node.frontmatter.linktitle;
+
+  return mdx.node.node.frontmatter.title;
+}
+
+const getDocsLevel = (level, data) => {
 }
 
 const getTopics = function(markdown) {
   let list = { };
-  for (let topic of topics) {
-    let pageSlug = "/"+topic;
-    if (typeof markdown[pageSlug] === "undefined")
-      throw new Error(`No page for topic ${topic} at ${pageSlug}`);
-    list[topic] = {
-      title: markdown[pageSlug].node.node.frontmatter.title,
+  let slugs = Object.keys(markdown);
+  slugs.sort();
+	for (let slug of slugs) {
+    let chunks = slug.split("/");
+    let data = {
+      title: markdown[slug].node.node.frontmatter.title,
       children: {},
     }
-    let children = {};
-    for (let page in markdown) {
-      if (isChild(topic, page)) {
-        let title = markdown[page].node.node.frontmatter.title;
-        if (typeof markdown[page].node.node.frontmatter.order !== "undefined") {
-          let order = markdown[page].node.node.frontmatter.order !== "undefined";
-          if (order !== null)
-            title = markdown[page].node.node.frontmatter.order + title;
-        }
-        children[title] = page;
-      }
-    }
-    let childrenOrder = Object.keys(children);
-    childrenOrder.sort();
-    for (let c of childrenOrder) {
-      let link = children[c];
-      list[topic].children[link] = markdown[link].node.node.frontmatter.title;
-    }
+    if (chunks.length === 2) list[chunks[1]] = data;
+    if (chunks.length === 3) list[chunks[1]][chunks[2]] = data;
+    if (chunks.length === 4) list[chunks[1]][chunks[2]][chunks[3]] = data;
+    if (chunks.length === 5) list[chunks[1]][chunks[2]][chunks[3]][chunks[4]] = data;
   }
 
   return list;
@@ -145,51 +188,91 @@ const flattenTopicsToc = function(topicsToc) {
     titles["/"+topic] = topicsToc[topic].title;
     for (let child in topicsToc[topic].children) {
       slugs.push(child);
-      titles[child] = topicsToc[topic].children[child];
+      titles[child] = topicsToc[topic].children[child].title;
+      if (typeof topicsToc[topic].children !== "undefined") {
+        for (let grandchild in topicsToc[topic].children[child].children) {
+          slugs.push(grandchild);
+          titles[grandchild] = topicsToc[topic].children[child].children[grandchild].title;
+        }
+      }
     }
   }
 
   return { slugs, titles };
 }
 
+const createRedirects = function(redirects, createRedirect) {
+  let promises = [];
+	for (let from in redirects) {
+		promises.push(new Promise((resolve, reject) => {
+      createRedirect({
+        fromPath: from,
+        toPath: redirects[from],
+        isPermanent: true,
+        redirectInBrowser: true,
+      });
+    	resolve(true);
+ 	  }));
+  }
+
+  return Promise.all(promises);
+}
+
 const createMdx = function(graphql, language, markdown, titles, createPage) {
   let promises = [];
-  let template = path.resolve("src/components/page-template.js");
   let topicsToc = getTopics(markdown);
   let content = flattenTopicsToc(topicsToc);
-	for (let i in markdown) {
-    let topic = getTopic(i);
+  let slugs = Object.keys(markdown);
+  slugs.sort();
+	for (let slug of slugs) {
+    let topic = getTopic(slug);
 		promises.push(new Promise((resolve, reject) => {
       createPage({
-        path: i,
-        component: template,
+        path: slug,
+        component: rootComponent,
         context: {
-          node: markdown[i].node.node,
-          markdown,
+          node: markdown[slug].node.node,
           topic,
           topics,
           topicsToc,
           content,
-          crumbs: breadcrumbs(i, titles),
-          language: markdown[i].language,
-          slug: i
+          crumbs: breadcrumbs(slug, titles),
+          language: markdown[slug].language,
+          slug: slug
         }
       });
     	resolve(true);
  	  }));
   }
-  for (let i in pages) {
+  for (let i in pages.single) {
 		promises.push(new Promise((resolve, reject) => {
       createPage({
         path: i,
-        component: path.resolve("src/components/pages/"+pages[i]+".js"),
+        component: rootComponent,
         context: {
-          markdown,
           topics,
           topicsToc,
           content,
           crumbs: breadcrumbs(i, titles),
-          slug: i
+          slug: i,
+          title: pages.single[i]
+        }
+      });
+    	resolve(true);
+ 	  }));
+  }
+  for (let i in pages.multiple) {
+		promises.push(new Promise((resolve, reject) => {
+      createPage({
+        path: i,
+        component: rootComponent,
+        ...pages.multiple[i],
+        context: {
+          topics,
+          topicsToc,
+          content,
+          crumbs: breadcrumbs(i, titles),
+          slug: i,
         }
       });
     	resolve(true);
@@ -214,11 +297,13 @@ exports.createPages = ({ actions, graphql }) => {
           createMdx(graphql, language, markdown, titles, actions.createPage)
           .then(() => {
             console.log("[##----]", "MDX pages created");
-            resolve(true);
+            createRedirects(redirects, actions.createRedirect)
+            .then(() => {
+              console.log("[##----]", "Redirects created");
+              resolve(true);
+            })
           })
         })
       })
     })
 };
-
-

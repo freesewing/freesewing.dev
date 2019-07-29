@@ -3,59 +3,80 @@ import TableOfContents from "./TableOfContents";
 import ExpandedIcon from "@material-ui/icons/KeyboardArrowDown";
 import CollapsedIcon from "@material-ui/icons/KeyboardArrowRight";
 import { Link } from "gatsby";
+import { FormattedMessage } from "react-intl";
 
 const TopicsToc = props => {
-
-  let items = [];
-  let children = false;
-  for (let t of props.topics) {
-    let liProps = {
-      key: t,
-      className: "topic",
-    }
-    let toc = null;
-    let tocComponent = <TableOfContents toc={props.toc} slug={props.slug}/>
-    if (t === props.topic) {
-      liProps.className += " active";
-      children = [];
-      for (let c in props.topicsToc[t].children) {
-        if (c === props.slug) toc = tocComponent
-        else toc = null;
-        children.push(<li key={c} className={c === props.slug ? "active" : ""}>
-          <Link to={c}>
-            {props.topicsToc[t].children[c]}
-          </Link>
-          {toc}
-        </li>);
-      }
-      if (children) children = <ul className="topics l1">{children}</ul>
-      else children = null;
-    } else children = null;
-    if (!children && props.topic === t) children = <TableOfContents toc={props.toc} slug={props.slug}/>
-    items.push(<li {...liProps}>
-        <Link to={"/"+t} className="topic">
-      { t === props.topic
-        ? <ExpandedIcon fontSize="inherit"/>
-        : <CollapsedIcon fontSize="inherit"/>
-      }
-          {props.topicsToc[t].title}
-        </Link>
-      { props.slug.split("/").length === 2
-        && props.topic === t
-        && props.toc.items
-        && props.toc.items.length > 0
-        ? <ul className="topics l1"><li>{tocComponent}</li></ul>
-        : null
-      }
-        {children}
-      </li>);
+  const topics = props.topics;
+  const topicsToc = props.topicsToc;
+  const isDescendant = (checkSlug, baseSlug) => {
+    if (checkSlug.slice(0, baseSlug.length) === baseSlug) return true;
+    return false;
   }
 
-  return (
-    <ul className="topics">
-      {items}
-    </ul>
-  );
+  const styles = {
+    icon: {
+      fontSize: "16px"
+    }
+  }
+  const renderSidebar = () => {
+    let items = [];
+    for (let topic of topics) {
+      let active = isDescendant(props.slug, "/"+topic) ? true : false;
+      items.push(
+        <li key={topic} className={active ? "topic active" : "topic"}>
+          <Link className={active ? "topic active" : "topic"} to={"/"+topic}>
+            { active
+              ? <ExpandedIcon fontSize="inherit" style={styles.icon}/>
+              : <CollapsedIcon fontSize="inherit" style={styles.icon}/>
+            }
+            {topicsToc[topic].title}
+          </Link>
+          {active
+            ? renderSidebarLevel(1, topicsToc["/"+topic].children)
+            : null
+          }
+        </li>
+      );
+    }
+
+    return <ul className="topics">{items}</ul>
+  }
+
+  const renderSidebarLevel = (level, data) => {
+    console.log("level", level, "data", data);
+    // Avoid too much recursion
+    if (level > 4) return null;
+    let children = [];
+    for (let key in data) {
+      let grandchildren = null;
+      let active = isDescendant(props.slug, key) ? true : false;
+      let current = props.slug === key ? true : false;
+      if (active && typeof data[key].children !== "undefined") {
+        grandchildren = renderSidebarLevel(level+1, data[key].children);
+      }
+      let className = active ? "active" : "inactive"
+      children.push(
+        <li key={key} className={className}>
+          <Link className={className} to={key}>
+            { active
+              ? <ExpandedIcon fontSize="inherit" style={styles.icon}/>
+              : <CollapsedIcon fontSize="inherit" style={styles.icon}/>
+            }
+            {data[key].title}
+          </Link >
+          {current
+            ? <TableOfContents toc={props.toc} slug={key}/>
+            : null
+          }
+          {grandchildren}
+        </li>
+      );
+    }
+
+    return <ul className={"topic-links level-"+level}>{children}</ul>
+  }
+
+  return renderSidebar();
 }
 
 export default TopicsToc;
