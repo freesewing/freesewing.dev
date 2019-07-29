@@ -160,14 +160,16 @@ const getTopics = function(markdown) {
   slugs.sort();
 	for (let slug of slugs) {
     let chunks = slug.split("/");
+    chunks[1] = "/" + chunks[1];
     let data = {
       title: markdown[slug].node.node.frontmatter.title,
       children: {},
     }
     if (chunks.length === 2) list[chunks[1]] = data;
-    if (chunks.length === 3) list[chunks[1]][chunks[2]] = data;
-    if (chunks.length === 4) list[chunks[1]][chunks[2]][chunks[3]] = data;
-    if (chunks.length === 5) list[chunks[1]][chunks[2]][chunks[3]][chunks[4]] = data;
+    if (chunks.length === 3) list[chunks[1]].children[slug] = data;
+    if (chunks.length === 4) list[chunks[1]].children[chunks.slice(1,3).join("/")].children[slug] = data;
+    if (chunks.length === 5)
+      list[chunks[1]].children[chunks.slice(1,3).join("/")].children[chunks.slice(1,4).join("/")].children[slug] = data;
   }
 
   return list;
@@ -184,8 +186,9 @@ const flattenTopicsToc = function(topicsToc) {
   let slugs = [];
   let titles = {};
   for (let topic of topics) {
-    slugs.push("/"+topic);
-    titles["/"+topic] = topicsToc[topic].title;
+    topic = "/" + topic;
+    slugs.push(topic);
+    titles[topic] = topicsToc[topic].title;
     for (let child in topicsToc[topic].children) {
       slugs.push(child);
       titles[child] = topicsToc[topic].children[child].title;

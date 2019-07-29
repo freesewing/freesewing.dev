@@ -25,6 +25,7 @@ import { injectIntl } from "react-intl";
 import PreviousNext from "../previous-next";
 import MainMenu from "./main-menu";
 import MainPage from "./main-page";
+import HomePage from "../pages/homepage";
 
 /* This component is the root component for all pages */
 
@@ -76,14 +77,9 @@ const App = props => {
       <IconButton onClick={app.frontend.toggleDarkMode} color="primary" variant="contained"><DarkModeIcon style={{transform: "rotate(26deg)"}}/></IconButton>
     </p>
   );
-
-  let layout = props.location.pathname === "/" ? "home" : "default";
-  let pageLayout;
-  switch(layout) {
-    case "home":
-      pageLayout = <MainPage app={app} pageContext={props.pageContext} uri={uri} />
-      break;
-    default: pageLayout = (
+  const pageLayout = (uri === "")
+    ? <HomePage app={app} />
+    : (
       <div className="fs-sa">
         <section>
           <article style={{ maxWidth: '42em', margin: 'auto', }}>
@@ -102,7 +98,6 @@ const App = props => {
         </aside> )}
       </div>
     )
-  }
   // Render
   let wrapperClasses = theme === "light"
     ? "theme-wrapper light"

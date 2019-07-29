@@ -16,7 +16,9 @@ const Footer = props => {
     }
   }
 
-  return <FooterBase language={props.language} links={links} home="/" />
+  const patrons = <p>Something here</p>
+
+  return <FooterBase language={props.language} links={links} home="/" patrons={patrons} />
 }
 
 export default Footer;

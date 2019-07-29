@@ -21,10 +21,11 @@ const TopicsToc = props => {
   const renderSidebar = () => {
     let items = [];
     for (let topic of topics) {
-      let active = isDescendant(props.slug, "/"+topic) ? true : false;
+      topic = "/" + topic;
+      let active = isDescendant(props.slug, topic) ? true : false;
       items.push(
         <li key={topic} className={active ? "topic active" : "topic"}>
-          <Link className={active ? "topic active" : "topic"} to={"/"+topic}>
+          <Link className={active ? "topic active" : "topic"} to={topic}>
             { active
               ? <ExpandedIcon fontSize="inherit" style={styles.icon}/>
               : <CollapsedIcon fontSize="inherit" style={styles.icon}/>
@@ -32,7 +33,7 @@ const TopicsToc = props => {
             {topicsToc[topic].title}
           </Link>
           {active
-            ? renderSidebarLevel(1, topicsToc["/"+topic].children)
+            ? renderSidebarLevel(1, topicsToc[topic].children)
             : null
           }
         </li>
@@ -43,7 +44,6 @@ const TopicsToc = props => {
   }
 
   const renderSidebarLevel = (level, data) => {
-    console.log("level", level, "data", data);
     // Avoid too much recursion
     if (level > 4) return null;
     let children = [];
