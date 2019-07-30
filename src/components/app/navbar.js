@@ -10,7 +10,7 @@ const Navbar = props => {
       start: {
         type: "link",
         href: "/start",
-        text: "app.start"
+        text: "app.getStarted"
       },
       tutorial: {
         type: "link",

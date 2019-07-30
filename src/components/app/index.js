@@ -26,6 +26,7 @@ import PreviousNext from "../previous-next";
 import MainMenu from "./main-menu";
 import MainPage from "./main-page";
 import HomePage from "../pages/homepage";
+import ShoutOuts from "./shout-outs";
 
 /* This component is the root component for all pages */
 
@@ -135,6 +136,7 @@ const App = props => {
           ) : null }
         </AppContext.Provider>
         <Footer language={props.language} />
+        {uri === "" ? <ShoutOuts theme={app.frontend.theme} /> : null}
       </div>
     </MuiThemeProvider>
   );

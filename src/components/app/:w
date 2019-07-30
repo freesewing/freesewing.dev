@@ -1,0 +1,47 @@
+import React from "react";
+
+const ShoutOuts = props => {
+  const styles = {
+    wrapper: {
+      background: "#212529",
+      margin: 0,
+      color: "#ccc",
+      textAlign: "center",
+      padding: "2rem 1rem",
+      borderTop: "2px solid #74c0fc",
+      display: "flex",
+      flexDirection: "row",
+      flexWrap: "wrap"
+    },
+    box: {
+      width: "200px",
+      display: "flex",
+      flexDirection: "column",
+    }
+  }
+
+  return (
+    <section style={styles.wrapper}>
+      <div style={styles.box}>
+        <h6>Hosting</h6>
+        <a href="https://www.netlify.com">
+          <img src="/brands/algolia.svg" alt="Search by Algolia"/>
+        </a>
+      </div>
+      <div style={styles.box}>
+        <h6>Translation</h6>
+        <a href="https://crowdin.com">
+          <img src="/brands/crowdin.svg" alt="Translation by Crowdin"/>
+        </a>
+      </div>
+      <div style={styles.box}>
+        <h6>Search</h6>
+        <a href="https://www.netlify.com">
+          <img src="/brands/netlify.svg" alt="Deploys by Netlify"/>
+        </a>
+      </div>
+    </section>
+  );
+}
+
+export default ShoutOuts;

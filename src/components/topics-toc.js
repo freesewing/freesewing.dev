@@ -3,7 +3,6 @@ import TableOfContents from "./TableOfContents";
 import ExpandedIcon from "@material-ui/icons/KeyboardArrowDown";
 import CollapsedIcon from "@material-ui/icons/KeyboardArrowRight";
 import { Link } from "gatsby";
-import { FormattedMessage } from "react-intl";
 
 const TopicsToc = props => {
   const topics = props.topics;
