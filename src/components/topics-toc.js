@@ -19,7 +19,10 @@ const TopicsToc = props => {
   }
   const renderSidebar = () => {
     let items = [];
-    for (let topic of topics) {
+    let order = {};
+    for (let topic of topics) order[topicsToc["/" + topic].order] = topic;
+    order = Object.values(order);
+    for (let topic of order) {
       topic = "/" + topic;
       let active = isDescendant(props.slug, topic) ? true : false;
       items.push(
