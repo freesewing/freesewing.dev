@@ -154,6 +154,27 @@ const getTitle = function (mdx) {
 const getDocsLevel = (level, data) => {
 }
 
+const orderChildren = (markdown, list, topic) => {
+  let order = {};
+  let noOrder = true;
+  for (let slug in list[topic].children) {
+    let prefix = markdown[slug].node.node.frontmatter.order || "";
+    order[prefix+slug] = slug;
+    if (prefix !== "") noOrder = false;
+  }
+  if (noOrder) return list[topic].children;
+
+  let children = {};
+  let ordered = Object.keys(order);
+  ordered.sort();
+  for (let i of ordered) {
+    let slug = order[i];
+    children[slug] = list[topic].children[slug];
+  }
+
+  return children;
+}
+
 const getTopics = function(markdown) {
   let list = { };
   let slugs = Object.keys(markdown);
@@ -171,7 +192,12 @@ const getTopics = function(markdown) {
     if (chunks.length === 5)
       list[chunks[1]].children[chunks.slice(1,3).join("/")].children[chunks.slice(1,4).join("/")].children[slug] = data;
   }
-
+  // Override order
+  for (let topic in list) {
+    if (typeof list[topic].children !== "undefined") {
+      list[topic].children = orderChildren(markdown, list, topic)
+    }
+  }
   return list;
 }
 
