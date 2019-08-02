@@ -186,7 +186,11 @@ const getTopics = function(markdown) {
       title: markdown[slug].node.node.frontmatter.title,
       children: {},
     }
-    if (chunks.length === 2) list[chunks[1]] = data;
+    // Top-level includes order parameter in frontmatter
+    if (chunks.length === 2) list[chunks[1]] = {
+      order: markdown[slug].node.node.frontmatter.order,
+      ...data
+    }
     if (chunks.length === 3) list[chunks[1]].children[slug] = data;
     if (chunks.length === 4) list[chunks[1]].children[chunks.slice(1,3).join("/")].children[slug] = data;
     if (chunks.length === 5)

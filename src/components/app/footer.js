@@ -5,14 +5,10 @@ const Footer = props => {
 
   const links = {
     left: {
-      blog: "/blog",
       aboutFreesewing: "/docs/about",
-      faq: "/docs/faq"
     },
     right: {
       becomeAPatron: "/patrons/join",
-      makerDocs: "/docs",
-      devDocs: "https://" + props.language + ".freesewing.dev/"
     }
   }
 

@@ -1,7 +1,6 @@
 import React from "react"
 import Button from "@material-ui/core/Button";
-import { FormattedMessage, FormattedHTMLMessage } from "react-intl";
-import { Link } from "gatsby";
+import { FormattedMessage } from "react-intl";
 
 const HomePage = ({ app }) => {
   app.frontend.setLayout = "home";
