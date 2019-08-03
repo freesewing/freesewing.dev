@@ -1,11 +1,10 @@
-import React from "react";
+import React from 'react'
 
 const PluginPage = props => {
-
-	const plugin = props.plugin;
+  const plugin = props.plugin
   const styles = {
     badge: {
-      marginRight: "0.5rem"
+      marginRight: '0.5rem'
     }
   }
 
@@ -13,22 +12,18 @@ const PluginPage = props => {
     <React.Fragment>
       <p>
         <a
-          href={"https://www.npmjs.com/package/@freesewing/plugin-"+plugin}
-          title={"@freesewing/plugin-"+plugin+" on NPM"}
+          href={'https://www.npmjs.com/package/@freesewing/plugin-' + plugin}
+          title={'@freesewing/plugin-' + plugin + ' on NPM'}
           style={styles.badge}
         >
           <img
-            src={"https://img.shields.io/npm/v/@freesewing/plugin-"+plugin+".svg"}
-            alt={"@freesewing/plugin-"+plugin+" on NPM"}
+            src={'https://img.shields.io/npm/v/@freesewing/plugin-' + plugin + '.svg'}
+            alt={'@freesewing/plugin-' + plugin + ' on NPM'}
           />
         </a>
-        <a
-          href="https://opensource.org/licenses/MIT"
-          title="License: MIT"
-          style={styles.badge}
-        >
+        <a href="https://opensource.org/licenses/MIT" title="License: MIT" style={styles.badge}>
           <img
-            src={"https://img.shields.io/npm/l/@freesewing/plugin-"+plugin+".svg?label=License"}
+            src={'https://img.shields.io/npm/l/@freesewing/plugin-' + plugin + '.svg?label=License'}
             alt="License: MIT"
           />
         </a>
@@ -43,24 +38,41 @@ const PluginPage = props => {
           />
         </a>
         <a
-          href={"https://github.com/freesewing/freesewing/issues?q=is%3Aissue+is%3Aopen+label%3Apkg%3Aplugin-"+plugin}
-          title={"Open issues tagged pkg:plugin-"+plugin}
+          href={
+            'https://github.com/freesewing/freesewing/issues?q=is%3Aissue+is%3Aopen+label%3Apkg%3Aplugin-' +
+            plugin
+          }
+          title={'Open issues tagged pkg:plugin-' + plugin}
           style={styles.badge}
         >
           <img
-            src={"https://img.shields.io/github/issues/freesewing/freesewing/pkg:plugin-"+plugin+".svg?label=Issues"}
-            alt={"Open issues tagged pkg:plugin-"+plugin}
+            src={
+              'https://img.shields.io/github/issues/freesewing/freesewing/pkg:plugin-' +
+              plugin +
+              '.svg?label=Issues'
+            }
+            alt={'Open issues tagged pkg:plugin-' + plugin}
           />
         </a>
       </p>
       <p>This is the {plugin} plugin:</p>
       <ul className="links">
-        <li><a href={"/plugins/"+plugin}>plugin-{plugin} documentation</a></li>
-        <li><a href={"https://npmjs.com/package/@freesewing/plugin-"+plugin}>Package on NPM</a></li>
-        <li><a href={"https://github.com/freesewing/freesewing/tree/develop/packages/plugin-"+plugin}>Code on GitHub</a></li>
+        <li>
+          <a href={'/plugins/' + plugin}>plugin-{plugin} documentation</a>
+        </li>
+        <li>
+          <a href={'https://npmjs.com/package/@freesewing/plugin-' + plugin}>Package on NPM</a>
+        </li>
+        <li>
+          <a
+            href={'https://github.com/freesewing/freesewing/tree/develop/packages/plugin-' + plugin}
+          >
+            Code on GitHub
+          </a>
+        </li>
       </ul>
     </React.Fragment>
-  );
+  )
 }
 
-export default PluginPage;
+export default PluginPage

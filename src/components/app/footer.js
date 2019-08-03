@@ -1,14 +1,13 @@
-import React from "react";
-import FooterBase from "@freesewing/components/Footer";
+import React from 'react'
+import FooterBase from '@freesewing/components/Footer'
 
 const Footer = props => {
-
   const links = {
     left: {
-      aboutFreesewing: "/docs/about",
+      aboutFreesewing: '/docs/about'
     },
     right: {
-      becomeAPatron: "/patrons/join",
+      becomeAPatron: '/patrons/join'
     }
   }
 
@@ -17,5 +16,4 @@ const Footer = props => {
   return <FooterBase language={props.language} links={links} home="/" patrons={patrons} />
 }
 
-export default Footer;
-
+export default Footer
