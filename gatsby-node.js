@@ -109,51 +109,6 @@ const getMdx = function(graphql, language, markdown, titles) {
   return Promise.all(promises);
 };
 
-const isDescendant = function (topic, slug, level=1) {
-  let chunks = slug.split("/");
-  if (chunks.length === (level + 2) && chunks[1] === topic) {
-    if (level === 1) return true;
-    if (level === 2) return "/"+topic+"/"+chunks[2];
-    if (level === 3) return "/"+topic+"/"+chunks[2]+"/"+chunks[3];
-  }
-  else return false;
-}
-
-const isChild = function (base, slug) {
-  if (slug.slice(0, base.length) !== base) return false;
-  let chunks = {
-    base: base.split("/"),
-    slug: slug.split("/")
-  }
-  if (chunks.base.length + 1 === chunks.slug.length) return true;
-
-  return false;
-}
-
-const getSortTitle = function (mdx) {
-  let title = mdx.node.node.frontmatter.title;
-  if (typeof mdx.node.node.frontmatter.linktitle !== "undefined")
-    title = mdx.node.node.frontmatter.title;
-  let order = null;
-  if (typeof mdx.node.node.frontmatter.order !== "undefined")
-    order = mdx.node.node.frontmatter.order;
-  if (typeof mdx.node.node.frontmatter.date !== "undefined")
-    order = mdx.node.node.frontmatter.date;
-  if (order !== null) title = order + title;
-
-  return title;
-}
-
-const getTitle = function (mdx) {
-  if (typeof mdx.node.node.frontmatter.linktitle !== "undefined")
-    return mdx.node.node.frontmatter.linktitle;
-
-  return mdx.node.node.frontmatter.title;
-}
-
-const getDocsLevel = (level, data) => {
-}
-
 const orderChildren = (markdown, list, topic) => {
   let order = {};
   let noOrder = true;

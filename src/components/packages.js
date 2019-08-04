@@ -25,7 +25,7 @@ const Packages = props => {
     <ul className="links">
       {data.allSitePage.edges.map(e => {
         return (
-          <li>
+          <li key={e.node.path}>
             <Link key={e.node.path} to={e.node.path}>
               {e.node.context.node.frontmatter.title}
             </Link>
