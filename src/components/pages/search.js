@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import Robot from '@freesewing/components/Robot'
 import { FormattedMessage } from 'react-intl'
+import Search from "../search";
 
 const SearchPage = props => {
   useEffect(() => {
@@ -9,8 +9,7 @@ const SearchPage = props => {
 
   return (
     <React.Fragment>
-      <Robot size={300} pose="shrug2" />
-      <p>FIXME: Under construction</p>
+     <Search search={props.app.frontend.intl.formatMessage({id:"app.search"})} />
     </React.Fragment>
   )
 }
