@@ -14,9 +14,9 @@ const pages = {
     "/search": "app.search",
   },
   multiple: {
-    //"/login/callback": {
-    //  matchPath: "/login/callback/*",
-    //},
+    "/404": {
+      matchPath: "^\/?404\/?$",
+    },
   }
 }
 
