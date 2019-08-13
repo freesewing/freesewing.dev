@@ -18,6 +18,7 @@
 <p align="center">
   <a href="https://gitter.im/freesewing/freesewing"><img src="https://badgen.net/badge/chat/on%20Gitter/cyan" alt="Chat on Gitter"></a>
   <a href="https://freesewing.org/patrons/join"><img src="https://badgen.net/badge/become/a%20Patron/FF5B77" alt="Become a Patron"></a>
+  <a href="https://app.netlify.com/sites/fs-dev-en/deploys"><img src="https://api.netlify.com/api/v1/badges/a4289b92-50a0-4293-9a7c-36bbb603a04e/deploy-status" alt=Deploys by Netlify" /></a>
 </p>
 
 ## About freesewing
