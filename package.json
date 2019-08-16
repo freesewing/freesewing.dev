@@ -55,7 +55,7 @@
     "react-youtube": "^7.9.0",
     "styled-components": "^4.2.0",
     "typeface-permanent-marker": "0.0.72",
-    "typeface-roboto-condensed": "0.0.54"
+    "typeface-roboto-condensed": "0.0.75"
   },
   "devDependencies": {
     "@freesewing/prettier-config": "2.0.0-beta.38",
