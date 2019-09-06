@@ -134,7 +134,7 @@ const HomePage = ({ app }) => {
           <p>Setup your development environement with this one-liner:</p>
           <div className="gatsby-highlight">
             <pre className="language-bash">
-              <code className="language-bash">npm init freesewing-pattern@beta</code>
+              <code className="language-bash">npm init freesewing-pattern</code>
             </pre>
           </div>
           <p>You can try it out right now, or learn more about what to expect.</p>

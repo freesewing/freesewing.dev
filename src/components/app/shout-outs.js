@@ -30,7 +30,10 @@ const ShoutOuts = props => {
     },
     logo: {
       maxWidth: '200px',
-      maxHeight: '100px'
+      maxHeight: '51px'
+    },
+    h6: {
+      margin: "1rem 0 0.5rem"
     }
   }
 
@@ -39,21 +42,27 @@ const ShoutOuts = props => {
       <div style={styles.intro}>These awesome companies harbour us</div>
       <div style={styles.inner}>
         <div style={styles.box}>
-          <h6>Search</h6>
+          <h6 style={styles.h6}>Search</h6>
           <a href="https://www.algolia.com">
             <img src="/brands/algolia.svg" alt="Search by Algolia" style={styles.logo} />
           </a>
         </div>
         <div style={styles.box}>
-          <h6>Translation</h6>
+          <h6 style={styles.h6}>Translation</h6>
           <a href="https://crowdin.com">
             <img src="/brands/crowdin.svg" alt="Translation by Crowdin" style={styles.logo} />
           </a>
         </div>
         <div style={styles.box}>
-          <h6>Hosting</h6>
+          <h6 style={styles.h6}>Hosting</h6>
           <a href="https://www.netlify.com">
             <img src="/brands/netlify.svg" alt="Deploys by Netlify" style={styles.logo} />
+          </a>
+        </div>
+        <div style={styles.box}>
+          <h6 style={styles.h6}>Error handling</h6>
+          <a href="https://www.bugsnag.com/">
+            <img src="/brands/bugsnag.svg" alt="Error handling by Bugsnag" style={styles.logo} />
           </a>
         </div>
       </div>

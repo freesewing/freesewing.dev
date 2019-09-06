@@ -5,7 +5,6 @@ import NotFoundPage from '../pages/404'
 import DocumentationPage from '../templates/docs-page'
 
 const MainPage = props => {
-  console.log('checking main page', props);
   // Props for pages
   const pageProps = {
     app: props.app,
