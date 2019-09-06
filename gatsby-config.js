@@ -1,4 +1,4 @@
-const searchData = require("./src/algolia")
+//const searchData = require("./src/algolia")
 require("dotenv").config()
 
 module.exports = {
@@ -47,15 +47,15 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',
-		{
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: process.env.GATSBY_ALGOLIA_API_ID,
-        apiKey: process.env.GATSBY_ALGOLIA_UPDATE_KEY,
-        queries: searchData(process.env.GATSBY_LANGUAGE),
-        chunkSize: 1000,
-      },
-    },
+		//{
+    //  resolve: `gatsby-plugin-algolia`,
+    //  options: {
+    //    appId: process.env.GATSBY_ALGOLIA_API_ID,
+    //    apiKey: process.env.GATSBY_ALGOLIA_UPDATE_KEY,
+    //    queries: searchData(process.env.GATSBY_LANGUAGE),
+    //    chunkSize: 1000,
+    //  },
+    //},
   ],
 };
 
