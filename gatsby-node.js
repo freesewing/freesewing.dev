@@ -83,7 +83,7 @@ const getMdx = function(graphql, language, markdown, titles) {
  		  			node {
  		      		id
  		      		frontmatter { ${fm} }
- 		      		code { body }
+ 		      		body
  		      		excerpt
  		      		tableOfContents
  		  			}

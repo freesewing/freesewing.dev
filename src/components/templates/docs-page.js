@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
-import MDXRenderer from 'gatsby-mdx/mdx-renderer'
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from '@mdx-js/react'
 import Blockquote from '@freesewing/components/Blockquote'
 import Example from '@freesewing/components/Example'
+import PreviousNext from '../previous-next'
 
 const DocumentationPage = props => {
   useEffect(() => {
@@ -26,9 +27,10 @@ const DocumentationPage = props => {
     <React.Fragment>
       {props.pageContext.node ? (
         <MDXProvider components={components}>
-          <MDXRenderer>{props.pageContext.node.code.body}</MDXRenderer>
+          <MDXRenderer>{props.pageContext.node.body}</MDXRenderer>
         </MDXProvider>
       ) : null}
+      <PreviousNext pageContext={props.pageContext} theme={props.app.frontend.theme} />
     </React.Fragment>
   )
 }
