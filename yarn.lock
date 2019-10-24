@@ -1265,16 +1265,15 @@
   dependencies:
     "@babel/runtime" "^7.2.0"
 
-"@material-ui/lab@4.0.0-alpha.25":
-  version "4.0.0-alpha.25"
-  resolved "https://registry.yarnpkg.com/@material-ui/lab/-/lab-4.0.0-alpha.25.tgz#243ed39c3b26bcc1b545a32cc97aba53bae2c078"
-  integrity sha512-KaySMP6SLtPFalpFClcMK3sZO9UgzCzpFZ41UiESP0FvebORbH9NAD/TwYDyr+o2vghC+lzzRLRtr5HM3V8Mrg==
+"@material-ui/lab@4.0.0-alpha.27":
+  version "4.0.0-alpha.27"
+  resolved "https://registry.yarnpkg.com/@material-ui/lab/-/lab-4.0.0-alpha.27.tgz#591b0c5028afd1e1b5a591467b83317feb5cff19"
+  integrity sha512-Nl2F4bCws10BGWFJalAJZ9/qEGpxhUWvIGBye1KIeqfesRqc6A/L799sMbPSgXviasVD8s1RrstOKcyKI0A0Ew==
   dependencies:
     "@babel/runtime" "^7.4.4"
     "@material-ui/utils" "^4.4.0"
     clsx "^1.0.4"
     prop-types "^15.7.2"
-    warning "^4.0.3"
 
 "@material-ui/styles@^4.3.3":
   version "4.3.3"
@@ -13808,7 +13807,7 @@ warning@^3.0.0:
   dependencies:
     loose-envify "^1.0.0"
 
-warning@^4.0.1, warning@^4.0.3:
+warning@^4.0.1:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/warning/-/warning-4.0.3.tgz#16e9e077eb8a86d6af7d64aa1e05fd85b4678ca3"
   integrity sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
