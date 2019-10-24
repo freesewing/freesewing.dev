@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Joost De Cock <joost@decock.org> (https://github.com/joostdecock)",
   "homepage": "https://freesewing.org/",
-  "repository": "https://github.com/freesewing.org/devsite",
+  "repository": "https://github.com/freesewing/freesewing.dev",
   "dependencies": {
     "@freesewing/components": "2.0.2",
     "@freesewing/core": "2.0.2",
