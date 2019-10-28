@@ -26,7 +26,7 @@
     "@mdx-js/react": "^1.4.4",
     "algoliasearch": "^3.33.0",
     "dotenv": "^8.0.0",
-    "gatsby": "^2.13.39",
+    "gatsby": "^2.17.4",
     "gatsby-image": "^2.2.17",
     "gatsby-link": "^2.2.22",
     "gatsby-plugin-algolia": "^0.3.2",
