@@ -3,18 +3,22 @@ import { Highlight, Snippet } from "react-instantsearch-dom"
 import { Link } from "gatsby"
 
 const Hit = clickHandler => ({ hit }) => {
-  console.log(hit);
   return (
-    <React.Fragment>
-      <h6>
-        <Link to={hit.slug} onClick={clickHandler}>
+    <div className="search-hit">
+      <h2>
+        <Link to={hit.path} onClick={clickHandler}>
           <Highlight attribute="title" hit={hit} tagName="mark" />
         </Link>
-      </h6>
-      <p style={{marginTop: 0}}>
+      </h2>
+      <div className="path">
+        <Link to={hit.path} onClick={clickHandler}>
+          {hit.path}
+        </Link>
+      </div>
+      <div className="snippet">
         <Snippet attribute="content" hit={hit} tagName="mark" />
-      </p>
-    </React.Fragment>
+      </div>
+    </div>
   )
 }
 

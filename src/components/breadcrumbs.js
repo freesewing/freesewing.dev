@@ -6,7 +6,7 @@ const Breadcrumbs = props => {
   const renderCrumb = crumb => {
     return (
       <li key={crumb.slug}>
-        <Link to={crumb.slug}>{crumb.title}</Link>
+        <Link to={crumb.slug}>{(typeof crumb.title === 'string') ? crumb.title.split('|').pop() : crumb.title}</Link>
       </li>
     )
   }
@@ -20,7 +20,7 @@ const Breadcrumbs = props => {
           </Link>
         </li>
         {props.crumbs.map(crumb => renderCrumb(crumb))}
-        <li>{props.pageTitle}</li>
+        <li>{(typeof props.pageTitle === 'string') ? props.pageTitle.split('|').pop(): props.pageTitle}</li>
       </ul>
     </nav>
   )

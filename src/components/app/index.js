@@ -22,11 +22,15 @@ import '@freesewing/css-theme'
 import 'typeface-roboto-condensed'
 import 'typeface-permanent-marker'
 import { injectIntl } from 'react-intl'
+import crumbsFromNavigation from './crumbsFromNavigation'
 import PreviousNext from '../previous-next'
 import MainMenu from './main-menu'
 import MainPage from './main-page'
 import HomePage from '../pages/homepage'
 import ShoutOuts from './shout-outs'
+
+// Move this to CSS theme
+import './style.css'
 
 /* This component is the root component for all pages */
 
@@ -36,10 +40,12 @@ const App = props => {
   const tablet = useMediaQuery('(min-width: 600px) and (max-width: 959px)')
   const [theme, setTheme] = useState(props.storageData.theme || 'light')
   const [menu, setMenu] = useState(false)
-  const [crumbs, setCrumbs] = useState(props.pageContext.crumbs || false)
+  const [crumbs, setCrumbs] = useState(crumbsFromNavigation(props.location.pathname, props.pageContext.navigation, props.pageContext.titles))
   const [title, setTitle] = useState(false)
   const [next, setNext] = useState(false)
 
+  const fixTitle = title => typeof title === 'string' ? title.split('|').pop() : title
+  const setAndFixTitle = title => setTitle(fixTitle(title))
   // Prepare props
   const app = {
     frontend: {
@@ -60,16 +66,17 @@ const App = props => {
       tablet,
       intl: props.intl,
       theme,
-      setTitle,
+      setTitle: setAndFixTitle,
       setCrumbs,
-      setNext
+      setNext,
+      fixTitle
     }
   }
 
   const uri =
     props.location.pathname.slice(-1) === '/'
-      ? props.location.pathname.slice(0, -1)
-      : props.location.pathname
+      ? props.location.pathname
+      : props.location.pathname + '/'
 
   const mobileIcons = (
     <p style={{ margin: '2rem 0 100px 0', textAlign: 'center' }}>
@@ -88,7 +95,7 @@ const App = props => {
     </p>
   )
   const pageLayout =
-    uri === '' ? (
+    uri === '/' ? (
       <HomePage app={app} />
     ) : (
       <div className="fs-sa">
@@ -142,7 +149,7 @@ const App = props => {
           ) : null}
         </AppContext.Provider>
         <Footer language={props.language} />
-        {uri === '' ? <ShoutOuts theme={app.frontend.theme} /> : null}
+        {uri === '/' ? <ShoutOuts theme={app.frontend.theme} /> : null}
       </div>
     </MuiThemeProvider>
   )

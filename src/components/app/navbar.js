@@ -9,17 +9,17 @@ const Navbar = props => {
     left: {
       start: {
         type: 'link',
-        href: '/start',
+        href: '/guides/getting-started/',
         text: 'app.getStarted'
       },
       tutorial: {
         type: 'link',
-        href: '/tutorial',
+        href: '/tutorials/pattern-design',
         text: 'app.tutorial'
       },
       api: {
         type: 'link',
-        href: '/api',
+        href: '/reference/api',
         text: 'app.apiReference'
       }
     },
@@ -27,20 +27,20 @@ const Navbar = props => {
       search: {
         type: 'link',
         href: '/search',
-        text: <SearchIcon className="nav-icon" />,
-        title: 'app.search'
+        text: <SearchIcon className="nav-icon" style={{maxWidth: '24px'}}/>,
+        title: 'account.languageTitle'
       },
       language: {
         type: 'link',
         href: '/language',
-        text: <LanguageIcon className="nav-icon" />,
-        title: 'account.languageTitle'
+        text: <LanguageIcon className="nav-icon" style={{maxWidth: '24px'}}/>,
+        title: props.app.frontend.intl.formatMessage({id: 'account.languageTitle'})
       },
       theme: {
         type: 'button',
         onClick: props.app.frontend.toggleDarkMode,
-        text: <DarkModeIcon className="nav-icon moon" />,
-        title: 'Toggle dark mode'
+        text: <DarkModeIcon className="nav-icon moon" style={{color: '#ffd43b', maxWidth: '24px'}}/>,
+        title: props.app.frontend.intl.formatMessage({id: 'app.darkMode'})
       }
     }
   }

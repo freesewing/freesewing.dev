@@ -109,7 +109,7 @@ const HomePage = ({ app }) => {
             <Button
               size="large"
               color="secondary"
-              href="/start"
+              href="/guides/getting-started/"
               variant="contained"
               style={styles.primaryButton}
             >
@@ -118,7 +118,7 @@ const HomePage = ({ app }) => {
             <Button
               size="large"
               color="secondary"
-              href="/tutorial"
+              href="/tutorials/pattern-design/"
               variant="outlined"
               style={styles.secondaryButton}
             >
@@ -131,39 +131,34 @@ const HomePage = ({ app }) => {
       <div style={styles.boxes}>
         <div style={styles.box}>
           <h2>Get started in seconds</h2>
-          <p>Setup your development environement with this one-liner:</p>
+          <p>Setup your development environment with this one-liner:</p>
           <div className="gatsby-highlight">
             <pre className="language-bash">
               <code className="language-bash">npm init freesewing-pattern</code>
             </pre>
           </div>
           <p>You can try it out right now, or learn more about what to expect.</p>
-          <Button variant="outlined" href="/packages/create-freesewing-pattern">
+          <Button variant="outlined" href="/guides/getting-started/">
             Learn more
           </Button>
         </div>
         <div style={styles.box}>
           <h2>FreeSewing tutorial</h2>
           <p>
-            Follow our step-by-step tutorial to familiarize yourself with the{' '}
-            <a href="/concepts">basic concepts</a> and inner workings of FreeSewing.
+            Follow our step-by-step tutorial to familiarize yourself with the FreeSewing API.
           </p>
           <p>
             You'll learn everything you need to start designing your own made-to-measure sewing
             patterns.
           </p>
-          <Button variant="outlined" href="/tutorial">
+          <Button variant="outlined" href="/tutorials/pattern-design/">
             Take the tutorial
           </Button>
         </div>
         <div style={styles.box}>
           <h2>API Reference</h2>
           <p>Detailed documentation for FreeSewing's API, including examples.</p>
-          <p>
-            We also have <a href="/do">best practices</a> and{' '}
-            <a href="/advanced">advanced guides</a> to take your work to the next level.
-          </p>
-          <Button variant="outlined" href="/api">
+          <Button variant="outlined" href="/reference/api/">
             API Documentation
           </Button>
         </div>
@@ -183,7 +178,7 @@ const HomePage = ({ app }) => {
           <Button
             style={styles.primaryButton}
             variant="contained"
-            href="https://en.freesewing.org/patrons/join"
+            href="https://freesewing.org/patrons/join"
           >
             Join the FreeSewing Patrons
           </Button>

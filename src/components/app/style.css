@@ -1,0 +1,27 @@
+article table {
+  border-collapse: collapse;
+  font-size: 90%;
+}
+article table thead {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+article table th,
+article table td {
+  padding: 5px 10px;
+
+}
+.theme-wrapper.light article table th,
+.theme-wrapper.light article table td {
+  border: 1px solid #ccc;
+}
+.theme-wrapper.light article table th {
+  background: #ddd;
+  text-align: left;
+}
+.theme-wrapper.light article table tr:nth-child(even) {
+  background: #eee;
+}
+
+.theme-wrapper.dark article table {
+}
+

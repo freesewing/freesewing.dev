@@ -4,6 +4,7 @@ import { MDXProvider } from '@mdx-js/react'
 import Blockquote from '@freesewing/components/Blockquote'
 import Example from '@freesewing/components/Example'
 import PreviousNext from '../previous-next'
+import ReadMore from '../read-more'
 
 const DocumentationPage = props => {
   useEffect(() => {
@@ -20,6 +21,18 @@ const DocumentationPage = props => {
     Warning: ({ children }) => {
       return <Blockquote type="warning">{children}</Blockquote>
     },
+    Fixme: ({ children }) => {
+      return <Blockquote type="fixme">{children}</Blockquote>
+    },
+    ReadMore: (rmProps) => {
+      return <ReadMore
+        navigation={props.pageContext.navigation}
+        title={rmProps.title}
+        slug={props.slug}
+        root={rmProps.root}
+        pageTitle={props.pageContext.node.frontmatter.title}
+        />
+    },
     Example
   }
 
@@ -30,7 +43,7 @@ const DocumentationPage = props => {
           <MDXRenderer>{props.pageContext.node.body}</MDXRenderer>
         </MDXProvider>
       ) : null}
-      <PreviousNext pageContext={props.pageContext} theme={props.app.frontend.theme} />
+      <PreviousNext pageContext={props.pageContext} theme={props.app.frontend.theme} app={props.app}/>
     </React.Fragment>
   )
 }

@@ -7,19 +7,20 @@ const PreviousNext = props => {
     const slug = props.pageContext.slug
     let to = false
     let title = false
-    let pos = props.pageContext.content.slugs.indexOf(slug)
+    let keys = Object.keys(props.pageContext.titles)
+    let pos = keys.indexOf(slug)
     if (side === 'next') pos++
     else pos--
-    if (props.pageContext.content.slugs[pos] !== 'undefined') {
-      to = props.pageContext.content.slugs[pos]
-      title = props.pageContext.content.titles[to]
+    if (keys[pos] !== 'undefined') {
+      to = keys[pos]
+      title = props.pageContext.titles[to]
     }
     if (!to) return <span>&nbsp;</span>
 
     return (
       <Link to={to} style={{ textAlign: side === 'prev' ? 'left' : 'right' }}>
         {side === 'prev' ? <span>&laquo;&nbsp;</span> : null}
-        {title}
+        {props.app.frontend.fixTitle(title)}
         {side === 'next' ? <span>&nbsp;&raquo;</span> : null}
       </Link>
     )
