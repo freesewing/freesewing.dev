@@ -6109,12 +6109,12 @@ gatsby-graphiql-explorer@^0.2.26:
   dependencies:
     "@babel/runtime" "^7.6.3"
 
-gatsby-image@^2.2.30:
-  version "2.2.30"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.30.tgz#3ca58adb1814a759dcaf26d742ae90e89c7144de"
-  integrity sha512-WANouedEFeqLsaDwZbTHlYKTPqV0Htr2A1BiP921SVaR3GrMwtuBoBzpDSXHF+0q9TE2w885gKdNIG/GgzgKaQ==
+gatsby-image@^2.2.32:
+  version "2.2.32"
+  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.2.32.tgz#bbe2b343fc281035949e3651f5a555892a7b1d00"
+  integrity sha512-pzGkBgH55qb3DQeBaOHYN4n4b8njaBv5d1Om2W10k120vnDZgM6/64ooULTA1Ljyj9q2S7emfB9tyr6ooOaKOQ==
   dependencies:
-    "@babel/runtime" "^7.6.3"
+    "@babel/runtime" "^7.7.2"
     object-fit-images "^3.2.4"
     prop-types "^15.7.2"
 
@@ -9217,7 +9217,7 @@ mdast-util-to-nlcst@^3.2.0:
     unist-util-position "^3.0.0"
     vfile-location "^2.0.0"
 
-mdast-util-to-string@^1.0.2, mdast-util-to-string@^1.0.5, mdast-util-to-string@^1.0.6, mdast-util-to-string@^1.0.7:
+mdast-util-to-string@^1.0.2, mdast-util-to-string@^1.0.5, mdast-util-to-string@^1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/mdast-util-to-string/-/mdast-util-to-string-1.0.7.tgz#62d8e9c6b2113070d8b497c7dc35bf12796f06ee"
   integrity sha512-P+gdtssCoHOX+eJUrrC30Sixqao86ZPlVjR5NEAoy0U79Pfxb1Y0Gntei0+GrnQD4T04X9xA8tcugp90cSmNow==
