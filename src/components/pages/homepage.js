@@ -189,7 +189,7 @@ const HomePage = ({ app }) => {
         <div style={styles.solobox}>
           <h2>Need a hand?</h2>
           <p>The FreeSewing community is ready to help out when you get stuck or have questions.</p>
-          <Button variant="outlined" href="https://gitter.im/freesewing/freesewing">
+          <Button variant="outlined" href="https://gitter.im/freesewing">
             Join our chat room
           </Button>
         </div>
