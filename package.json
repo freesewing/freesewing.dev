@@ -53,7 +53,7 @@
     "react-instantsearch-dom": "^5.6.0",
     "react-intl": "^2.9.0",
     "react-youtube": "^7.9.0",
-    "sharp": "0.23.0",
+    "sharp": "0.23.3",
     "styled-components": "^4.4.1",
     "typeface-permanent-marker": "0.0.72",
     "typeface-roboto-condensed": "0.0.75"
