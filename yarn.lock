@@ -1043,10 +1043,10 @@
   resolved "https://registry.yarnpkg.com/@freesewing/models/-/models-2.1.4.tgz#aee8c8e2f7fe993f9c553cd163c63eea5c4cafc3"
   integrity sha512-ckhgwlW6sKk9JrY2wrhxf3mS2nH11a55dC+ygalIKOop2FIbIPrT07wlK7WPW8QroGQoFBYOrzl26kEzi2lQ3A==
 
-"@freesewing/mui-theme@2.1.4":
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/@freesewing/mui-theme/-/mui-theme-2.1.4.tgz#29e78b114f569d7f2d2944e03c58e13b524b00bd"
-  integrity sha512-nwOXnl0cz+nsou4IptVsUKVIkPx02K8+SSwgLSbpyqMjMPZMnOrDgMmOxxp9aqrUJHNHub1ss2DNPm5qctIs3Q==
+"@freesewing/mui-theme@2.1.6":
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/@freesewing/mui-theme/-/mui-theme-2.1.6.tgz#5d1022d49b9dc2b9773c711fc6a499cb19e50c9b"
+  integrity sha512-z4NLx9J6BawkDbq6u2GzmMkAG2bqB4BUlpr3vdm+WNSGEb1agliRGqP4kSKBSng8+RCYFwqgurj0zXIwHSHYVw==
 
 "@freesewing/pattern-info@2.1.4":
   version "2.1.4"
