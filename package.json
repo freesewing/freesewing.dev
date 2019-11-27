@@ -33,7 +33,7 @@
     "gatsby-plugin-catch-links": "^2.1.15",
     "gatsby-plugin-manifest": "^2.2.26",
     "gatsby-plugin-mdx": "1.0.56",
-    "gatsby-plugin-nprogress": "2.1.13",
+    "gatsby-plugin-nprogress": "2.1.15",
     "gatsby-plugin-offline": "^3.0.22",
     "gatsby-plugin-react-helmet": "^3.1.15",
     "gatsby-plugin-sharp": "^2.2.37",
