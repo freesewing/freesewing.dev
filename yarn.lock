@@ -1565,10 +1565,10 @@
     bin-pack "1.0.2"
     hooks "^0.3.2"
 
-"@freesewing/css-theme@2.1.4":
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/@freesewing/css-theme/-/css-theme-2.1.4.tgz#df4355da8df193514592b41ba7ec3f7549870a7d"
-  integrity sha512-e5/JFh1GcKt5Qj5d2btoiUzxD/Ur6gYhxlJ1JBGSWTaAyfCZAOQ/Emtv/cjKqtHW9u9aNiSa2G0fIqMtPxUazA==
+"@freesewing/css-theme@2.1.6":
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/@freesewing/css-theme/-/css-theme-2.1.6.tgz#c5a2b8b54a611ad6d7e4469e3487699d59f8b4a2"
+  integrity sha512-UyD6mvlhHLm03OgH5YxJtML9x7HGsShsL0HVDCrEm8JTtfFW+0g8Rz0aXXCkQ1Pwn5IVlstjCovGARZgZdz9Pw==
   dependencies:
     open-color "1.6.3"
 
