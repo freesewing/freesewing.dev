@@ -59,7 +59,7 @@
     "typeface-roboto-condensed": "0.0.75"
   },
   "devDependencies": {
-    "@freesewing/prettier-config": "2.1.4",
+    "@freesewing/prettier-config": "2.1.6",
     "babel-plugin-styled-components": "^1.10.6",
     "core-js": "^3.4.8",
     "remark": "11.0.2",
