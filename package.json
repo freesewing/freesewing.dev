@@ -9,7 +9,7 @@
   "dependencies": {
     "@freesewing/components": "2.1.4",
     "@freesewing/core": "2.1.4",
-    "@freesewing/css-theme": "2.1.4",
+    "@freesewing/css-theme": "2.1.9",
     "@freesewing/examples": "2.1.4",
     "@freesewing/i18n": "2.1.4",
     "@freesewing/models": "2.1.4",
