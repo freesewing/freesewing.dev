@@ -8,7 +8,8 @@ import { getChildren } from '../utils'
 
 // FIXME: This only handles pages 2, 3, or 4 levels deep
 
-const ReadMore = ({ root, recurse = false, link = false, box = false, title = false }) => {
+const ReadMore = ({ root=false, recurse = false, link = false, box = false, title = false }) => {
+  if (!root) throw new Error('You MUST specify a root in the ReadMore component')
   const app = useApp()
   const { tree, titles } = useNavigation(app)
 

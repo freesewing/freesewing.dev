@@ -22,6 +22,8 @@ const bugsnagClient = bugsnag({
   }
 })
 bugsnagClient.use(bugsnagReact, React)
+
+// FIXME: Filter out SSR errors
 const ErrorBoundary = bugsnagClient.getPlugin('react')
 
 export default ErrorBoundary
