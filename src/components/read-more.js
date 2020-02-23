@@ -1,55 +1,90 @@
 import React from 'react'
+import useApp from '../hooks/useApp'
+import useNavigation from '../hooks/useNavigation'
 import { Link } from 'gatsby'
 import Blockquote from '@freesewing/components/Blockquote'
+import { FormattedMessage } from 'react-intl'
 
-const ReadMore = props => {
+// FIXME: This only handles pages 2, 3, or 4 levels deep
 
-  const renderChild = (child, slug) => {
-    let grandchildren = false
-    if (child.children) {
-      grandchildren = []
-      let order = {}
-      for (let grandchild in child.children) {
-        order[child.children[grandchild].title] = grandchild
-      }
-      for (let title of Object.keys(order).sort()) {
-        let grandchild = order[title]
-        grandchildren.push(renderChild(child.children[grandchild], grandchild))
-      }
-      grandchildren = <ul className="links">{grandchildren}</ul>
+const ReadMore = ({ root, recurse = false, link = false, box = false, title = false }) => {
+  const app = useApp()
+  const { tree, titles } = useNavigation(app)
+
+  const getChildren = root => {
+    let chunks = root.split('/')
+    try {
+      if (chunks[0] === '') chunks.splice(0, 1)
+      if (chunks[-1] === '') chunks.splice(-1, 1)
+      if (chunks.length === 1) return tree[`/` + chunks[0] + '/'].children
+      if (chunks.length === 2) return tree[`/` + chunks[0] + '/'].children['/' + chunks.join('/') + '/'].children
+      if (chunks.length === 3)
+        return tree[`/` + chunks[0] + '/'].children[`/` + chunks.slice(0, 2).join('/') + '/'].children['/' + chunks.join('/') + '/'].children
+      if (chunks.length === 4)
+        return tree[`/` + chunks[0] + '/'].children[`/` + chunks.slice(0, 2).join('/') + '/'].children[
+          '/' + chunks.slice(0, 3).join('/') + '/'
+        ].children['/' + chunks.join('/') + '/'].children
+    }
+    catch(err) {
+      console.log('Could not get children', {err, chunks, root})
     }
 
-    return <li key={slug}><Link to={slug}>{child.title.split('|').pop()}</Link>{grandchildren}</li>
+    return {}
   }
 
+  const renderDocs = root => {
+    let children = getChildren(root)
+    let links = []
+    for (let slug in children) links.push(renderDocsLevel(slug, children[slug]))
 
-  let from = props.root ? props.root : props.slug
-  if (from.slice(-1) === '/') from = from.slice(0,-1)
-  const chunks = from.split('/').slice(1);
-  let path = '/'+chunks.shift()+'/'
-  let root = props.navigation[path]
-  if (typeof root === 'undefined') return null
-
-  let title = root.title
-  for (let chunk of chunks) {
-    path += chunk + '/'
-    root = root.children[path]
-    title = root.title
+    return <ul className="links">{links}</ul>
   }
 
-  let links = []
-  for (let child in root.children) {
-    links.push(renderChild(root.children[child], child))
+  const renderDocsLevel = (slug, level) => {
+    let links = []
+    if (level.children && Object.keys(level.children).length > 0 && recurse) {
+      for (let slug in level.children) links.push(renderDocsLevel(slug, level.children[slug]))
+    }
+    if (links.length > 0) {
+      // Sort based on title
+      links = <ul className="links">{links}</ul>
+    }
+    let url = null
+    if (link) url = <span style={styles.url}>{slug}</span>
+
+    return (
+      <li key={slug}>
+        <Link to={slug}>
+          {titles[slug]}
+          {url}
+        </Link>
+        {links}
+      </li>
+    )
   }
-  if (links.length < 1) return null
-  if (typeof props.title === 'undefined') title = <h6>Further reading</h6>
-  else title = <h6>{props.title}</h6>
-  return (
-    <Blockquote type="note">
-      {title}
-      <ul className="links">{links}</ul>
-    </Blockquote>
-  )
+
+  const styles = {
+    url: {
+      display: 'block',
+      margin: '0 0 0.25rem 1rem',
+      fontSize: '0.9rem',
+      color: app.theme === 'dark' ? 'white' : 'black'
+    }
+  }
+
+  if (box || title)
+    return (
+      <Blockquote type="note">
+        <h5>
+      {title
+        ? title
+        : <FormattedMessage id="app.furtherReading" />
+      }
+        </h5>
+        {renderDocs(root)}
+      </Blockquote>
+    )
+  else return renderDocs(root)
 }
 
 export default ReadMore
