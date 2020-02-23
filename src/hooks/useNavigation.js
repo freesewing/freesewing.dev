@@ -82,6 +82,8 @@ function useNavigation(app) {
       }
     }
     tree.children = children
+    // Recursively do the same for children
+    for (let level in tree.children) tree.children[level] = sortByTitle(tree.children[level])
 
     return tree
   }
