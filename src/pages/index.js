@@ -47,10 +47,9 @@ const HomePage = props => {
       {
         to: 'https://gitter.im/freesewing/developement',
         txt: 'Join our chat room'
-      },
-    ],
+      }
+    ]
   }
-
 
   return (
     <AppWrapper app={app}>
@@ -58,7 +57,7 @@ const HomePage = props => {
         {/* Top banner */}
         <header>
           <div className="banner">
-            <div className="text-block" style={{maxWidth: '600px'}}>
+            <div className="text-block" style={{ maxWidth: '600px' }}>
               <h1>FreeSewing</h1>
               <h2>An open source platform for made-to-measure sewing patterns</h2>
               <Button
@@ -66,7 +65,7 @@ const HomePage = props => {
                 color="secondary"
                 href="/guides/getting-started/"
                 variant="contained"
-                style={{marginRight: '1rem'}}
+                style={{ marginRight: '1rem' }}
               >
                 Get started
               </Button>
@@ -88,7 +87,9 @@ const HomePage = props => {
             {[1, 2, 3].map(id => (
               <div key={'row1-' + id}>
                 <Mdx node={uiMdx[`homepage/row-1/${id}`]} />
-                <Button variant="outlined" href={buttons.row1[id].to}>{buttons.row1[id].txt}</Button>
+                <Button variant="outlined" href={buttons.row1[id].to}>
+                  {buttons.row1[id].txt}
+                </Button>
               </div>
             ))}
           </div>
@@ -106,7 +107,11 @@ const HomePage = props => {
             <p>
               <FormattedMessage id="app.patronPitch" />
             </p>
-            <Button className="btn-primary" variant="contained" href="https://freesewing.org/patrons/join/">
+            <Button
+              className="btn-primary"
+              variant="contained"
+              href="https://freesewing.org/patrons/join/"
+            >
               Join the FreeSewing patrons
             </Button>
           </div>
@@ -118,7 +123,9 @@ const HomePage = props => {
             {[1, 2, 3].map(id => (
               <div key={'row1-' + id}>
                 <Mdx node={uiMdx[`homepage/row-2/${id}`]} />
-                <Button variant="outlined" href={buttons.row2[id].to}>{buttons.row2[id].txt}</Button>
+                <Button variant="outlined" href={buttons.row2[id].to}>
+                  {buttons.row2[id].txt}
+                </Button>
               </div>
             ))}
           </div>

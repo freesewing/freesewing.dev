@@ -33,7 +33,7 @@ const ShoutOuts = props => {
       maxHeight: '51px'
     },
     h6: {
-      margin: "1rem 0 0.5rem"
+      margin: '1rem 0 0.5rem'
     }
   }
 

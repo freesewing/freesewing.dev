@@ -47,7 +47,7 @@ function useApp(slug = null) {
   const mobile = useMediaQuery('(max-width:599px)')
   const tablet = useMediaQuery('(min-width: 600px) and (max-width: 959px)')
 
-  const cleanTitle = title => (title.indexOf('|') === -1) ?  title : title.split('|')[1]
+  const cleanTitle = title => (title.indexOf('|') === -1 ? title : title.split('|')[1])
 
   // These are used in other methods
   let core = {
@@ -59,7 +59,7 @@ function useApp(slug = null) {
     setLoading,
     // Persistent state
     theme,
-    setTheme,
+    setTheme
   }
 
   return {

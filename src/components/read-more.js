@@ -17,16 +17,17 @@ const ReadMore = ({ root, recurse = false, link = false, box = false, title = fa
       if (chunks[0] === '') chunks.splice(0, 1)
       if (chunks[-1] === '') chunks.splice(-1, 1)
       if (chunks.length === 1) return tree[`/` + chunks[0] + '/'].children
-      if (chunks.length === 2) return tree[`/` + chunks[0] + '/'].children['/' + chunks.join('/') + '/'].children
+      if (chunks.length === 2)
+        return tree[`/` + chunks[0] + '/'].children['/' + chunks.join('/') + '/'].children
       if (chunks.length === 3)
-        return tree[`/` + chunks[0] + '/'].children[`/` + chunks.slice(0, 2).join('/') + '/'].children['/' + chunks.join('/') + '/'].children
+        return tree[`/` + chunks[0] + '/'].children[`/` + chunks.slice(0, 2).join('/') + '/']
+          .children['/' + chunks.join('/') + '/'].children
       if (chunks.length === 4)
-        return tree[`/` + chunks[0] + '/'].children[`/` + chunks.slice(0, 2).join('/') + '/'].children[
-          '/' + chunks.slice(0, 3).join('/') + '/'
-        ].children['/' + chunks.join('/') + '/'].children
-    }
-    catch(err) {
-      console.log('Could not get children', {err, chunks, root})
+        return tree[`/` + chunks[0] + '/'].children[`/` + chunks.slice(0, 2).join('/') + '/']
+          .children['/' + chunks.slice(0, 3).join('/') + '/'].children['/' + chunks.join('/') + '/']
+          .children
+    } catch (err) {
+      console.log('Could not get children', { err, chunks, root })
     }
 
     return {}
@@ -75,12 +76,7 @@ const ReadMore = ({ root, recurse = false, link = false, box = false, title = fa
   if (box || title)
     return (
       <Blockquote type="note">
-        <h5>
-      {title
-        ? title
-        : <FormattedMessage id="app.furtherReading" />
-      }
-        </h5>
+        <h5>{title ? title : <FormattedMessage id="app.furtherReading" />}</h5>
         {renderDocs(root)}
       </Blockquote>
     )

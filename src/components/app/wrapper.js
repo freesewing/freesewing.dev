@@ -86,7 +86,7 @@ const AppWrapper = ({ app, children }) => {
           />
           <Loading loading={app.loading} />
           {app.mobile && (
-            <div className="menu" role='button' onClick={app.closeNav} onKeyDown={app.closeNav}>
+            <div className="menu" role="button" onClick={app.closeNav} onKeyDown={app.closeNav}>
               <MobileMenu app={app} />
             </div>
           )}

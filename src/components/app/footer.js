@@ -47,7 +47,6 @@ const Footer = props => {
     }
   }
 
-
   const patrons = {}
   data.allFsPatron.edges.map(node => (patrons[node.node.patron.username] = node.node.patron))
 

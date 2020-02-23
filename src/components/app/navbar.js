@@ -39,7 +39,7 @@ export default function ButtonAppBar(props) {
     guides: Boolean(guidesAnchor),
     howtos: Boolean(howtosAnchor),
     reference: Boolean(referenceAnchor),
-    tutorials: Boolean(tutorialsAnchor),
+    tutorials: Boolean(tutorialsAnchor)
   }
 
   const handleOpen = (section, evt) => setAnchor[section](evt.currentTarget)
@@ -99,7 +99,7 @@ export default function ButtonAppBar(props) {
       flexWrap: 'wrap',
       maxWidth: '600px',
       minWidth: '250px'
-    },
+    }
   }
 
   const popoverProps = {
@@ -129,11 +129,11 @@ export default function ButtonAppBar(props) {
           <Link to="/" style={style.logo}>
             <Logo embed />
           </Link>
-          {Object.keys(anchor).map( section => (
+          {Object.keys(anchor).map(section => (
             <>
               <Button
                 aria-owns={open[section] ? `${section}-popover` : undefined}
-                onClick={(evt) => handleOpen(section, evt)}
+                onClick={evt => handleOpen(section, evt)}
                 {...buttonProps}
               >
                 {section}
@@ -153,7 +153,12 @@ export default function ButtonAppBar(props) {
           ))}
           <span style={style.spacer} />
 
-          <Button href="https://gitter.im/freesewing/development" color="inherit" size="large" style={style.button}>
+          <Button
+            href="https://gitter.im/freesewing/development"
+            color="inherit"
+            size="large"
+            style={style.button}
+          >
             Support
           </Button>
 

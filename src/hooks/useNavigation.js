@@ -44,8 +44,7 @@ function useNavigation(app) {
 
   const getTitlesAndPages = mdx => {
     let titles = {}
-    let pages = {
-    }
+    let pages = {}
     for (let edge of mdx.docs.edges) {
       let slug = slugFromFilePath(edge.node.fileAbsolutePath)
       titles[slug] = cleanTitle(pageTitle(slug, edge.node))
@@ -56,7 +55,7 @@ function useNavigation(app) {
   }
 
   const getTree = pages => {
-    const tree = { }
+    const tree = {}
 
     // Add documentation from MDX pages
     // Better make sure they are in order
@@ -87,7 +86,7 @@ function useNavigation(app) {
     return tree
   }
 
-  const cleanTitle = title => (title.indexOf('|') === -1) ?  title : title.split('|')[1]
+  const cleanTitle = title => (title.indexOf('|') === -1 ? title : title.split('|')[1])
 
   const addToTree = function(slug, page, tree) {
     let [a, b, c, d, e] = slug.slice(1, -1).split('/')
@@ -104,9 +103,8 @@ function useNavigation(app) {
       else if (b) target = tree[slugFor(a)].children
       else if (a) target = tree
       target[slugFor(a, b, c, d, e)] = { title: pageTitle(slug, page), children: {} }
-    }
-    catch (err) {
-      console.log('Could not add page to tree', {err, slug, page, tree, a,b,c,d,e})
+    } catch (err) {
+      console.log('Could not add page to tree', { err, slug, page, tree, a, b, c, d, e })
     }
     return
   }

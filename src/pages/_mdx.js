@@ -22,12 +22,8 @@ const DocsPage = props => {
 
   return (
     <AppWrapper app={app}>
-      <DocsLayout
-        app={app}
-        slug={props.path}
-        toc={props.data.allMdx.edges[0].node.tableOfContents}
-      >
-        <Mdx node={props.data.allMdx.edges[0].node} slug={props.path}/>
+      <DocsLayout app={app} slug={props.path} toc={props.data.allMdx.edges[0].node.tableOfContents}>
+        <Mdx node={props.data.allMdx.edges[0].node} slug={props.path} />
       </DocsLayout>
     </AppWrapper>
   )

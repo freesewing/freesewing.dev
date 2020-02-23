@@ -21,7 +21,7 @@ const DocsLayout = ({ app, slug, children, toc }) => {
       </section>
       <aside>
         <div className="sticky">
-          <Navigation app={app} slug={slug} toc={toc}/>
+          <Navigation app={app} slug={slug} toc={toc} />
         </div>
       </aside>
     </div>
