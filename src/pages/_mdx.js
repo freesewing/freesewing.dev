@@ -8,6 +8,7 @@ import crumbsFromNavigation from '../components/app/crumbsFromNavigation'
 
 import { graphql } from 'gatsby'
 import Mdx from '../components/mdx'
+import PrevNext from '../components/prev-next'
 
 const DocsPage = props => {
   // State
@@ -24,6 +25,7 @@ const DocsPage = props => {
     <AppWrapper app={app}>
       <DocsLayout app={app} slug={props.path} toc={props.data.allMdx.edges[0].node.tableOfContents}>
         <Mdx node={props.data.allMdx.edges[0].node} slug={props.path} />
+        <PrevNext slug={props.path} tree={tree} titles={titles} />
       </DocsLayout>
     </AppWrapper>
   )

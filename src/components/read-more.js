@@ -4,6 +4,7 @@ import useNavigation from '../hooks/useNavigation'
 import { Link } from 'gatsby'
 import Blockquote from '@freesewing/components/Blockquote'
 import { FormattedMessage } from 'react-intl'
+import { getChildren } from '../utils'
 
 // FIXME: This only handles pages 2, 3, or 4 levels deep
 
@@ -11,30 +12,8 @@ const ReadMore = ({ root, recurse = false, link = false, box = false, title = fa
   const app = useApp()
   const { tree, titles } = useNavigation(app)
 
-  const getChildren = root => {
-    let chunks = root.split('/')
-    try {
-      if (chunks[0] === '') chunks.splice(0, 1)
-      if (chunks[-1] === '') chunks.splice(-1, 1)
-      if (chunks.length === 1) return tree[`/` + chunks[0] + '/'].children
-      if (chunks.length === 2)
-        return tree[`/` + chunks[0] + '/'].children['/' + chunks.join('/') + '/'].children
-      if (chunks.length === 3)
-        return tree[`/` + chunks[0] + '/'].children[`/` + chunks.slice(0, 2).join('/') + '/']
-          .children['/' + chunks.join('/') + '/'].children
-      if (chunks.length === 4)
-        return tree[`/` + chunks[0] + '/'].children[`/` + chunks.slice(0, 2).join('/') + '/']
-          .children['/' + chunks.slice(0, 3).join('/') + '/'].children['/' + chunks.join('/') + '/']
-          .children
-    } catch (err) {
-      console.log('Could not get children', { err, chunks, root })
-    }
-
-    return {}
-  }
-
   const renderDocs = root => {
-    let children = getChildren(root)
+    let children = getChildren(root, tree)
     let links = []
     for (let slug in children) links.push(renderDocsLevel(slug, children[slug]))
 
