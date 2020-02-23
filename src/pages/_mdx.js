@@ -20,12 +20,11 @@ const DocsPage = props => {
     app.setTitle(props.data.allMdx.edges[0].node.frontmatter.title || false)
     app.setCrumbs(crumbsFromNavigation(props.path, tree, titles))
   }, [])
-
   return (
     <AppWrapper app={app}>
       <DocsLayout app={app} slug={props.path} toc={props.data.allMdx.edges[0].node.tableOfContents}>
-        <Mdx node={props.data.allMdx.edges[0].node} slug={props.path} />
-        <PrevNext slug={props.path} tree={tree} titles={titles} />
+        <Mdx node={props.data.allMdx.edges[0].node} slug={props.location.pathname} />
+        <PrevNext slug={props.location.pathname} tree={tree} titles={titles} />
       </DocsLayout>
     </AppWrapper>
   )

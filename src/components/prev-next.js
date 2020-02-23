@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 import { getChildren, getSiblings, getParents } from '../utils'
 
 const PreviousNext = ({slug, tree, titles}) => {
-
   const children = getChildren(slug, tree)
   const siblings = getSiblings(slug, tree)
   const parents = getParents(slug, tree)
