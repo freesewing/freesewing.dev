@@ -1,6 +1,12 @@
 import React from 'react'
+import Logo from '@freesewing/components/Logo'
+import Icon from '@freesewing/components/Icon'
 import { useStaticQuery, graphql } from 'gatsby'
-import FooterBase from '@freesewing/components/Footer'
+import { Link } from 'gatsby'
+import IconButton from '@material-ui/core/IconButton'
+import FreeSewing from '@freesewing/core'
+import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
+import ShoutOuts from './shout-outs'
 
 const Footer = props => {
   const data = useStaticQuery(graphql`
@@ -19,14 +25,6 @@ const Footer = props => {
       }
     }
   `)
-  const links = {
-    left: {
-      aboutFreesewing: 'https://freesewing.org/docs/about/'
-    },
-    right: {
-      becomeAPatron: 'https://freesewing.org/patrons/join/'
-    }
-  }
   const styles = {
     ul: {
       margin: '2rem auto',
@@ -43,7 +41,18 @@ const Footer = props => {
       borderRadius: '50%',
       background: '#000',
       margin: '2px',
-      border: '1px solid #fff6'
+      border: '1px solid #fff6',
+      display: 'inline-block',
+      overflow: 'hidden'
+    },
+    container: {
+      display: 'flex',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'center'
+    },
+    links: {
+      margin: '0 1rem'
     }
   }
 
@@ -57,9 +66,9 @@ const Footer = props => {
     let patron = patrons[username]
     list.push(
       <li key={patron.username} style={styles.li}>
-        <a href={'https://freesewing.org/users/' + patron.username} title={patron.username}>
+        <Link to={'/users/' + patron.username} title={patron.username}>
           <img src={patron.pictureUris.xs} alt={patron.username} style={styles.img} />
-        </a>
+        </Link>
       </li>
     )
     return null
@@ -67,7 +76,53 @@ const Footer = props => {
 
   const allPatrons = <ul style={styles.ul}>{list}</ul>
 
-  return <FooterBase language={props.language} links={links} home="/" patrons={allPatrons} />
+  const icons = {
+    gitter: 'https://gitter.im/freesewing/chat',
+    twitter: 'https://twitter.com/freesewing_org',
+    github: 'https://github.com/freesewing',
+    instagram: 'https://instagram.com/freesewing_org'
+  }
+
+  return (
+    <footer>
+      <Link to="/">
+        <Logo size={101} />
+      </Link>
+      <p>
+        {Object.keys(icons).map(i => (
+          <IconButton href={icons[i]} className={i} title={i} key={i}>
+            <Icon icon={i} />
+          </IconButton>
+        ))}
+      </p>
+      <p>
+        <FormattedHTMLMessage id="app.txt-footer" />:
+      </p>
+      {allPatrons}
+      <div style={styles.container}>
+        <ul style={styles.links}>
+          <li>
+            <a href={`https://${process.env.GATSBY_LANGUAGE}freesewing.org/docs/about/`}>
+              <FormattedMessage id="app.aboutFreesewing" />
+            </a>
+          </li>
+        </ul>
+        <ul style={styles.links}>
+          <li>
+            <a href={`https://${process.env.GATSBY_LANGUAGE}freesewing.org/patrons/join/`}>
+              <FormattedMessage id="app.becomeAPatron" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p className="version">
+        <a href={'https://github.com/freesewing/freesewing/releases/tag/v' + FreeSewing.version}>
+          v{FreeSewing.version}
+        </a>
+      </p>
+      <ShoutOuts />
+    </footer>
+  )
 }
 
 export default Footer
