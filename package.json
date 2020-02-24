@@ -45,7 +45,7 @@
     "gatsby-remark-autolink-headers": "latest",
     "gatsby-remark-copy-linked-files": "latest",
     "gatsby-remark-images": "latest",
-    "gatsby-remark-jargon": "^2.2.0",
+    "gatsby-remark-jargon": "^2.3.0",
     "gatsby-remark-prismjs": "latest",
     "gatsby-remark-smartypants": "latest",
     "gatsby-source-filesystem": "latest",
