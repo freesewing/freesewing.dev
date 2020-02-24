@@ -10,7 +10,7 @@
     "@bugsnag/js": "latest",
     "@bugsnag/plugin-react": "latest",
     "@freesewing/components": "^2.2.0",
-    "@freesewing/core": "^2.2.0",
+    "@freesewing/core": "^2.3.0",
     "@freesewing/css-theme": "^2.2.0",
     "@freesewing/examples": "^2.2.0",
     "@freesewing/i18n": "^2.2.0",
