@@ -8,13 +8,14 @@ import SearchIcon from '@material-ui/icons/Search'
 import MapIcon from '@material-ui/icons/Map'
 import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
-import DocsMenu from './docs'
 import DocsNavigation from '../app/docs-navigation'
 
 import ExpansionPanel from '@material-ui/core/ExpansionPanel'
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+
+import ReadMore from '../read-more'
 
 const MobileMenu = ({ app }) => {
   // State
@@ -35,24 +36,6 @@ const MobileMenu = ({ app }) => {
   // Methods
   const handleChange = panel => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false)
-  }
-
-  const renderMenu = (type, title, menu) => {
-    return (
-      <ExpansionPanel expanded={expanded === type} onChange={handleChange(type)} {...noClose}>
-        <ExpansionPanelSummary
-          {...noClose}
-          expandIcon={<ExpandMoreIcon className="no-closenav" />}
-          aria-controls={`${type}-content`}
-          id={`${type}-header`}
-        >
-          <h5 style={style.h5} {...noClose}>
-            {title}
-          </h5>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>{menu}</ExpansionPanelDetails>
-      </ExpansionPanel>
-    )
   }
 
   // Style
@@ -76,22 +59,12 @@ const MobileMenu = ({ app }) => {
     h5: {}
   }
 
-  // Figure out where we are
-  let docsMenu = <DocsMenu app={app} />
-  if (window && window.location.pathname.slice(0, 5) === '/docs')
-    docsMenu = <DocsNavigation app={app} slug={window.location.pathname} />
-
   // Icons
   const icons = {
     home: {
       title: 'app.home',
       link: '/',
       icon: <Logo size={22} />
-    },
-    sitemap: {
-      title: 'app.sitemap',
-      link: '/sitemap/',
-      icon: <MapIcon />
     },
     search: {
       title: 'app.search',
@@ -140,12 +113,30 @@ const MobileMenu = ({ app }) => {
         </IconButton>
       </div>
 
-      {renderMenu('docs', app.translate('app.docs'), docsMenu)}
-      {renderMenu('docs', app.translate('app.docs'), docsMenu)}
-      {renderMenu('docs', app.translate('app.docs'), docsMenu)}
-      <Button variant="outlined" color="primary" href="/designs/" style={{ marginTop: '1rem' }}>
-        <FormattedMessage id="app.browseCollection" />
-      </Button>
+      { ['guides', 'howtos', 'reference'].map( type => (
+        <ExpansionPanel expanded={expanded === type} onChange={handleChange(type)} {...noClose}>
+          <ExpansionPanelSummary
+            {...noClose}
+            expandIcon={<ExpandMoreIcon className="no-closenav" />}
+            aria-controls={`${type}-content`}
+            id={`${type}-header`}
+          >
+            <h5 style={{textTransform: 'capitalize'}} {...noClose}>
+              {type}
+            </h5>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <ReadMore root={type} />
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+      ))}
+      <Button
+        variant="outlined"
+        color="primary"
+        style={{marginTop: '2rem'}}
+        size='large'
+        href="https://gitter.im/freesewing/development"
+      >Support</Button>
     </div>
   )
 }
