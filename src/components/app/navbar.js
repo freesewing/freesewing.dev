@@ -8,7 +8,6 @@ import Logo from '@freesewing/components/Logo'
 import { Link } from 'gatsby'
 import LightModeIcon from '@material-ui/icons/WbSunny'
 import DarkModeIcon from '@material-ui/icons/Brightness3'
-import LanguageIcon from '@material-ui/icons/Translate'
 import SearchIcon from '@material-ui/icons/Search'
 
 import Popover from '@material-ui/core/Popover'
@@ -170,15 +169,6 @@ export default function ButtonAppBar(props) {
             title={props.app.translate('app.search')}
           >
             <SearchIcon style={style.icon} />
-          </IconButton>
-          <IconButton
-            style={style.iconButton}
-            aria-label="menu"
-            color="inherit"
-            href="/language/"
-            title={props.app.translate(`i18n.${props.app.language}`)}
-          >
-            <LanguageIcon style={style.icon} />
           </IconButton>
           <IconButton
             style={style.darkModeButton}

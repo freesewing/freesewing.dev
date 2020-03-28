@@ -1,4 +1,5 @@
 import React from 'react'
+import Blockquote from '@freesewing/components/Blockquote'
 
 const PatternPage = props => {
   const pattern = props.pattern
@@ -8,6 +9,12 @@ const PatternPage = props => {
       marginRight: '0.5rem'
     }
   }
+
+  const hidden = [
+    'tutorial',
+    'rendertest',
+    'examples'
+  ]
 
   return (
     <React.Fragment>
@@ -55,25 +62,37 @@ const PatternPage = props => {
             alt={'Open issues tagged pkg:' + pattern}
           />
         </a>
+        <a
+          href={`https://github.com/freesewing/freesewing/actions?query=workflow%3A%22Unit+tests+-+${Pattern}%22`}
+          title={'Unit tests ' + pattern}
+          style={styles.badge}
+        >
+          <img
+            src={`https://github.com/freesewing/freesewing/workflows/Unit%20tests%20-%20${Pattern}/badge.svg`}
+            alt={'Unit tests ' + pattern}
+          />
+        </a>
       </p>
       <p>This is the FreeSewing {Pattern} pattern:</p>
       <ul className="links">
-        <li>
-          <a href={'https://freesewing.org/patterns/' + pattern}>{Pattern} on freesewing.org</a>
-        </li>
-        <li>
-          <a href={'https://freesewing.org/showcase/category/' + pattern}>{Pattern} examples</a>
-        </li>
-        <li>
-          <a href={'https://freesewing.org/docs/patterns/' + pattern + '/measurements'}>
-            {Pattern} required measurements
-          </a>
-        </li>
-        <li>
-          <a href={'https://freesewing.org/docs/patterns/' + pattern + '/options'}>
-            {Pattern} options
-          </a>
-        </li>
+        { (hidden.indexOf(pattern) === -1) && [
+          <li key='plink'>
+            <a href={'https://freesewing.org/designs/' + pattern}>{Pattern} on freesewing.org</a>
+          </li>,
+          <li key='pshow'>
+            <a href={'https://freesewing.org/showcase/category/' + pattern}>{Pattern} examples</a>
+          </li>,
+          <li key='pmeas'>
+            <a href={'https://freesewing.org/docs/patterns/' + pattern + '/measurements'}>
+              {Pattern} required measurements
+            </a>
+          </li>,
+          <li key='popts'>
+            <a href={'https://freesewing.org/docs/patterns/' + pattern + '/options'}>
+              {Pattern} options
+            </a>
+          </li>
+        ]}
         <li>
           <a href={'https://npmjs.com/package/@freesewing/' + pattern}>Package on NPM</a>
         </li>
@@ -83,6 +102,16 @@ const PatternPage = props => {
           </a>
         </li>
       </ul>
+      { (hidden.indexOf(pattern) !== -1) && (
+        <Blockquote type='note'>
+          <h6>This pattern is not published</h6>
+          <p>
+            <b>{ Pattern }</b> is a technically a FreeSewing pattern, but is not intended as such.
+            That is why it is not published on <a href='https://freesewing.org/'>freesewing.org</a>.
+          </p>
+
+        </Blockquote>
+      )}
     </React.Fragment>
   )
 }

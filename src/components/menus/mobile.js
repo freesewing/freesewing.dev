@@ -3,7 +3,6 @@ import { FormattedMessage } from 'react-intl'
 import Logo from '@freesewing/components/Logo'
 import LightModeIcon from '@material-ui/icons/WbSunny'
 import DarkModeIcon from '@material-ui/icons/Brightness3'
-import LanguageIcon from '@material-ui/icons/Translate'
 import SearchIcon from '@material-ui/icons/Search'
 import MapIcon from '@material-ui/icons/Map'
 import Button from '@material-ui/core/Button'
@@ -71,11 +70,6 @@ const MobileMenu = ({ app }) => {
       link: '/search/',
       icon: <SearchIcon />
     },
-    language: {
-      title: 'account.language',
-      link: '/language/',
-      icon: <LanguageIcon />
-    }
   }
 
   return (
