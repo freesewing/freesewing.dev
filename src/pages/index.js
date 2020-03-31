@@ -37,15 +37,15 @@ const HomePage = props => {
     row2: [
       '', // Skip 0
       {
-        to: '/reference/repositories/',
+        to: '/reference/repos/',
         txt: 'Browse GitHub repositories'
       },
       {
-        to: 'https://gitter.im/freesewing/developement',
+        to: '/reference/packages/',
         txt: 'Browse NPM packages'
       },
       {
-        to: 'https://gitter.im/freesewing/developement',
+        to: 'https://gitter.im/freesewing/development',
         txt: 'Join our chat room'
       }
     ]
