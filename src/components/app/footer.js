@@ -66,7 +66,7 @@ const Footer = props => {
     let patron = patrons[username]
     list.push(
       <li key={patron.username} style={styles.li}>
-        <Link to={'/users/' + patron.username} title={patron.username}>
+        <Link to={'https://freesewing.org/users/' + patron.username} title={patron.username}>
           <img src={patron.pictureUris.xs} alt={patron.username} style={styles.img} />
         </Link>
       </li>
