@@ -21,13 +21,12 @@ of [plugins](https://freesewing.dev/reference/plugins) and getting started is as
 npm init freesewing-pattern
 ```
 
-The [getting started](https://freesewing.dev/start) section on [freesewing.dev](https://freesewing.dev/) is a good
-entrypoint to our documentation, but you'll find a lot more there, including
-our [API reference](https://freesewing.dev/api),
-as well as [our turorial](https://freesewing.dev/tutorial),
-and [best practices](https://freesewing.dev/do).
+The [getting started](https://freesewing.dev/guides/getting-started/) section on [freesewing.dev](https://freesewing.dev/) is a good
+entrypoint to our documentation, but you'll find a lot more there, including [references to our API's](https://freesewing.dev/reference/),
+as well as [our tutorials](https://freesewing.dev/tutorials/),
+and [best practices](https://freesewing.dev/guides/best-practices/).
 
-If you're a maker, checkout [freesewing.org](https://freesewing/) where you can generate
+If you're a maker, checkout [freesewing.org](https://freesewing.org/) where you can generate
 our sewing patterns adapted to your measurements.
 
 ## Support FreeSewing: Become a patron 🥰
