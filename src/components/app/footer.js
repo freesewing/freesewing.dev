@@ -102,14 +102,14 @@ const Footer = props => {
       <div style={styles.container}>
         <ul style={styles.links}>
           <li>
-            <a href={`https://${process.env.GATSBY_LANGUAGE}.freesewing.org/docs/about/`}>
+            <a href={`https://freesewing.org/docs/about/`}>
               <FormattedMessage id="app.aboutFreesewing" />
             </a>
           </li>
         </ul>
         <ul style={styles.links}>
           <li>
-            <a href={`https://${process.env.GATSBY_LANGUAGE}.freesewing.org/patrons/join/`}>
+            <a href={`https://freesewing.org/patrons/join/`}>
               <FormattedMessage id="app.becomeAPatron" />
             </a>
           </li>
