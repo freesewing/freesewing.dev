@@ -3,8 +3,9 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 
 import Blockquote from '@freesewing/components/Blockquote'
+import ReadMore from './readmore'
+import YouTube from '../youtube'
 import Example from '@freesewing/components/Example'
-import ReadMore from './read-more'
 
 const customComponents = {
   Note: ({ children }) => <Blockquote type="note">{children}</Blockquote>,
@@ -12,15 +13,19 @@ const customComponents = {
   Warning: ({ children }) => <Blockquote type="warning">{children}</Blockquote>,
   Fixme: ({ children }) => <Blockquote type="fixme">{children}</Blockquote>,
   ReadMore: props => <ReadMore {...props} />,
-  Example
+  YouTube,
+  Example,
 }
 
-const Mdx = props => (
-  <section id="mdx">
-    <MDXProvider components={customComponents}>
-      <MDXRenderer>{props.node.body}</MDXRenderer>
-    </MDXProvider>
-  </section>
-)
+const Mdx = ({ node, offspring, orderedOffspring }) => {
+  customComponents.ReadMore = (props) => <ReadMore {...props} offspring={offspring} orderedOffspring={orderedOffspring} />
+  return (
+    <section id="mdx">
+      <MDXProvider components={customComponents}>
+        <MDXRenderer>{node.body}</MDXRenderer>
+      </MDXProvider>
+    </section>
+  )
+}
 
 export default Mdx

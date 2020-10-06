@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
+import { navigate as gatsbyNavigate } from 'gatsby'
 import { useIntl } from 'react-intl'
-
 import useLocalStorage from './useLocalStorage'
 
-function useApp(slug = null) {
-  // Environment
+function useApp() {
 
   // i18n
   const intl = useIntl()
@@ -15,15 +14,22 @@ function useApp(slug = null) {
 
   // React State
   const [crumbs, setCrumbs] = useState([])
-  const [description, setDescription] = useState(false)
+  const [description, setDescription] = useState(
+    intl.formatMessage({ id: 'cty.weAreACommunityOfMakers' }) +
+      '. ' +
+      intl.formatMessage({ id: 'cty.weProvideMtmSewingPatterns' }) +
+      '.'
+  )
   const [image, setImage] = useState(`https://freesewing.org/share/language.wide.jpg`)
   const [loading, setLoading] = useState(false)
   const [menu, setMenu] = useState(false)
-  const [mobileAside, setMobileAside] = useState(false)
   const [title, setTitle] = useState('FreeSewing')
+  const [mounted, setMounted] = useState(false) // false until app is mounted
+  const [context, setContext] = useState([])
+  const [toc, setToc] = useState(false)
 
   // Persist user data to local storage
-  const persist = data => {
+  const persist = (data) => {
     if (data.theme) setTheme(data.theme)
   }
 
@@ -36,34 +42,21 @@ function useApp(slug = null) {
   // Toggles
   const toggleDarkMode = () => setTheme(theme === 'light' ? 'dark' : 'light')
   const toggleMenu = () => setMenu(!menu)
-  const toggleMobileAside = () => setMobileAside(!mobileAside)
-  const closeNav = evt => {
-    if (typeof evt.target.className === 'object') {
-      if (evt.target.className.baseVal.indexOf('o-closenav') === -1) return setMenu(false)
-    } else if (evt.target.className.indexOf('o-closenav') === -1) return setMenu(false)
-  }
 
   // Media queries
   const mobile = useMediaQuery('(max-width:599px)')
   const tablet = useMediaQuery('(min-width: 600px) and (max-width: 959px)')
+  const slate = useMediaQuery('(min-width: 960px) and (max-width: 1199px)')
 
-  const cleanTitle = title => (title.indexOf('|') === -1 ? title : title.split('|')[1])
-
-  // These are used in other methods
-  let core = {
-    // Helper methods
-    persist,
-    translate,
-    // React state
-    loading,
-    setLoading,
-    // Persistent state
-    theme,
-    setTheme
+  // SSR-save navigate method
+  const navigate = (slug) => {
+    if (typeof window !== 'undefined') gatsbyNavigate(slug)
   }
 
   return {
-    ...core,
+    // Helper methods
+    persist,
+    navigate,
 
     // React state
     crumbs,
@@ -72,19 +65,26 @@ function useApp(slug = null) {
     setDescription,
     image,
     setImage,
+    loading,
+    setLoading,
     menu,
     setMenu,
-    mobileAside,
-    setMobileAside,
-    cleanTitle,
     title,
-    setTitle: title => setTitle(cleanTitle(title)),
+    setTitle,
+    mounted,
+    setMounted,
+    context,
+    setContext,
+    toc,
+    setToc,
+
+    // Persistent state
+    theme,
+    setTheme,
 
     // Toggles
     toggleDarkMode,
     toggleMenu,
-    toggleMobileAside,
-    closeNav,
 
     // Translation
     translate,
@@ -93,6 +93,7 @@ function useApp(slug = null) {
     // Media queries
     mobile,
     tablet,
+    slate,
 
     // Site language
     language: process.env.GATSBY_LANGUAGE

@@ -1,21 +1,18 @@
 import React from 'react'
 import useApp from '../hooks/useApp'
+import AppWrapper from '../components/app/wrapper'
+
 import useUiMdx from '../hooks/useUiMdx'
 import withLanguage from '../components/withLanguage'
-import AppWrapper from '../components/app/wrapper'
-import WideLayout from '../components/layouts/wide'
-
 import Button from '@material-ui/core/Button'
 import { FormattedMessage } from 'react-intl'
-
 import Mdx from '../components/mdx'
+import './homepage.scss'
 
-// Style
-import './homepage.css'
+const Page = props => {
 
-const HomePage = props => {
-  // Hooks
   const app = useApp()
+
   const uiMdx = useUiMdx()
 
   const buttons = {
@@ -52,52 +49,22 @@ const HomePage = props => {
   }
 
   return (
-    <AppWrapper app={app}>
+    <AppWrapper
+      app={app}
+      title='FreeSewing documentation for contributors & developers'
+      noCrumbs
+      noTitle
+    >
       <div id="homepage">
-        {/* Top banner */}
-        <header>
-          <div className="banner">
-            <div className="text-block" style={{ maxWidth: '600px' }}>
-              <h1>FreeSewing</h1>
-              <h2>An open source platform for made-to-measure sewing patterns</h2>
-              <Button
-                size="large"
-                color="secondary"
-                href="/guides/getting-started/"
-                variant="contained"
-                style={{ marginRight: '1rem' }}
-              >
-                Get started
-              </Button>
-              <Button
-                size="large"
-                color="secondary"
-                href="/tutorials/pattern-design/"
-                variant="outlined"
-              >
-                Tutorial
-              </Button>
-            </div>
-          </div>
-        </header>
+        <h1>
+          FreeSewing documentation
+          <span>For contributors & developers</span>
+        </h1>
 
-        {/* First row of text boxes */}
-        <WideLayout app={app} noTitle>
-          <div className="boxes">
-            {[1, 2, 3].map(id => (
-              <div key={'row1-' + id}>
-                <Mdx node={uiMdx[`homepage/row-1/${id}`]} />
-                <Button variant="outlined" href={buttons.row1[id].to}>
-                  {buttons.row1[id].txt}
-                </Button>
-              </div>
-            ))}
-          </div>
-        </WideLayout>
 
         {/* Support banner */}
         <div className="stripe">
-          <div>
+          <div className='stripe-content'>
             <h1>
               <FormattedMessage id="app.supportFreesewing" />
             </h1>
@@ -117,7 +84,6 @@ const HomePage = props => {
           </div>
         </div>
 
-        <WideLayout app={app} noTitle>
           {/* Second row of text boxes */}
           <div className="boxes">
             {[1, 2, 3].map(id => (
@@ -129,10 +95,9 @@ const HomePage = props => {
               </div>
             ))}
           </div>
-        </WideLayout>
       </div>
     </AppWrapper>
   )
 }
 
-export default withLanguage(HomePage)
+export default withLanguage(Page)

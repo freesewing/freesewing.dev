@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { Link } from 'gatsby'
 import IconButton from '@material-ui/core/IconButton'
 import FreeSewing from '@freesewing/core'
-import { FormattedMessage, FormattedHTMLMessage } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 import ShoutOuts from './shout-outs'
 
 const Footer = props => {
@@ -96,7 +96,7 @@ const Footer = props => {
         ))}
       </p>
       <p>
-        <FormattedHTMLMessage id="app.txt-footer" />:
+        <FormattedMessage id="app.txt-footer" />:
       </p>
       {allPatrons}
       <div style={styles.container}>

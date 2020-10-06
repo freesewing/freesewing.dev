@@ -1,54 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Button from '@material-ui/core/Button'
-import IconButton from '@material-ui/core/IconButton'
-
 import Logo from '@freesewing/components/Logo'
 import { Link } from 'gatsby'
-import LightModeIcon from '@material-ui/icons/WbSunny'
-import DarkModeIcon from '@material-ui/icons/Brightness3'
-import SearchIcon from '@material-ui/icons/Search'
-
+import { FormattedMessage } from 'react-intl'
 import Popover from '@material-ui/core/Popover'
-import ReadMore from '../read-more'
+import NavbarIcons from './navbar-icons'
+import Icon from '@freesewing/components/Icon'
+// FIXME: The 'Campaign' icon is not (yet) available in material-ui
+import UpdatesIcon from '../UpdatesIcon'
+
 
 export default function ButtonAppBar(props) {
-  const [guidesAnchor, setGuidesAnchor] = useState(null)
-  const [howtosAnchor, setHowtosAnchor] = useState(null)
-  const [referenceAnchor, setReferenceAnchor] = useState(null)
-  const [tutorialsAnchor, setTutorialsAnchor] = useState(null)
-
   // Don't show on mobile
   if (props.app.mobile) return null
-
-  const anchor = {
-    guides: guidesAnchor,
-    howtos: howtosAnchor,
-    reference: referenceAnchor,
-    tutorials: tutorialsAnchor
-  }
-  const setAnchor = {
-    guides: setGuidesAnchor,
-    howtos: setHowtosAnchor,
-    reference: setReferenceAnchor,
-    tutorials: setTutorialsAnchor
-  }
-  const open = {
-    guides: Boolean(guidesAnchor),
-    howtos: Boolean(howtosAnchor),
-    reference: Boolean(referenceAnchor),
-    tutorials: Boolean(tutorialsAnchor)
-  }
-
-  const handleOpen = (section, evt) => setAnchor[section](evt.currentTarget)
-
-  const handlePopoverClose = () => {
-    setGuidesAnchor(null)
-    setHowtosAnchor(null)
-    setReferenceAnchor(null)
-    setTutorialsAnchor(null)
-  }
 
   const colors = {
     light: '#212529',
@@ -90,36 +56,13 @@ export default function ButtonAppBar(props) {
       transform: 'rotate(26deg)',
       maxWidth: '24px',
       maxHeight: '24px'
-    },
-    menuwrapper: {
-      padding: '0 1rem',
-      display: 'flex',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      maxWidth: '600px',
-      minWidth: '250px'
     }
   }
 
-  const popoverProps = {
-    anchorOrigin: {
-      vertical: 'bottom',
-      horizontal: 'left'
-    },
-    transformOrigin: {
-      vertical: 'top',
-      horizontal: 'left'
-    },
-    disableRestoreFocus: true,
-    elevation: 1
+  const iconStyle = {
+    marginRight: '0.5rem',
+    color: props.app.theme === 'dark' ? '#b197fc' : '#845ef7'
   }
-
-  const buttonProps = {
-    color: 'primary',
-    size: 'large',
-    style: style.button
-  }
-  buttonProps['aria-haspopup'] = 'true'
 
   return (
     <div style={style.wrapper}>
@@ -128,64 +71,25 @@ export default function ButtonAppBar(props) {
           <Link to="/" style={style.logo}>
             <Logo embed />
           </Link>
-          {Object.keys(anchor).map(section => (
-            <>
-              <Button
-                aria-owns={open[section] ? `${section}-popover` : undefined}
-                onClick={evt => handleOpen(section, evt)}
-                {...buttonProps}
-              >
-                {section}
-              </Button>
-              <Popover
-                id={`${section}-popover`}
-                open={open[section]}
-                anchorEl={anchor[section]}
-                onClose={handlePopoverClose}
-                {...popoverProps}
-              >
-                <div style={style.menuwrapper} className={`style-wrapper ${props.app.theme}`}>
-                  <ReadMore root={section} />
-                </div>
-              </Popover>
-            </>
-          ))}
-          <span style={style.spacer} />
 
-          <Button
-            href="https://gitter.im/freesewing/development"
-            color="inherit"
-            size="large"
-            style={style.button}
-          >
-            Support
+          <Button href="/news/" style={{...style.iconButton}}>
+            <UpdatesIcon style={iconStyle} size={28}/>
+            Recent Updates
           </Button>
 
-          <IconButton
-            style={style.iconButton}
-            aria-label="menu"
-            color="inherit"
-            href="/search/"
-            title={props.app.translate('app.search')}
-          >
-            <SearchIcon style={style.icon} />
-          </IconButton>
-          <IconButton
-            style={style.darkModeButton}
-            aria-label="menu"
-            onClick={props.app.toggleDarkMode}
-            title={
-              props.app.theme === 'dark'
-                ? props.app.translate('app.lightMode')
-                : props.app.translate('app.darkMode')
-            }
-          >
-            {props.app.theme === 'dark' ? (
-              <LightModeIcon style={style.icon} />
-            ) : (
-              <DarkModeIcon style={style.darkModeIcon} />
-            )}
-          </IconButton>
+          <span style={style.spacer} />
+
+          <Button href="https://chat.freesewing.org/">
+            <Icon style={{ ...iconStyle }} icon="discord" />
+            <FormattedMessage id="app.chatOnDiscord" />
+          </Button>
+
+          <NavbarIcons
+            translate={props.app.translate}
+            toggleDarkMode={props.app.toggleDarkMode}
+            theme={props.app.theme}
+            language={props.app.language}
+          />
         </Toolbar>
       </AppBar>
     </div>

@@ -1,36 +1,58 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import useApp from '../hooks/useApp'
-import useNavigation from '../hooks/useNavigation'
-import withLanguage from '../components/withLanguage'
 import AppWrapper from '../components/app/wrapper'
-import DocsLayout from '../components/layouts/docs'
-import crumbsFromNavigation from '../components/app/crumbsFromNavigation'
 
-import { graphql } from 'gatsby'
 import Mdx from '../components/mdx'
-import PrevNext from '../components/prev-next'
+import MdxToc from '../components/mdx/toc'
+import DocsContext from '../components/context/docs'
+import { graphql, Link } from 'gatsby'
+import UpIcon from '@material-ui/icons/KeyboardArrowUp'
+import PrevNext from '../components/mdx/prevnext'
+import Tutorials from '../components/mdx/tutorials'
 
-const DocsPage = props => {
-  // State
+const Page = props => {
+
   const app = useApp()
-  const { tree, titles } = useNavigation(app)
 
-  // Effects
-  useEffect(() => {
-    app.setTitle(props.data.allMdx.edges[0].node.frontmatter.title || false)
-    app.setCrumbs(crumbsFromNavigation(props.path, tree, titles))
-  }, [])
+  const context = [
+    <h5>
+      <Link to={props.pageContext.up.slug}>
+        <UpIcon />
+        {props.pageContext.up.title}
+      </Link>
+    </h5>,
+    <DocsContext {...props.pageContext} />
+  ]
+
+  const toc = props.data.allMdx.edges[0].node.tableOfContents.items
+    ? [
+        <h6>{props.pageContext.title}</h6>,
+        <MdxToc toc={props.data.allMdx.edges[0].node.tableOfContents} />
+      ]
+    : []
+
   return (
-    <AppWrapper app={app}>
-      <DocsLayout app={app} slug={props.path} toc={props.data.allMdx.edges[0].node.tableOfContents}>
-        <Mdx node={props.data.allMdx.edges[0].node} slug={props.location.pathname} />
-        <PrevNext slug={props.location.pathname} tree={tree} titles={titles} />
-      </DocsLayout>
+    <AppWrapper
+      app={app}
+      title={props.pageContext.title}
+      description={props.data.allMdx.edges[0].node.excerpt}
+      crumbs={props.pageContext.crumbs}
+      context={context}
+      toc={toc}
+      active="docs"
+      text
+    >
+      {props.path === '/tutorials/' && <Tutorials />}
+      <Mdx
+        node={props.data.allMdx.edges[0].node}
+        offspring={props.pageContext.offspring}
+        orderedOffspring={props.pageContext.orderedOffspring}
+      />
     </AppWrapper>
   )
 }
 
-export default withLanguage(DocsPage)
+export default Page
 
 // See https://www.gatsbyjs.org/docs/page-query/
 export const pageQuery = graphql`
@@ -39,6 +61,7 @@ export const pageQuery = graphql`
       edges {
         node {
           body
+          excerpt
           tableOfContents(maxDepth: 2)
           frontmatter {
             title

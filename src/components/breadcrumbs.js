@@ -2,17 +2,14 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { FormattedMessage } from 'react-intl'
 
-const Breadcrumbs = props => {
-  const renderCrumb = crumb => {
+const Breadcrumbs = ({ pageTitle, suffix, crumbs = [] }) => {
+  const renderCrumb = (crumb) => {
     return (
       <li key={crumb.slug}>
-        <Link to={crumb.slug}>
-          {typeof crumb.title === 'string' ? crumb.title.split('|').pop() : crumb.title}
-        </Link>
+        <Link to={crumb.slug}>{crumb.title}</Link>
       </li>
     )
   }
-
   return (
     <nav className="breadcrumbs">
       <ul>
@@ -21,9 +18,10 @@ const Breadcrumbs = props => {
             <FormattedMessage id="app.home" />
           </Link>
         </li>
-        {props.crumbs.map(crumb => renderCrumb(crumb))}
+        {crumbs.map((crumb) => renderCrumb(crumb))}
         <li>
-          {typeof props.pageTitle === 'string' ? props.pageTitle.split('|').pop() : props.pageTitle}
+          {pageTitle}
+          {suffix ? suffix : null}
         </li>
       </ul>
     </nav>
