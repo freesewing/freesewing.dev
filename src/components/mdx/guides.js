@@ -1,14 +1,14 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Preview from './preview'
-import Icon from '@material-ui/icons/School'
+import Icon from '@material-ui/icons/SwapCalls'
 import './preview.scss'
 
-const Tutorials = props => {
+const Guides = props => {
   const data = useStaticQuery(graphql`
     {
       allMdx(
-        filter: { fileAbsolutePath: { regex: "/tutorials\/[^\/]*\/en.md/" } }
+        filter: { fileAbsolutePath: { regex: "/guides\/[^\/]*\/en.md/" } }
         sort: { fields: [frontmatter___order, frontmatter___title], order: ASC }
       ) {
         edges {
@@ -38,4 +38,4 @@ const Tutorials = props => {
   return <div className='previews'>{list}</div>
 }
 
-export default Tutorials
+export default Guides

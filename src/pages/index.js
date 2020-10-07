@@ -8,6 +8,8 @@ import Button from '@material-ui/core/Button'
 import { FormattedMessage } from 'react-intl'
 import Mdx from '../components/mdx'
 import './homepage.scss'
+import Tutorials from '../components/mdx/tutorials'
+import Guides from '../components/mdx/guides'
 
 const Page = props => {
 
@@ -60,7 +62,10 @@ const Page = props => {
           FreeSewing documentation
           <span>For contributors & developers</span>
         </h1>
-
+        <div className='previews'>
+          <Tutorials list brief />
+          <Guides list brief />
+        </div>
 
         {/* Support banner */}
         <div className="stripe">

@@ -9,6 +9,14 @@ const DocsContext = ({
   orderedOffspring,
   up
 }) => {
+  console.log({
+  slug,
+  siblings,
+  orderedSiblings,
+  offspring,
+  orderedOffspring,
+  up
+  })
   return (
     <ul>
       {orderedSiblings.map(sib => (

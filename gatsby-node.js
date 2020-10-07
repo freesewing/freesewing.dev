@@ -84,7 +84,7 @@ const getOffspring = (slug, pages, tree) => {
 
 const getSiblings = (slug, pages, tree) => {
   let parentSlug = getParentSlug(slug)
-  if (parentSlug = '/') {
+  if (parentSlug === '/') {
     let siblings = {}
     for (let i in tree) siblings[tree[i].slug] = tree[i].title
 

@@ -9,17 +9,28 @@ div.previews {
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
-    max-width: 400px;
     margin: 0.75rem 0;
     overflow: hidden;
     div.header {
-      background: -webkit-linear-gradient(0deg, $oc-violet-7, $oc-pink-7);
+      background: $oc-violet-5;
+      padding: 1rem;
       h3 {
         text-align: center;
         margin: auto;
         color: white;
-        padding: 1rem;
+        padding: 0;
         font-weight: bold;
+        line-height: 1.2;
+        font-size: 100%;
+        span.icon {
+          display: block;
+          margin-bottom: -0.5rem;
+          margin-top: -0.5rem;
+          svg {
+            width: 52px;
+            height: 52px;
+          }
+        }
       }
     }
     div.body {

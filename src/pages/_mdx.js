@@ -24,10 +24,13 @@ const Page = props => {
     <DocsContext {...props.pageContext} />
   ]
 
-  const toc = props.data.allMdx.edges[0].node.tableOfContents.items
+  const node = props.data.allMdx.edges[0].node
+
+
+  const toc = node.tableOfContents.items
     ? [
         <h6>{props.pageContext.title}</h6>,
-        <MdxToc toc={props.data.allMdx.edges[0].node.tableOfContents} />
+        <MdxToc toc={node.tableOfContents} />
       ]
     : []
 
@@ -35,12 +38,11 @@ const Page = props => {
     <AppWrapper
       app={app}
       title={props.pageContext.title}
-      description={props.data.allMdx.edges[0].node.excerpt}
+      description={node.excerpt}
       crumbs={props.pageContext.crumbs}
       context={context}
-      toc={toc}
+      toc={node.frontmatter.fullWidth ? false : toc}
       active="docs"
-      text
     >
       {props.path === '/tutorials/' && <Tutorials />}
       <Mdx
