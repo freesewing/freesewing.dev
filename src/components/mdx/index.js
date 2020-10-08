@@ -14,7 +14,7 @@ const customComponents = {
   Fixme: ({ children }) => <Blockquote type="fixme">{children}</Blockquote>,
   ReadMore: props => <ReadMore {...props} />,
   YouTube,
-  Example,
+  Example: props => <Example {...props} design={props.design ? true : false} />,
 }
 
 const Mdx = ({ node, offspring, orderedOffspring }) => {
