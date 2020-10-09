@@ -1,13 +1,17 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import icons from '../icons'
 
 const Preview = props => {
   return (
-  <div className='preview shadow'>
+  <div className={`preview shadow ${props.frontmatter.for || ''}`}>
     <Link to={`/${props.parent.relativeDirectory}/`} />
     <div className='header'>
       <h3>
-        <span className='icon'>{props.icon}</span>
+        {props.frontmatter.icon
+          ? icons[props.frontmatter.icon]()
+          : <span className='icon'>{props.icon}</span>
+        }
         {props.frontmatter.title}
       </h3>
     </div>

@@ -25,6 +25,7 @@ const contrib = {
   editors: 'For editors',
   translators: 'For translators',
 }
+
 const icons = {
   tutorials: <TutorialIcon />,
   guides: <GuideIcon />,
@@ -53,7 +54,7 @@ const MainMenu = ({ app, active = '', iconsOnly = false }) => (
     ))}
     <li className='divider'>Contributor documentation:</li>
     {Object.keys(contrib).map(link => (
-      <li key={link} className='contrib'>
+      <li key={link} className={`contrib ${link}`}>
         <Link
           to={`/${link}/`}
           className={link === active ? 'active' : ''}

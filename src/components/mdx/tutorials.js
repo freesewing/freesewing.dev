@@ -20,6 +20,10 @@ const Tutorials = props => {
             fileAbsolutePath
             frontmatter {
               title
+              icon
+              for
+              background
+              color
               about
               goals
             }

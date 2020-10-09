@@ -112,9 +112,10 @@
 }
 
 #homepage div.previews {
+  margin-bottom: 3rem;
   div.preview {
-    margin: .5rem;
-    max-width: 330px;
+    margin: .25rem;
+    max-width: 300px;
     div.body {
       padding: 1rem;
       h5 {

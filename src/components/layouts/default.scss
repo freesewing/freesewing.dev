@@ -75,9 +75,23 @@ div.fs-sa aside ul.aside-main-menu li.contrib {
   font-size: 90%;
   a { padding: 0; }
 }
+
+div.fs-sa aside ul.aside-main-menu li.contrib.contributors a {
+  border-left: 25px solid $oc-pink-5;
+}
+div.fs-sa aside ul.aside-main-menu li.contrib.developers a {
+  border-left: 25px solid $oc-teal-5;
+}
+div.fs-sa aside ul.aside-main-menu li.contrib.editors a {
+  border-left: 25px solid $oc-cyan-5;
+}
+div.fs-sa aside ul.aside-main-menu li.contrib.translators a {
+  border-left: 25px solid $oc-yellow-5;
+}
+
 .theme-wrapper.dark div.fs-sa aside ul.aside-main-menu li.contrib a svg,
 .theme-wrapper.light div.fs-sa aside ul.aside-main-menu li.contrib a svg {
-  color: $oc-pink-5;
+  color: currentColor;
 }
 
 div.mob-menu {
