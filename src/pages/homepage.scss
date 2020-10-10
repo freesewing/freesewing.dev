@@ -78,6 +78,7 @@
   font-family: 'Roboto Condensed', sans-serif;
   position: relative;
   width: 100%;
+  margin-bottom: 3rem;
 }
 
 #homepage div.stripe-content {
@@ -115,7 +116,6 @@
   margin-bottom: 3rem;
   div.preview {
     margin: .25rem;
-    max-width: 300px;
     div.body {
       padding: 1rem;
       h5 {

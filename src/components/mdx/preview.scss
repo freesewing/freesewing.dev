@@ -5,14 +5,16 @@ div.previews {
   flex-direction: row;
   flex-wrap: wrap;
   div.preview {
+    max-width: 300px;
     position: relative;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
-    margin: 0.75rem 0;
+    margin: 0.25rem;
     overflow: hidden;
     div.header {
       background: $oc-violet-5;
+      color: $oc-gray-9;
       padding: 0.5rem 1rem;
       h3 {
         text-align: center;
@@ -24,20 +26,21 @@ div.previews {
         svg {
           width: 52px;
           height: 52px;
-          display: block;
-          margin: 0.5rem auto;
+          margin: 0.5rem;
           fill: currentColor;
         }
         span.icon {
           display: block;
-          margin: 0.5rem auto;
+          margin: 0.5rem;
           svg {
             width: 52px;
             height: 52px;
           }
         }
-        img.icon {
+        span.text {
           display: block;
+        }
+        img.icon {
           margin: 0 auto;
           width: 52px;
           height: 52px;
@@ -48,8 +51,11 @@ div.previews {
     div.body {
       padding: 0 1rem;
       font-size: 95%;
+      p {
+        margin: 0
+      }
     }
-    a {
+    a.cover {
       position: absolute;
       top: 0;
       left: 0;

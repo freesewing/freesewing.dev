@@ -7,8 +7,10 @@ import MdxToc from '../components/mdx/toc'
 import DocsContext from '../components/context/docs'
 import { graphql, Link } from 'gatsby'
 import UpIcon from '@material-ui/icons/KeyboardArrowUp'
-import PrevNext from '../components/mdx/prevnext'
 import Tutorials from '../components/mdx/tutorials'
+import Guides from '../components/mdx/guides'
+import Howtos from '../components/mdx/howtos'
+import Reference from '../components/mdx/reference'
 
 const Page = props => {
 
@@ -41,10 +43,14 @@ const Page = props => {
       description={node.excerpt}
       crumbs={props.pageContext.crumbs}
       context={context}
-      toc={node.frontmatter.fullWidth ? false : toc}
+      toc={toc}
       active="docs"
+      wide={node.frontmatter.wide}
     >
-      {props.path === '/tutorials/' && <Tutorials />}
+      {props.path === '/tutorials/' && <div className='previews'><Tutorials list/></div>}
+      {props.path === '/guides/' && <div className='previews'><Guides list/></div>}
+      {props.path === '/howtos/' && <Howtos />}
+      {props.path === '/reference/' && <Reference />}
       <Mdx
         node={props.data.allMdx.edges[0].node}
         offspring={props.pageContext.offspring}
@@ -67,6 +73,7 @@ export const pageQuery = graphql`
           tableOfContents(maxDepth: 2)
           frontmatter {
             title
+            wide
           }
         }
       }

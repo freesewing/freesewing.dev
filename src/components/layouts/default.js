@@ -4,6 +4,7 @@ import MainAside from '../menus/main-aside'
 import './default.scss'
 
 const DefaultLayout = (props) => {
+  console.log(props)
   return (
     <div className="fs-sa" dataLayout="docs">
       <aside>
@@ -15,7 +16,7 @@ const DefaultLayout = (props) => {
       <section>
         {!props.noCrumbs && <BreadCrumbs crumbs={props.crumbs} pageTitle={props.title} />}
         {!props.noTitle && <h1>{props.title}</h1>}
-        {props.toc ? (
+        {(props.toc && !props.wide) ? (
           <div className="text-toc-wrapper">
             <div className="text">{props.children}</div>
             <div className="toc">{props.toc}</div>

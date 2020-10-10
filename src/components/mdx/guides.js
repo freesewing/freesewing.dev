@@ -22,6 +22,8 @@ const Guides = props => {
               title
               about
               goals
+              for
+              icons
             }
           }
         }

@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Button from '@material-ui/core/Button'
 import Logo from '@freesewing/components/Logo'
 import { Link } from 'gatsby'
 import { FormattedMessage } from 'react-intl'
-import Popover from '@material-ui/core/Popover'
 import NavbarIcons from './navbar-icons'
 import Icon from '@freesewing/components/Icon'
 // FIXME: The 'Campaign' icon is not (yet) available in material-ui
@@ -88,7 +87,6 @@ export default function ButtonAppBar(props) {
             translate={props.app.translate}
             toggleDarkMode={props.app.toggleDarkMode}
             theme={props.app.theme}
-            language={props.app.language}
           />
         </Toolbar>
       </AppBar>

@@ -4,12 +4,16 @@ import Preview from './preview'
 import Icon from '@material-ui/icons/School'
 import './preview.scss'
 
-const Tutorials = props => {
+const Pinned = props => {
   const data = useStaticQuery(graphql`
     {
-      allMdx(
-        filter: { fileAbsolutePath: { regex: "/tutorials\/[^\/]*\/en.md/" } }
-        sort: { fields: [frontmatter___order, frontmatter___title], order: ASC }
+      pinned: allMdx(
+        filter: { slug: { in: [
+        "contributors/code-of-conduct/en",
+        "contributors/help/en",
+        "contributors/terms/en",
+        "reference/api/en",
+        ] } }
       ) {
         edges {
           node {
@@ -23,7 +27,6 @@ const Tutorials = props => {
               icons
               for
               about
-              goals
             }
           }
         }
@@ -31,7 +34,7 @@ const Tutorials = props => {
     }
 `)
 
-  const list = data.allMdx.edges.map(node => (
+  const list = data.pinned.edges.map(node => (
     <Preview key={node.node.fileAbsolutePath} {...node.node} {...props} icon={<Icon />}/>
   ))
 
@@ -40,4 +43,4 @@ const Tutorials = props => {
   return <div className='previews'>{list}</div>
 }
 
-export default Tutorials
+export default Pinned

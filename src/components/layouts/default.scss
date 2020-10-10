@@ -64,34 +64,37 @@ ul.aside-main-menu li {
     display: inline-block;
   }
 }
-div.fs-sa aside ul.aside-main-menu li.divider {
+ul.aside-main-menu li.divider {
   font-size: 80%;
   text-transform: none;
   font-weight: bold;
   padding-left: 1rem;
   color: $oc-gray-6;
 }
-div.fs-sa aside ul.aside-main-menu li.contrib {
+ul.aside-main-menu li.contrib {
   font-size: 90%;
   a { padding: 0; }
 }
 
-div.fs-sa aside ul.aside-main-menu li.contrib.contributors a {
+ul.aside-main-menu li.contrib.contributors a {
   border-left: 25px solid $oc-pink-5;
 }
-div.fs-sa aside ul.aside-main-menu li.contrib.developers a {
+ul.aside-main-menu li.contrib.developers a {
   border-left: 25px solid $oc-teal-5;
 }
-div.fs-sa aside ul.aside-main-menu li.contrib.editors a {
+ul.aside-main-menu li.contrib.editors a {
   border-left: 25px solid $oc-cyan-5;
 }
-div.fs-sa aside ul.aside-main-menu li.contrib.translators a {
+ul.aside-main-menu li.contrib.translators a {
   border-left: 25px solid $oc-yellow-5;
 }
 
-.theme-wrapper.dark div.fs-sa aside ul.aside-main-menu li.contrib a svg,
-.theme-wrapper.light div.fs-sa aside ul.aside-main-menu li.contrib a svg {
+.theme-wrapper.dark ul.aside-main-menu li.contrib a svg,
+.theme-wrapper.light ul.aside-main-menu li.contrib a svg {
   color: currentColor;
+}
+ul.footer-main-menu li.divider {
+  display: none;
 }
 
 div.mob-menu {

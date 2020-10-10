@@ -4,20 +4,18 @@ import TutorialIcon from '@material-ui/icons/School'
 import GuideIcon from '@material-ui/icons/SwapCalls'
 import HowtoIcon from '@material-ui/icons/Help'
 import ReferenceIcon from '@material-ui/icons/MenuBook'
-import VideoIcon from '@material-ui/icons/OndemandVideo'
+//import VideoIcon from '@material-ui/icons/OndemandVideo'
 import ContributorIcon from '@material-ui/icons/Face'
 import EditorIcon from '@material-ui/icons/Create'
 import TranslatorIcon from '@material-ui/icons/Translate'
 import DeveloperIcon from '@material-ui/icons/Code'
-
-import { FormattedMessage } from 'react-intl'
 
 const links = {
   tutorials: 'Tutorials',
   guides: 'Guides',
   howtos: 'Howtos',
   reference: 'Reference',
-  videos: 'Videos',
+ // videos: 'Videos',
 }
 const contrib = {
   contributors: 'For all contributors',
@@ -31,7 +29,7 @@ const icons = {
   guides: <GuideIcon />,
   howtos: <HowtoIcon />,
   reference: <ReferenceIcon />,
-  videos: <VideoIcon />,
+  //videos: <VideoIcon />,
   contributors: <ContributorIcon />,
   developers: <DeveloperIcon />,
   editors: <EditorIcon />,

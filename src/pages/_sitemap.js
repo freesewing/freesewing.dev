@@ -3,7 +3,6 @@ import useApp from '../hooks/useApp'
 import AppWrapper from '../components/app/wrapper'
 
 import { Link, graphql } from 'gatsby'
-import { FormattedMessage } from 'react-intl'
 
 const Page = (props) => {
   const app = useApp()
@@ -15,32 +14,6 @@ const Page = (props) => {
       fontSize: '0.9rem',
       color: app.theme === 'dark' ? 'white' : 'black'
     }
-  }
-
-  const main = {
-    '#account': 'app.account',
-    '#blog': 'app.blog',
-    '#docs': 'app.docs',
-    '#patrons': 'app.patrons',
-    '#patterns': 'app.patterns',
-    '#showcase': 'app.showcase'
-  }
-
-  const renderMdxList = (pages) => {
-    let links = []
-    for (let slug in pages) {
-      let p = pages[slug]
-      links.push(
-        <li key={p.slug}>
-          <Link to={p.slug}>
-            {p.title}
-            <span style={styles.url}>{p.slug}</span>
-          </Link>
-        </li>
-      )
-    }
-
-    return <ul className="links">{links}</ul>
   }
 
   const renderMdxTree = (pages) => {
