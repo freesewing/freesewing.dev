@@ -70,7 +70,7 @@ export const pageQuery = graphql`
         node {
           body
           excerpt
-          tableOfContents(maxDepth: 2)
+          tableOfContents(maxDepth: 4)
           frontmatter {
             title
             wide

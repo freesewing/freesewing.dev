@@ -2,7 +2,7 @@ import React from 'react'
 import useApp from '../hooks/useApp'
 import AppWrapper from '../components/app/wrapper'
 
-import { Link, graphql } from 'gatsby'
+import { Link } from 'gatsby'
 
 const Page = (props) => {
   const app = useApp()
@@ -58,36 +58,3 @@ const Page = (props) => {
 }
 
 export default Page
-
-// See https://www.gatsbyjs.org/docs/page-query/
-export const pageQuery = graphql`
-  {
-    patrons8: allFsPatron(filter: { patron: { tier: { eq: "8" } } }) {
-      edges {
-        node {
-          patron {
-            username
-          }
-        }
-      }
-    }
-    patrons4: allFsPatron(filter: { patron: { tier: { eq: "4" } } }) {
-      edges {
-        node {
-          patron {
-            username
-          }
-        }
-      }
-    }
-    patrons2: allFsPatron(filter: { patron: { tier: { eq: "2" } } }) {
-      edges {
-        node {
-          patron {
-            username
-          }
-        }
-      }
-    }
-  }
-`

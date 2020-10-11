@@ -42,6 +42,16 @@ div.text-toc-wrapper {
         background: $oc-violet-0;
         text-decoration: none;
       }
+      li ul li {
+        a {
+          padding: 0.15rem 0.5rem 0.15rem 1.5rem;
+          font-size: 90%;
+        }
+        ul li a {
+          padding: 0.15rem 0.5rem 0.15rem 2.5rem;
+          font-size: 90%;
+        }
+      }
     }
   }
 }
@@ -58,12 +68,14 @@ h6 a.anchor {
   margin-right: -1px;
 }
 
+div.fs-sa aside ul.aside-main-menu li,
 ul.aside-main-menu li {
   display: block;
   a span.text {
     display: inline-block;
   }
 }
+div.fs-sa aside ul.aside-main-menu li.divider,
 ul.aside-main-menu li.divider {
   font-size: 80%;
   text-transform: none;
@@ -71,6 +83,7 @@ ul.aside-main-menu li.divider {
   padding-left: 1rem;
   color: $oc-gray-6;
 }
+div.fs-sa aside ul.aside-main-menu li.contrib,
 ul.aside-main-menu li.contrib {
   font-size: 90%;
   a { padding: 0; }
@@ -126,6 +139,35 @@ img.gatsby-resp-image-image {
 }
 .theme-wrapper.light svg.freesewing.draft text.fill-note {
   fill: $oc-violet-7;
+}
+
+
+.theme-wrapper.light section#mdx table tr.hover:hover {
+  background-color: $oc-gray-1;
+}
+.theme-wrapper.dark section#mdx table tr.hover:hover {
+  background-color: $oc-gray-8;
+}
+section#mdx table {
+  border-collapse: collapse;
+  font-family: 'Roboto condensed';
+  margin: 1rem 0;
+  tr {
+    margin: 0;
+  }
+  td {
+    margin: 0;
+    padding: 0.25rem 0.5rem;
+  }
+  thead tr {
+    border-bottom: 1px solid $oc-gray-5;
+  }
+}
+.theme-wrapper.light section#mdx table tr:nth-child(even) {
+  background-color: $oc-gray-2;
+}
+.theme-wrapper.dark section#mdx table tr:nth-child(even) {
+  background-color: $oc-gray-8;
 }
 
 

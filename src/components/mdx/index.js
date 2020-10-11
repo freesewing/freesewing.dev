@@ -6,6 +6,7 @@ import Blockquote from '@freesewing/components/Blockquote'
 import ReadMore from './readmore'
 import YouTube from '../youtube'
 import Example from '@freesewing/components/Example'
+import Hashtag from '../hashtag'
 
 const customComponents = {
   Note: ({ children }) => <Blockquote type="note">{children}</Blockquote>,
@@ -15,6 +16,7 @@ const customComponents = {
   ReadMore: props => <ReadMore {...props} />,
   YouTube,
   Example: props => <Example {...props} design={props.design ? true : false} />,
+  Hashtag
 }
 
 const Mdx = ({ node, offspring, orderedOffspring }) => {

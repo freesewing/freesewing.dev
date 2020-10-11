@@ -1,11 +1,6 @@
 require('dotenv').config()
 const searchData = require('./src/algolia')
-const languages = require('@freesewing/i18n').languages
-const ignore = []
-for (let lang in languages) {
-  if (lang !== process.env.GATSBY_LANGUAGE) ignore.push(`**/${lang}.md`)
-}
-const jargon = require('@freesewing/i18n').jargon[process.env.GATSBY_LANGUAGE]
+const jargon = require('@freesewing/i18n').jargon.en
 
 
 const plugins = [
@@ -24,7 +19,12 @@ const plugins = [
     options: {
       path: `${__dirname}/markdown/dev`,
       name: 'markdown',
-      ignore: ignore
+      ignore: [
+        '**/nl.md',
+        '**/es.md',
+        '**/fr.md',
+        '**/de.md',
+      ]
     }
   },
   {
@@ -36,7 +36,9 @@ const plugins = [
         {
           resolve: 'gatsby-remark-images',
           options: {
-            maxWidth: 756
+            maxWidth: 800,
+            showCaptions: ['title', 'alt'],
+            markdownCaptions: true
           }
         }
       ],
@@ -44,7 +46,7 @@ const plugins = [
         {
           resolve: 'gatsby-remark-images',
           options: {
-            maxWidth: 756
+            maxWidth: 800,
           }
         },
         {
@@ -94,7 +96,7 @@ if (process.env.CONTEXT === 'production' && process.env.HEAD === 'master') {
     options: {
       appId: process.env.GATSBY_ALGOLIA_API_ID,
       apiKey: process.env.GATSBY_ALGOLIA_UPDATE_KEY,
-      queries: searchData(process.env.GATSBY_LANGUAGE),
+      queries: searchData('en'),
       chunkSize: 10000
     }
   })

@@ -18,7 +18,7 @@ const links = {
  // videos: 'Videos',
 }
 const contrib = {
-  contributors: 'For all contributors',
+  contributors: 'For all',
   developers: 'For developers',
   editors: 'For editors',
   translators: 'For translators',

@@ -50,6 +50,21 @@ const Howtos = props => {
           }
         }
       }
+      dev: allMdx(
+        filter: { slug: { regex: "/howtos/dev/[^\/]+/en/" } }
+        sort: { fields: [frontmatter___order, frontmatter___title], order: ASC }
+      ) {
+        edges {
+          node {
+            slug
+            frontmatter {
+              title
+              for
+              about
+            }
+          }
+        }
+      }
     }
 `)
 
@@ -67,6 +82,8 @@ const Howtos = props => {
   list.push(<ul className='preview-list'>{data.code.edges.map(node => renderNode(node))}</ul>)
   list.push(<h3>Working with our core library</h3>)
   list.push(<ul className='preview-list'>{data.core.edges.map(node => renderNode(node))}</ul>)
+  list.push(<h3>Setting up your development environment</h3>)
+  list.push(<ul className='preview-list'>{data.dev.edges.map(node => renderNode(node))}</ul>)
 
   return list
 

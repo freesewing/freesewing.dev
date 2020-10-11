@@ -1,6 +1,6 @@
 ![FreeSewing](https://freesewing.org/banner.jpg)
 <p align="center">
-  <a href="https://gitter.im/freesewing/freesewing"><img src="https://badgen.net/badge/chat/on%20Gitter/cyan" alt="Chat on Gitter"></a>
+  <a href="https://chat.freesewing.org" title="Chat with us on Discord"><img src="https://img.shields.io/discord/698854858052075530?label=Chat%20on%20Discord" alt="Chat with us on Discord"/></a>
   <a href="https://freesewing.org/patrons/join"><img src="https://badgen.net/badge/become/a%20Patron/FF5B77" alt="Become a Patron"></a>
   <a href="https://app.netlify.com/sites/fs-org-en/deploys"><img src="https://api.netlify.com/api/v1/badges/c87c4827-2039-4a65-b1c2-0ba6e12cbf0d/deploy-status" alt=Deploys by Netlify" /></a>
 </p>
@@ -41,7 +41,7 @@ should [become a patron](https://freesewing.org/patrons/join).
 
  - 💻 Makers website: [freesewing.org](https://freesewing.org)
  - 💻 Developers website: [freesewing.dev](https://freesewing.dev)
- - 💬 Chat: [gitter.im/freesewing](https://gitter.im/freesewing/chat)
+ - 💬 Chat: On Discord via [chat.freesewing.org](https://chat.freesewing.org/)
  - 🐦 Twitter: [@freesewing_org](https://twitter.com/freesewing_org)
  - 📷 Instagram: [@freesewing_org](https://instagram.com/freesewing_org)
 
@@ -52,7 +52,7 @@ See [the license file](https://github.com/freesewing/freesewing/blob/develop/LIC
 
 ## Where to get help 🤯
 
-Our [chatroom on Gitter](https://gitter.im/freesewing/chat) is the best place to ask questions,
+Our [chatrooms on Discord](https://chat.freesewing.org) are the best place to ask questions,
 share your feedback, or just hang out.
 
 If you want to report a problem, please [create an issue](https://github.com/freesewing/freesewing/issues/new).
