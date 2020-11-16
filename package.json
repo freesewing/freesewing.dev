@@ -16,7 +16,7 @@
     "@bugsnag/js": "^7.1.1",
     "@bugsnag/plugin-react": "^7.1.1",
     "@freesewing/components": "2.9.0",
-    "@freesewing/core": "2.9.0",
+    "@freesewing/core": "2.10.6",
     "@freesewing/css-theme": "2.9.0",
     "@freesewing/examples": "2.9.0",
     "@freesewing/i18n": "2.9.0",
