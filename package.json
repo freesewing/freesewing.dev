@@ -22,7 +22,7 @@
     "@freesewing/i18n": "2.9.0",
     "@freesewing/models": "2.9.0",
     "@freesewing/mui-theme": "2.9.0",
-    "@freesewing/pattern-info": "2.9.0",
+    "@freesewing/pattern-info": "2.10.7",
     "@freesewing/plugin-bundle": "2.9.0",
     "@freesewing/rendertest": "2.9.0",
     "@freesewing/tutorial": "2.9.0",
