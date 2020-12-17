@@ -69,7 +69,7 @@
     "remark-jargon": "2.9.0",
     "sharp": "^0.25.1",
     "styled-components": "^4.4.0",
-    "typeface-permanent-marker": "0.0.72",
+    "typeface-permanent-marker": "1.1.13",
     "typeface-raleway": "0.0.75",
     "typeface-roboto-condensed": "0.0.75"
   },
