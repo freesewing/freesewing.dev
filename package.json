@@ -31,7 +31,7 @@
     "@material-ui/icons": "4.9.1",
     "@material-ui/lab": "4.0.0-alpha.56",
     "@mdx-js/mdx": "1.6.18",
-    "@mdx-js/react": "1.6.18",
+    "@mdx-js/react": "1.6.22",
     "algoliasearch": "4.3.0",
     "dotenv": "8.2.0",
     "gatsby": "^2.25.4",
