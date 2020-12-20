@@ -14722,10 +14722,10 @@ remark-html@13.0.1:
     hast-util-to-html "^7.0.0"
     mdast-util-to-hast "^10.0.0"
 
-remark-jargon@2.9.0, remark-jargon@^2.9.0:
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/remark-jargon/-/remark-jargon-2.9.0.tgz#7b1f38132d80b368b66b5538aec5e7cb00d99e36"
-  integrity sha512-BlKGVpcdupB8TqEshRQ6hB4WX/oSovys79eubDOpHBBKKo/OcIQVWcgOexNrBCcgVgHq0hOPpT7vKuOuMNQUrQ==
+remark-jargon@2.10.7, remark-jargon@^2.9.0:
+  version "2.10.7"
+  resolved "https://registry.yarnpkg.com/remark-jargon/-/remark-jargon-2.10.7.tgz#92aaaecd3287b8f006aeedfffb8d888fef33c13c"
+  integrity sha512-ykhzFCSfrObkfJwSalQ6ezdWzVOQueZ54tvgybgb3fVSUQtkl9JFYG6TdF5rssludJyG1dAfrYjP2fz8SoTXVg==
   dependencies:
     unist-util-visit "^2.0.3"
 
