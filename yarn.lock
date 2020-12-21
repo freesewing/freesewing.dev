@@ -1580,10 +1580,10 @@
   resolved "https://registry.yarnpkg.com/@freesewing/tutorial/-/tutorial-2.9.0.tgz#bcbab9458b872047354fef6b0ac1b6f02dd07566"
   integrity sha512-DdUTNDJU9CtYL5GmZ+tkaqPSPr17khYl2mnmJjGUb+LG2QD7EmSTi9qfGP0qkXjp5gJTtI/CGdBYoWOZtjmjcA==
 
-"@freesewing/utils@2.9.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@freesewing/utils/-/utils-2.9.0.tgz#b0d55c6fd321cae7ad516976b0da7aea2e656427"
-  integrity sha512-YiXDFyjwY5vrxoMlZds/BjdTjUmDgI1RWkgNd/iIZvEsKvnEfGpMMA1YWP2zw6hMQcNOym9oIsKzC8MDhovp/g==
+"@freesewing/utils@2.10.7":
+  version "2.10.7"
+  resolved "https://registry.yarnpkg.com/@freesewing/utils/-/utils-2.10.7.tgz#35f80cbd18badff647e325a0033207ac014b3fff"
+  integrity sha512-e2WwV+OhyWjoyFywXd3uNax2Yx0z6Ml5aljmNpr96GHOXebR+JuaNufFGQoUAWWR/PeSCo7EFygeBXpegOBKVg==
 
 "@graphql-tools/batch-execute@^7.0.0":
   version "7.0.0"
