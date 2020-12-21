@@ -55,7 +55,7 @@
     "gatsby-remark-jargon": "2.9.0",
     "gatsby-remark-prismjs": "3.5.10",
     "gatsby-remark-smartypants": "2.3.10",
-    "gatsby-source-filesystem": "2.7.0",
+    "gatsby-source-filesystem": "2.8.0",
     "gatsby-transformer-remark": "2.13.0",
     "gatsby-transformer-sharp": "2.5.17",
     "node-sass": "^4.14.1",
