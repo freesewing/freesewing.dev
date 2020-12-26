@@ -16,9 +16,7 @@ const links = {
   howtos: 'Howtos',
   reference: 'Reference',
  // videos: 'Videos',
-}
-const contrib = {
-  contributors: 'For all',
+  contributors: 'For contributors',
   developers: 'For developers',
   editors: 'For editors',
   translators: 'For translators',
@@ -47,19 +45,6 @@ const MainMenu = ({ app, active = '', iconsOnly = false }) => (
         >
           {icons[link]}
           {!iconsOnly && <span className="text">{links[link]}</span>}
-        </Link>
-      </li>
-    ))}
-    <li className='divider'>Contributor documentation:</li>
-    {Object.keys(contrib).map(link => (
-      <li key={link} className={`contrib ${link}`}>
-        <Link
-          to={`/${link}/`}
-          className={link === active ? 'active' : ''}
-          title={contrib[link]}
-        >
-          {icons[link]}
-          {!iconsOnly && <span className="text">{contrib[link]}</span>}
         </Link>
       </li>
     ))}
