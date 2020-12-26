@@ -19,7 +19,7 @@
     "@freesewing/core": "2.10.7",
     "@freesewing/css-theme": "2.10.8-rc.0",
     "@freesewing/examples": "2.10.8-rc.0",
-    "@freesewing/i18n": "2.10.8-rc.0",
+    "@freesewing/i18n": "2.10.7",
     "@freesewing/models": "2.10.8-rc.0",
     "@freesewing/mui-theme": "2.10.8-rc.0",
     "@freesewing/pattern-info": "2.10.7",

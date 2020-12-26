@@ -1253,10 +1253,10 @@
   resolved "https://registry.yarnpkg.com/@freesewing/examples/-/examples-2.10.8-rc.0.tgz#9dcf6e7c0ec48f82619ef0e4195cda346ae7ce90"
   integrity sha512-r+Qr7hTKVOAXBwaHAP5h7hFLdC7/Vj9adlN8IarObkO9naLRQsemKNEh3N0axmNzmnIzCSRrh2uXYxAIFXzbPQ==
 
-"@freesewing/i18n@2.10.8-rc.0":
-  version "2.10.8-rc.0"
-  resolved "https://registry.yarnpkg.com/@freesewing/i18n/-/i18n-2.10.8-rc.0.tgz#982e77d476ef9a05e68ba7784b30948925bad2a9"
-  integrity sha512-V9Phro74dJ9VX9ggxlW0x5iyd6tI8/ojXIRKe+NiDfWBe7FFod2Cicwe+IPOV7ZSNyzIINyJxduEb2/MdGO1cg==
+"@freesewing/i18n@2.10.7":
+  version "2.10.7"
+  resolved "https://registry.yarnpkg.com/@freesewing/i18n/-/i18n-2.10.7.tgz#a87c9ec3cc443df4f90fea1cc443e86a0f125ef5"
+  integrity sha512-0NlI4ehni4ocKJwQ3kGrKCpGwtQb7vOukXSSsDDSs0XqnMJrZPcATBOM34yif7AMtAl1oMZk2AYLEMZHF9RZlQ==
 
 "@freesewing/models@2.10.8-rc.0":
   version "2.10.8-rc.0"
