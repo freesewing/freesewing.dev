@@ -11,16 +11,10 @@ const Preview = props => {
     })
     : []
   return (
-  <div className={`preview shadow ${props.frontmatter.for || ''}`}>
+  <div className={`preview ${props.frontmatter.for || ''}`}>
     <Link to={`/${props.parent.relativeDirectory}/`} className='cover' />
-    <div className='header'>
-      <h3>
-        {icons || <span className='icon'>{props.icon}</span>}
-        <span className='text'>{props.frontmatter.title}</span>
-      </h3>
-    </div>
     <div className='body'>
-      <h5>Description</h5>
+      <h5>{props.frontmatter.title}</h5>
       <Markdown source={props.frontmatter.about} />
       {!props.brief && props.frontmatter.goals && (
         <>
@@ -30,6 +24,9 @@ const Preview = props => {
           </ul>
         </>
       )}
+    </div>
+    <div className='footer'>
+      {icons || <span className='icon'>{props.icon}</span>}
     </div>
   </div>
 )}

@@ -73,7 +73,7 @@ export default function ButtonAppBar(props) {
 
           <Button href="/news/" style={{...style.iconButton}}>
             <UpdatesIcon style={iconStyle} size={28}/>
-            Recent Updates
+            News & Updates
           </Button>
 
           <span style={style.spacer} />

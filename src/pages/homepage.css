@@ -77,6 +77,20 @@
   text-align: center;
   margin-top: 3rem;
 }
+#homepage > div.content {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+#homepage > div.content div.content-cols {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#homepage > div.content div.content-cols > div {
+  max-width: calc(50% - 1rem);
+}
+
 
 /* mobile and tablet */
 @media (max-width: 959px) {
