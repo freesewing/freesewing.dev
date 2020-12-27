@@ -11,7 +11,6 @@ import Fab from '@material-ui/core/Fab'
 import '@freesewing/css-theme'
 import 'typeface-roboto-condensed'
 import 'typeface-permanent-marker'
-import Notification from '../notification'
 import Loading from '../loading'
 import Meta from './meta'
 import MobileMenu from '../menus/mobile'
@@ -109,11 +108,6 @@ const AppWrapper = props => {
             <UpIcon fontSize="inherit" />
           </Fab>
           {props.noLayout ? props.children : <Layout {...props}>{props.children}</Layout>}
-          <Notification
-            notification={props.app.notification}
-            setNotification={props.app.setNotification}
-            mobile={props.app.mobile}
-          />
           <Loading loading={props.app.loading} />
           {props.app.mobile && (
             <div className="menu" onClick={props.app.closeNav}>

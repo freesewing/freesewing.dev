@@ -4,6 +4,7 @@ import MainAside from '../menus/main-aside'
 import './default.scss'
 
 const DefaultLayout = (props) => {
+  console.log(props.pageContext)
   return (
     <div className="fs-sa" dataLayout="docs">
       <aside>

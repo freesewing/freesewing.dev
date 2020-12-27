@@ -1,25 +1,17 @@
 import { useState } from 'react'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import { navigate as gatsbyNavigate } from 'gatsby'
-import { useIntl } from 'react-intl'
 import useLocalStorage from './useLocalStorage'
 
 function useApp() {
-
-  // i18n
-  const intl = useIntl()
 
   // Persistent state
   const [theme, setTheme] = useLocalStorage('theme', 'light')
 
   // React State
   const [crumbs, setCrumbs] = useState([])
-  const [description, setDescription] = useState(
-    intl.formatMessage({ id: 'cty.weAreACommunityOfMakers' }) +
-      '. ' +
-      intl.formatMessage({ id: 'cty.weProvideMtmSewingPatterns' }) +
-      '.'
-  )
+  const [description, setDescription] = 'FreeSewing platform documentation'
+
   const [image, setImage] = useState(`https://freesewing.org/share/language.wide.jpg`)
   const [loading, setLoading] = useState(false)
   const [menu, setMenu] = useState(false)
@@ -31,12 +23,6 @@ function useApp() {
   // Persist user data to local storage
   const persist = (data) => {
     if (data.theme) setTheme(data.theme)
-  }
-
-  // Translate helper method
-  const translate = (id, values = false) => {
-    if (!values) return intl.formatMessage({ id })
-    else return intl.formatMessage({ id }, values)
   }
 
   // Toggles
@@ -85,10 +71,6 @@ function useApp() {
     // Toggles
     toggleDarkMode,
     toggleMenu,
-
-    // Translation
-    translate,
-    intl,
 
     // Media queries
     mobile,

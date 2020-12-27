@@ -46,6 +46,9 @@ const Page = props => {
       toc={toc}
       active="docs"
       wide={node.frontmatter.wide}
+
+      pageContext={props.pageContext}
+      tocItems={node.tableOfContents.items || []}
     >
       {props.path === '/tutorials/' && <div className='previews'><Tutorials list/></div>}
       {props.path === '/guides/' && <div className='previews'><Guides list/></div>}
