@@ -1,6 +1,5 @@
 import React from 'react'
 import Logo from '@freesewing/components/Logo'
-import Button from '@material-ui/core/Button'
 import { Link } from 'gatsby'
 
 import './splash.scss'

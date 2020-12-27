@@ -8,8 +8,8 @@ const Page = (props) => {
   const app = useApp(false)
 
   return (
-    <AppWrapper app={app} title={app.translate('app.search')}>
-      <Search search={app.translate('app.search')} />
+    <AppWrapper app={app} title='search'>
+      <Search search='Search'/>
     </AppWrapper>
   )
 }

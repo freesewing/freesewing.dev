@@ -6,7 +6,7 @@ import DarkModeIcon from '@material-ui/icons/Brightness3'
 import SearchIcon from '@material-ui/icons/Search'
 import SitemapIcon from '@material-ui/icons/Map'
 
-const NavbarIcons = ({ translate, toggleDarkMode, theme }) => {
+const NavbarIcons = ({ toggleDarkMode, theme }) => {
   const colors = {
     light: '#212529',
     dark: '#f8f9fa'
@@ -37,7 +37,7 @@ const NavbarIcons = ({ translate, toggleDarkMode, theme }) => {
         aria-label="menu"
         color="inherit"
         href="/search/"
-        title={translate('app.search')}
+        title='Search'
       >
         <SearchIcon style={style.icon} />
       </IconButton>
@@ -46,7 +46,7 @@ const NavbarIcons = ({ translate, toggleDarkMode, theme }) => {
         aria-label="menu"
         color="inherit"
         href="/sitemap/"
-        title={translate(`app.sitemap`)}
+        title='Sitemap'
       >
         <SitemapIcon style={style.icon} />
       </IconButton>
@@ -54,7 +54,7 @@ const NavbarIcons = ({ translate, toggleDarkMode, theme }) => {
         style={style.darkModeButton}
         aria-label="menu"
         onClick={toggleDarkMode}
-        title={theme === 'dark' ? translate('app.lightMode') : translate('app.darkMode')}
+        title={theme === 'dark' ? 'Light mode' : 'Dark mode'}
       >
         {theme === 'dark' ? (
           <LightModeIcon style={style.icon} />

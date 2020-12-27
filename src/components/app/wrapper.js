@@ -81,7 +81,7 @@ const AppWrapper = props => {
           {props.app.mobile ? (
             <>
               <Fab
-                title={props.app.translate('app.menu')}
+                title='Menu'
                 color="primary"
                 className="fab primary only-xs"
                 aria-label="Menu"
@@ -98,7 +98,7 @@ const AppWrapper = props => {
             !props.noNavbar && <Navbar app={props.app} />
           )}
           <Fab
-            title={props.app.translate('app.scrollToTop')}
+            title='Scroll to top'
             color="primary"
             className="fab secondary"
             arial-label="Scroll to top"

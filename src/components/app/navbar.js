@@ -84,7 +84,6 @@ export default function ButtonAppBar(props) {
           </Button>
 
           <NavbarIcons
-            translate={props.app.translate}
             toggleDarkMode={props.app.toggleDarkMode}
             theme={props.app.theme}
           />

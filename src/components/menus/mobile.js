@@ -83,11 +83,11 @@ const MobileMenu = ({ app, context }) => {
         <IconButton
           style={style.darkModeButton}
           aria-label={
-            app.theme === 'dark' ? app.translate('app.lightMode') : app.translate('app.darkMode')
+            app.theme === 'dark' ? 'Light mode' : 'Dark mode'
           }
           onClick={app.toggleDarkMode}
           title={
-            app.theme === 'dark' ? app.translate('app.lightMode') : app.translate('app.darkMode')
+            app.theme === 'dark' ? 'Light mode' : 'Dark mode'
           }
         >
           {app.theme === 'dark' ? (

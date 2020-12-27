@@ -29,7 +29,7 @@ const MobileAside = ({ app, content }) => {
       <>
         <Fab
           style={style.fab}
-          title={app.translate('app.patternOptions')}
+          title='Pattern options'
           color="accent"
           className="fab accent"
           aria-label="Menu"

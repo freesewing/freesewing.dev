@@ -18,7 +18,7 @@ const IconBar = () => {
 
   return (
     <div className="icons">
-      {Object.keys(icons).map((icon) => (
+      {Object.keys(icons).map(icon => (
         <div className="icon" key={icon}>
           <Link to={`/${icon}/`} title={icon}>
             {icons[icon]}
