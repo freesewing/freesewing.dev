@@ -55,7 +55,7 @@ const ReadMore = ({ root=false, recurse = false, link = false, box = false, titl
   if (box || title)
     return (
       <Blockquote type="note">
-        <h5>{title ? title : <FormattedMessage id="app.furtherReading" />}</h5>
+        <h5>{title ? title : 'Further reading'}</h5>
         {renderDocs(root)}
       </Blockquote>
     )

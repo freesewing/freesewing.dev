@@ -13,7 +13,6 @@ function useApp() {
   const [description, setDescription] = 'FreeSewing platform documentation'
 
   const [image, setImage] = useState(`https://freesewing.org/share/language.wide.jpg`)
-  const [loading, setLoading] = useState(false)
   const [menu, setMenu] = useState(false)
   const [title, setTitle] = useState('FreeSewing')
   const [mounted, setMounted] = useState(false) // false until app is mounted
@@ -51,8 +50,6 @@ function useApp() {
     setDescription,
     image,
     setImage,
-    loading,
-    setLoading,
     menu,
     setMenu,
     title,

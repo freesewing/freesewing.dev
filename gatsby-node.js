@@ -1,5 +1,4 @@
 const path = require('path')
-const i18n = require('@freesewing/i18n')
 
 // Expose some variables set by Netlify to send to Bugsnag
 process.env.GATSBY_NETLIFY = process.env.NETLIFY
@@ -8,9 +7,6 @@ process.env.GATSBY_NETLIFY_CONTEXT = process.env.CONTEXT
 process.env.GATSBY_NETLIFY_REPOSITORY_URL = process.env.REPOSITORY_URL
 process.env.GATSBY_NETLIFY_BRANCH = process.env.BRANCH
 process.env.GATSBY_NETLIFY_COMMIT_REF = process.env.COMMIT_REF
-
-const translate = (id) =>
-  i18n.strings.en[id] || `No translation for ${id}`
 
 const slugChunks = (slug) => {
   const chunks = []
@@ -206,7 +202,7 @@ const createMdxPages = async function (pages, createPage, graphql) {
       let up = getParentSlug(slug)
       pages[slug].context.up = {
         slug: up,
-        title: pages[up] ? pages[up].context.title : translate('app.docs')
+        title: pages[up] ? pages[up].context.title : 'Docs'
       }
       // Children is a special prop in react, so we'll offspring
       pages[slug].context.offspring = getOffspring(slug, pages, tree)
@@ -216,6 +212,7 @@ const createMdxPages = async function (pages, createPage, graphql) {
     for (const slug in pages) {
       pages[slug].context.siblings = getSiblings(slug, pages, tree)
       pages[slug].context.orderedSiblings = orderOffspring(pages[slug].context.siblings, pages)
+      pages[slug].context.tree = tree
     }
     // Only do this after all offspring and siblings have been discovered
     let prevs = {}
@@ -251,7 +248,8 @@ const createMdxPages = async function (pages, createPage, graphql) {
         component: path.resolve(`./src/pages/_sitemap.js`),
         context: {
           pages: mdxList(pages),
-          tree: tree
+          tree: tree,
+          slug: '/sitemap/'
         }
       })
       resolve(true)

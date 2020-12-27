@@ -14,7 +14,7 @@ const NavbarIcons = ({ toggleDarkMode, theme }) => {
 
   const style = {
     iconButton: {
-      color: colors[theme]
+      color: colors.dark
     },
     icon: {
       maxWidth: '24px',
@@ -26,7 +26,8 @@ const NavbarIcons = ({ toggleDarkMode, theme }) => {
     darkModeIcon: {
       transform: 'rotate(26deg)',
       maxWidth: '24px',
-      maxHeight: '24px'
+      maxHeight: '24px',
+      color: '#ffe066'
     }
   }
 
@@ -56,11 +57,10 @@ const NavbarIcons = ({ toggleDarkMode, theme }) => {
         onClick={toggleDarkMode}
         title={theme === 'dark' ? 'Light mode' : 'Dark mode'}
       >
-        {theme === 'dark' ? (
-          <LightModeIcon style={style.icon} />
-        ) : (
-          <DarkModeIcon style={style.darkModeIcon} />
-        )}
+        {theme === 'dark'
+          ? <LightModeIcon style={style.darkModeIcon} />
+          : <DarkModeIcon style={style.darkModeIcon} />
+        }
       </IconButton>
     </>
   )

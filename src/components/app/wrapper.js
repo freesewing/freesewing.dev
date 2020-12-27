@@ -11,7 +11,6 @@ import Fab from '@material-ui/core/Fab'
 import '@freesewing/css-theme'
 import 'typeface-roboto-condensed'
 import 'typeface-permanent-marker'
-import Loading from '../loading'
 import Meta from './meta'
 import MobileMenu from '../menus/mobile'
 import useScrolledDown from '../../hooks/useScrolledDown'
@@ -108,7 +107,6 @@ const AppWrapper = props => {
             <UpIcon fontSize="inherit" />
           </Fab>
           {props.noLayout ? props.children : <Layout {...props}>{props.children}</Layout>}
-          <Loading loading={props.app.loading} />
           {props.app.mobile && (
             <div className="menu" onClick={props.app.closeNav}>
               <MobileMenu app={props.app} context={props.context} />

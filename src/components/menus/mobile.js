@@ -5,7 +5,7 @@ import DarkModeIcon from '@material-ui/icons/Brightness3'
 import SitemapIcon from '@material-ui/icons/Map'
 import SearchIcon from '@material-ui/icons/Search'
 import IconButton from '@material-ui/core/IconButton'
-import MainAside from './main-aside'
+import MainMenu from './main'
 import Icon from '@freesewing/components/Icon'
 
 const MobileMenu = ({ app, context }) => {
@@ -98,7 +98,7 @@ const MobileMenu = ({ app, context }) => {
         </IconButton>
       </div>
 
-      <MainAside app={app} />
+      <MainMenu app={app} />
       <div className="context-wrapper">{context}</div>
     </div>
   )

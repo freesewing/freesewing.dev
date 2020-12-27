@@ -1,6 +1,5 @@
 require('dotenv').config()
 const searchData = require('./src/algolia')
-const jargon = require('@freesewing/i18n').jargon.en
 
 
 const plugins = [
@@ -60,10 +59,6 @@ const plugins = [
         'gatsby-remark-copy-linked-files',
         'gatsby-remark-autolink-headers',
         'gatsby-remark-smartypants',
-        {
-          resolve: 'gatsby-remark-jargon',
-          options: { jargon }
-        }
       ]
     }
   },
