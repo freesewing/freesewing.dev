@@ -34,7 +34,7 @@ const icons = {
   translators: <TranslatorIcon />
 }
 
-const MainMenu = ({ app, active = '', iconsOnly = false }) => (
+const MainMenu = ({ app, active = '', iconsOnly = false, context=null }) => (
   <ul className={iconsOnly ? 'footer-main-menu' : 'aside-main-menu'}>
     {Object.keys(links).map(link => (
       <li key={link}>
@@ -45,6 +45,7 @@ const MainMenu = ({ app, active = '', iconsOnly = false }) => (
         >
           {icons[link]}
           {!iconsOnly && <span className="text">{links[link]}</span>}
+          {(link === active) ? context : null}
         </Link>
       </li>
     ))}
