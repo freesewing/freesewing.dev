@@ -25,8 +25,8 @@ const Reference = props => {
 
   const renderNode = node => <li key={node.node.slug} className={node.node.frontmatter.for}>
     <Link to={`/${node.node.slug.slice(0,-2)}`}>
-      {node.node.frontmatter.title}
-      <span className='about'>{node.node.frontmatter.about}</span>
+      <h5>{node.node.frontmatter.title}</h5>
+      <p>{node.node.frontmatter.about}</p>
     </Link>
   </li>
 

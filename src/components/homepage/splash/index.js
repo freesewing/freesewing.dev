@@ -31,7 +31,7 @@ const Splash = ({ app }) => {
     boxes.push(
       <div
         key={group}
-        className={`${group} poh}`}
+        className={`${group} poh`}
       >
         <Link to={`/${group}/`} className='cover' />
         <h3>For {group}</h3>

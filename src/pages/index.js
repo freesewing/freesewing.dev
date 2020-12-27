@@ -15,7 +15,7 @@ import LatestNews from '../components/LatestNews'
 import Splash from '../components/homepage/splash'
 import Iconbar from '../components/homepage/iconbar'
 
-import './homepage.css'
+import './homepage.scss'
 
 const Page = props => {
 

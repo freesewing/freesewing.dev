@@ -4,8 +4,9 @@ div.previews {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
   div.preview {
-    max-width: 300px;
+    width: calc(25% - 1rem);
     position: relative;
     border-radius: 0.5rem;
     display: flex;
@@ -14,14 +15,17 @@ div.previews {
     margin: 0.25rem;
     overflow: hidden;
     border: 1px solid white;
+    background-repeat: no-repeat;
+    background-position: bottom right 10px;
+    background-size: 50% auto;
+    div.body {
+      flex-grow: 2;
+    }
     div.footer {
-      background-repeat: no-repeat;
-      background-position: bottom right 20px;
-      background-size: auto 100px;
-      min-height: calc(100px - 1rem);
+      min-height: calc(40px - 1rem);
       padding: 0.5rem 1rem;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       flex-wrap: wrap;
       svg {
         width: 32px;
@@ -65,31 +69,60 @@ div.previews {
   div.preview.contributors {
     background-color: $oc-pink-0;
     border-color: $oc-pink-5;
-    div.footer {
-      background-image: url('/splash/contributor.png');
+    background-image: url('/splash/contributor.png');
+    h5, p {
+      text-shadow: 1px  1px 1px $oc-pink-0, -1px  1px 1px $oc-pink-0, 1px -1px 1px $oc-pink-0, -1px -1px 1px $oc-pink-0;
     }
   }
   div.preview.developers {
     background-color: $oc-violet-0;
     border-color: $oc-violet-5;
-    div.footer {
-      background-image: url('/splash/developer.png');
+    background-image: url('/splash/developer.png');
+    h5, p {
+      text-shadow: 1px  1px 1px $oc-violet-0, -1px  1px 1px $oc-violet-0, 1px -1px 1px $oc-violet-0, -1px -1px 1px $oc-violet-0;
     }
   }
   div.preview.editors div.footer {
     background-color: $oc-cyan-0;
     border-color: $oc-cyan-5;
-    div.footer {
-      background-image: url('/splash/editor.png');
+    background-image: url('/splash/editor.png');
+    h5, p {
+      text-shadow: 1px  1px 1px $oc-cyan-0, -1px  1px 1px $oc-cyan-0, 1px -1px 1px $oc-cyan-0, -1px -1px 1px $oc-cyan-0;
     }
   }
   div.preview.translators div.footer {
     background-color: $oc-yellow-0;
     border-color: $oc-yellow-5;
-    div.footer {
-      background-image: url('/splash/translator.png');
+    background-image: url('/splash/translator.png');
+    h5, p {
+      text-shadow: 1px  1px 1px $oc-yellow-0, -1px  1px 1px $oc-yellow-0, 1px -1px 1px $oc-yellow-0, -1px -1px 1px $oc-yellow-0;
     }
   }
 
 }
+/* mobile and tablet and slate */
+@media (max-width: 1199px) and (min-width: 960px) {
+  div.previews > div.preview {
+    width: calc(33% - 1rem);
+  }
+}
+/* mobile and tablet */
+@media (max-width: 959px) and (min-width: 600px) {
+  div.previews > div.preview {
+    width: calc(50% - 1rem);
+    div.body {
+      padding-bottom: 50px;
+    }
+  }
+}
 
+/* mobile */
+@media (max-width: 599px) {
+  div.previews > div.preview {
+    width: calc(100% - 1rem);
+    background-size: auto 200px;
+    div.body {
+      padding-bottom: 50px;
+    }
+  }
+}

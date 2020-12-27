@@ -4,36 +4,50 @@ ul.preview-list {
   margin: 0;
   padding: 0;
   li {
-    margin-bottom: 1rem;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    line-height: 1.15;
-    span.about {
-      display: block;
-      font-size: 90%;
-      padding-bottom: 1rem;
-      margin-left: 1rem;
+    margin: 2px 0;
+    padding: 0 0.5rem;
+    h5 {
+      padding: 0 0.5rem;
+      margin: 0;
+    }
+    p {
+      font-family: 'Roboto condensed';
+      margin: 0;
+      font-size: 1.1rem;
+      padding: 0 0.5rem 1rem;
       font-weight: normal;
     }
+    a:hover {
+      text-decoration: none!important;
+    }
   }
-  li::before {
-    content: '';
-    padding: 0 4px;
-    border-radius: 4px;
-    margin-right: 0.5rem;
+  li:hover {
+    background-color: $oc-gray-1;
+    text-decoration: none;
   }
-  li.contributors::before {
-    background: $oc-pink-5;
+  li.contributors {
+    border-left: 5px solid $oc-pink-5;
   }
-  li.developers::before {
-    background: $oc-teal-5;
+  li.developers {
+    border-left: 5px solid $oc-teal-5;
   }
   li.editors::before {
     background: $oc-cyan-5;
   }
   li.translators::before {
     background: $oc-yellow-5;
+  }
+  li.contributors:hover {
+    background-color: $oc-pink-0;
+  }
+  li.developers:hover {
+    background-color: $oc-teal-0;
+  }
+  li.editors:hover {
+    background-color: $oc-cyan-0;
+  }
+  li.translators:hover {
+    background-color: $oc-yellow-0;
   }
 }

@@ -42,14 +42,14 @@ div.splash {
   }
 
   div.groups > div {
-    margin: 2rem 1rem;
+    margin: 2rem 0.5rem;
     border: 1px solid $oc-gray-5;
     padding: 0 2rem 0.5rem;
     border-radius: 6px;
     background-repeat: no-repeat;
     background-position: bottom right;
-    background-size: 43%;
-    width: calc(33% - 2rem);
+    background-size: 52%;
+    width: calc(25% - 5rem);
     background-color: $oc-gray-1;
     position: relative;
     h3 {
@@ -70,71 +70,68 @@ div.splash {
     background-image: url('/splash/contributor.png');
     border-color: $oc-pink-5;
     background-color: $oc-pink-0;
+    p {
+      text-shadow: 1px  1px 1px $oc-pink-0, -1px  1px 1px $oc-pink-0, 1px -1px 1px $oc-pink-0, -1px -1px 1px $oc-pink-0;
+    }
   }
   div.groups div.editors {
     background-image: url('/splash/editor.png');
     border-color: $oc-cyan-5;
     background-color: $oc-cyan-0;
+    p {
+      text-shadow: 1px  1px 1px $oc-cyan-0, -1px  1px 1px $oc-cyan-0, 1px -1px 1px $oc-cyan-0, -1px -1px 1px $oc-cyan-0;
+    }
   }
   div.groups div.translators {
     background-image: url('/splash/translator.png');
     border-color: $oc-yellow-5;
     background-color: $oc-yellow-0;
+    p {
+      text-shadow: 1px  1px 1px $oc-yellow-0, -1px  1px 1px $oc-yellow-0, 1px -1px 1px $oc-yellow-0, -1px -1px 1px $oc-yellow-0;
+    }
   }
   div.groups div.developers {
     background-image: url('/splash/developer.png');
     border-color: $oc-violet-5;
     background-color: $oc-violet-0;
-  }
-  div.groups div.active {
-    background-color: $oc-gray-9;
-    color: $oc-gray-0;
-  }
-  div.details {
-    width: calc(100% + 40px);
-    margin-left: -20px;
-    background: $oc-gray-9;
-    color: $oc-gray-0;
-    background-repeat: no-repeat;
-    background-position: bottom right 20px;
-    background-size: auto 33%;
-    section {
-      max-width: 700px;
-      width: calc(100% - 2rem - 40px);
-      margin: auto;
-      padding: 1rem;
-      a {
-        color: $oc-violet-2 !important;
-      }
+    p {
+      text-shadow: 1px  1px 1px $oc-violet-0, -1px  1px 1px $oc-violet-0, 1px -1px 1px $oc-violet-0, -1px -1px 1px $oc-violet-0;
     }
-  }
-  div.details.maker {
-    background-image: url('/splash/maker.png');
-  }
-  div.details.designer {
-    background-image: url('/splash/designer.png');
-  }
-  div.details.developer {
-    background-image: url('/splash/developer.png');
-  }
-  div.close-button {
-    padding-bottom: 1rem;
-    text-align: center;
   }
 }
 
+/* mobile and tablet and slate */
+@media (max-width: 1199px) and (min-width: 960px) {
+  div.splash {
+    div.groups {
+      flex-wrap:wrap;
+      > div {
+        width: calc(50% - 6rem);
+        margin: 0.5rem;
+        p {
+          max-width: 65%;
+        }
+      }
+    }
+  }
+}
 /* SM screens */
 @media (min-width: 600px) and (max-width: 959px) {
   div.splash {
-    div.groups div {
-      background-size: 200px;
-      padding: 0 1rem 170px 1rem;
-      margin: 2rem 1rem;
-      p {
-        max-width: 100%;
-      }
-      h3 {
-        line-height: 1;
+    div.groups {
+      flex-wrap:wrap;
+      > div {
+        background-size: 200px;
+        background-position: bottom center;
+        padding: 0 1rem 175px 1rem;
+        margin: 0.5rem;
+        width: calc(50% - 4rem);
+        p {
+          max-width: 100%;
+        }
+        h3 {
+          line-height: 1;
+        }
       }
     }
   }
@@ -158,9 +155,11 @@ div.splash {
       flex-wrap: wrap;
       margin-top: 0.5rem;
     }
-    div.groups div {
+    div.groups > div {
       width: 100%;
       margin: 0.5rem 1rem;
+      background-size: 50% auto;
+      padding-bottom: 40px;
     }
     div.details {
       background-size: 200px;
