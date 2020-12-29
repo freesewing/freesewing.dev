@@ -22,16 +22,6 @@ img.gatsby-resp-image-image {
   color: $oc-pink-5;
 }
 
-.theme-wrapper.light svg.freesewing.draft path.note {
-  stroke: $oc-violet-7;
-  fill: $oc-violet-5;
-  fill-opacity: 0.1;
-}
-.theme-wrapper.light svg.freesewing.draft text.fill-note {
-  fill: $oc-violet-7;
-}
-
-
 .theme-wrapper.light section#mdx table tr.hover:hover {
   background-color: $oc-gray-1;
 }
@@ -177,6 +167,7 @@ div.fs-sa {
 .theme-wrapper.light ul#main-menu li a svg {
   color: $oc-violet-5;
 }
+
 // Fix issues with notches
 g#notch {
   circle.outer {
