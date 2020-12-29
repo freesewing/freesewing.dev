@@ -3,7 +3,7 @@ const recommended = require('remark-preset-lint-recommended')
 const html = require('remark-html')
 const frontmatter = require('remark-frontmatter')
 
-const getQuery = language => `{
+const getQuery = () => `{
   allMdx(filter: {fileAbsolutePath: {regex: "/${language}.md/"}}) {
   	edges {
   	  node {
@@ -33,10 +33,10 @@ const flatten = arr => {
   })
 }
 
-const getSearchData = language => {
+const getSearchData = () => {
   const data = [
     {
-      query: getQuery(language),
+      query: getQuery(),
       transformer: ({ data }) => flatten(data.allMdx.edges),
       indexName: `${language}_freesewing_dev`,
       settings: {}
