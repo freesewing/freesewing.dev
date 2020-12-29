@@ -2,8 +2,6 @@ import React from 'react'
 import useApp from '../hooks/useApp'
 import AppWrapper from '../components/app/wrapper'
 
-import withLanguage from '../components/withLanguage'
-import Button from '@material-ui/core/Button'
 import './homepage.scss'
 import Pinned from '../components/mdx/pinned'
 import Tutorials from '../components/mdx/tutorials'
@@ -32,6 +30,8 @@ const Page = props => {
         <Iconbar />
         <Splash app={app} />
         <div className='content'>
+          <h2>Pinned</h2>
+          <Pinned />
           <h2>Recent updates</h2>
         </div>
         <div className="news">
@@ -58,4 +58,4 @@ const Page = props => {
   )
 }
 
-export default withLanguage(Page)
+export default Page

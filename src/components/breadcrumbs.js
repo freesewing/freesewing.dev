@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { FormattedMessage } from 'react-intl'
 
 const Breadcrumbs = ({ pageTitle, suffix, crumbs = [] }) => {
   const renderCrumb = (crumb) => {
@@ -15,7 +14,7 @@ const Breadcrumbs = ({ pageTitle, suffix, crumbs = [] }) => {
       <ul>
         <li>
           <Link to="/">
-            <FormattedMessage id="app.home" />
+            Home
           </Link>
         </li>
         {crumbs.map((crumb) => renderCrumb(crumb))}

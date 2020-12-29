@@ -43,7 +43,7 @@ const Page = (props) => {
   ]
 
   return (
-    <AppWrapper app={app} title={app.translate('app.sitemap')} context={context} text>
+    <AppWrapper app={app} title='Sitemap' context={context} text>
       {types.map( Type => {
         let type = Type.toLowerCase()
         return (

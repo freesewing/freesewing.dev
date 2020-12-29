@@ -7,7 +7,7 @@ const Preview = props => {
   const icons = props.frontmatter.icons
     ? props.frontmatter.icons.map(icon => {
       let AsComponent = iconlist[icon]
-      return <AsComponent />
+      return <AsComponent key={icon}/>
     })
     : []
   return (

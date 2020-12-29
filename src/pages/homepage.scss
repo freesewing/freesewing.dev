@@ -131,6 +131,9 @@ div.icons {
   #homepage div.news > div {
     min-width: calc(100% - 4rem);
   }
+  #homepage div.content-cols > div {
+    width: calc(100% - 1rem);
+  }
   div.icons {
     padding: 1rem 0;
     div.icon {

@@ -5,9 +5,13 @@ import Spinner from '@freesewing/components/Spinner'
 
 const LatestNews = ({ homepage=false }) => {
   useEffect(() => {
+    const CancelToken = axios.CancelToken
+    const source = CancelToken.source()
     axios
-      .get('https://raw.githubusercontent.com/freesewing/freesewing/develop/LATEST_DEVELOPER_NEWS.md')
-      .then((result) => {
+      .get(
+        'https://raw.githubusercontent.com/freesewing/freesewing/develop/LATEST_DEVELOPER_NEWS.md',
+      { cancelToken: source.token },
+      ).then((result) => {
         let n = []
         let a = false
         for (let line of result.data.split('\n')) {
@@ -25,12 +29,13 @@ const LatestNews = ({ homepage=false }) => {
         else setNews(n)
       })
       .catch((err) => console.log(err))
-  }, [])
+    return () => source.cancel()
+  }, [homepage])
   const [news, setNews] = useState(false)
 
   return news ? (
-    news.map((a) => (
-      <div className={`news-article ${homepage ? 'shadow' : '' }`}>
+    news.map((a, i) => (
+      <div className={`news-article ${homepage ? 'shadow' : '' }`} key={`article${i}`}>
         <Markdown source={a} />
       </div>
     ))

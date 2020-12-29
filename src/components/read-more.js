@@ -3,7 +3,6 @@ import useApp from '../hooks/useApp'
 import useNavigation from '../hooks/useNavigation'
 import { Link } from 'gatsby'
 import Blockquote from '@freesewing/components/Blockquote'
-import { FormattedMessage } from 'react-intl'
 import { getChildren } from '../utils'
 
 // FIXME: This only handles pages 2, 3, or 4 levels deep
@@ -56,7 +55,7 @@ const ReadMore = ({ root=false, recurse = false, link = false, box = false, titl
   if (box || title)
     return (
       <Blockquote type="note">
-        <h5>{title ? title : <FormattedMessage id="app.furtherReading" />}</h5>
+        <h5>{title ? title : 'Further reading'}</h5>
         {renderDocs(root)}
       </Blockquote>
     )

@@ -3,6 +3,7 @@ import { InstantSearch, Hits, connectStateResults, PoweredBy } from 'react-insta
 import algoliasearch from 'algoliasearch/lite'
 import Hit from './hit'
 import SearchBox from './search-box'
+import './search.scss'
 
 const Results = connectStateResults(({ searchState: state, searchResults: res, children }) =>
   res && res.nbHits > 0 ? children : `No results for '${state.query}'`

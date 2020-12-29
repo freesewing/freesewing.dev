@@ -1,9 +1,6 @@
 import React from 'react'
 import Logo from '@freesewing/components/Logo'
 import { Link } from 'gatsby'
-import { version } from '../../../package.json'
-import MainIcons from '../menus/main-aside'
-import { FormattedMessage } from 'react-intl'
 import ShoutOuts from './shout-outs'
 
 import './footer.scss'
@@ -82,7 +79,7 @@ const Footer = (props) => {
         </div>
         <div>
           <div className="logo">
-            <Link to="/" title={props.app.translate('app.home')}>
+            <Link to="/" title='Home'>
               <Logo size={props.app.mobile ? 96 : 133} />
             </Link>
             <div className="name">
