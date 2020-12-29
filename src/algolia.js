@@ -4,7 +4,7 @@ const html = require('remark-html')
 const frontmatter = require('remark-frontmatter')
 
 const getQuery = language => `{
-  allMdx(filter: {fileAbsolutePath: {regex: "/${language}.md/"}}) {
+  allMdx(filter: {fileAbsolutePath: {regex: "/en.md/"}}) {
   	edges {
   	  node {
         id
@@ -20,9 +20,9 @@ const getQuery = language => `{
 const flatten = arr => {
   return arr.map(node => {
     let it = {
-      objectId: node.node.id,
+      objectID: node.node.id,
       path: '/' + node.node.parent.relativeDirectory,
-      title: node.node.frontmatter.title.split('|').pop(),
+      title: node.node.frontmatter.title,
       content: remark()
         .use(recommended)
         .use(frontmatter)
@@ -38,7 +38,7 @@ const getSearchData = language => {
     {
       query: getQuery(language),
       transformer: ({ data }) => flatten(data.allMdx.edges),
-      indexName: `${language}_freesewing_dev`,
+      indexName: `en_freesewing_dev`,
       settings: {}
     }
   ]

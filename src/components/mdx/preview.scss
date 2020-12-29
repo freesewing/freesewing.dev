@@ -7,6 +7,7 @@ div.previews {
   justify-content: space-around;
   div.preview {
     width: calc(25% - 1rem);
+    min-width: 300px;
     position: relative;
     border-radius: 0.5rem;
     display: flex;
@@ -98,8 +99,20 @@ div.previews {
       text-shadow: 1px  1px 1px $oc-yellow-0, -1px  1px 1px $oc-yellow-0, 1px -1px 1px $oc-yellow-0, -1px -1px 1px $oc-yellow-0;
     }
   }
-
 }
+
+.theme-wrapper.dark div.previews {
+  div.preview.editors,
+  div.preview.translators,
+  div.preview.contributors,
+  div.preview.developers {
+    background-color: $oc-gray-9;
+    h5, p {
+      text-shadow: 1px  1px 1px $oc-gray-9, -1px  1px 1px $oc-gray-9, 1px -1px 1px $oc-gray-9, -1px -1px 1px $oc-gray-9;
+    }
+  }
+}
+
 /* mobile and tablet and slate */
 @media (max-width: 1199px) and (min-width: 960px) {
   div.previews > div.preview {

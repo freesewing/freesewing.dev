@@ -1,45 +1,12 @@
 @import '../../../node_modules/open-color/open-color.scss';
 
-div.fs-sa aside ul.aside-main-menu li,
-ul.aside-main-menu li {
-  display: block;
-  a span.text {
-    display: inline-block;
+ul#main-menu.aside-main-menu {
+  li {
+    display: block;
+    a span.text {
+      display: inline-block;
+    }
   }
-}
-div.fs-sa aside ul.aside-main-menu li.divider,
-ul.aside-main-menu li.divider {
-  font-size: 80%;
-  text-transform: none;
-  font-weight: bold;
-  padding-left: 1rem;
-  color: $oc-gray-6;
-}
-div.fs-sa aside ul.aside-main-menu li.contrib,
-ul.aside-main-menu li.contrib {
-  font-size: 90%;
-  a { padding: 0; }
-}
-
-ul.aside-main-menu li.contrib.contributors a {
-  border-left: 25px solid $oc-pink-5;
-}
-ul.aside-main-menu li.contrib.developers a {
-  border-left: 25px solid $oc-teal-5;
-}
-ul.aside-main-menu li.contrib.editors a {
-  border-left: 25px solid $oc-cyan-5;
-}
-ul.aside-main-menu li.contrib.translators a {
-  border-left: 25px solid $oc-yellow-5;
-}
-
-.theme-wrapper.dark ul.aside-main-menu li.contrib a svg,
-.theme-wrapper.light ul.aside-main-menu li.contrib a svg {
-  color: currentColor;
-}
-
-div.fs-sa aside ul.aside-main-menu {
   ul {
     margin: 0;
     padding: 0;
@@ -51,7 +18,6 @@ div.fs-sa aside ul.aside-main-menu {
   ul.level-3 > li,
   ul.level-4 > li,
   ul.level-5 > li {
-    padding: 0;
     line-height: 1.5;
   }
   ul.level-1 > li > a,
@@ -63,17 +29,18 @@ div.fs-sa aside ul.aside-main-menu {
     text-transform: none;
   }
   ul.level-1 > li > a {
-    padding: 0.2rem 2rem;
+    padding: 0.1rem 0.5rem 0.1rem 2rem;
     font-size: 1.25rem;
   }
   ul.level-2 > li > a {
-    padding-left: 3rem;
-    font-size: 1.1rem;
+    padding: 0.3rem 0.5rem 0.3rem 3rem;
+    font-size: 1.15rem;
     font-weight: bold;
+    line-height: 1;
   }
   ul.level-3 > li > a {
     padding-left: 4rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   ul.level-4 > li > a {
     padding-left: 5rem;
@@ -87,3 +54,24 @@ div.fs-sa aside ul.aside-main-menu {
   }
 }
 
+// Theme overrides
+.theme-wrapper.light > div.fs-sa > aside > div.sticky ul li {
+  a.active {
+    background-color: $oc-gray-3;
+  }
+  a:hover {
+  background-color: $oc-gray-2;
+  }
+}
+.theme-wrapper.dark > div.fs-sa > aside > div.sticky ul li {
+  a.active {
+    background-color: darken($oc-gray-8, 3);
+  }
+  a:hover {
+  background-color: $oc-gray-8;
+  }
+}
+ul#main-menu.aside-main-menu li a {
+  padding: 0.1rem 0;
+  text-transform: capitalize;
+}

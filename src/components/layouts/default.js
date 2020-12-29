@@ -1,6 +1,5 @@
 import React from 'react'
 import BreadCrumbs from '../breadcrumbs'
-import MainMenu from '../menus/main'
 import './default.scss'
 
 const DefaultLayout = (props) => {
@@ -8,7 +7,7 @@ const DefaultLayout = (props) => {
     <div className="fs-sa" dataLayout="docs">
       <aside>
         <div className="sticky">
-          <MainMenu app={props.app} active={props.active} pageContext={props.pageContext} />
+          {props.mainMenu}
         </div>
       </aside>
       <section>

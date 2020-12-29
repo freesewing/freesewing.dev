@@ -100,6 +100,27 @@ div.splash {
   }
 }
 
+.theme-wrapper.dark div.splash div.groups {
+  div.contributors p,
+  div.editors p,
+  div.translators p,
+  div.developers p {
+    text-shadow: 1px  1px 1px $oc-gray-9, -1px  1px 1px $oc-gray-9, 1px -1px 1px $oc-gray-9, -1px -1px 1px $oc-gray-9;
+  }
+  div.contributors {
+    border-color: $oc-pink-4;
+  }
+  div.editors {
+    border-color: $oc-cyan-4;
+  }
+  div.translators {
+    border-color: $oc-yellow-4;
+  }
+  div.developers {
+    border-color: $oc-violet-4;
+  }
+}
+
 /* mobile and tablet and slate */
 @media (max-width: 1199px) and (min-width: 960px) {
   div.splash {

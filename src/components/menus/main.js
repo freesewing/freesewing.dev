@@ -60,12 +60,11 @@ const getSiblings = (slug ,tree, chunks, level=1) => {
   for (let page of orderBy(branch.offspring, ['order'])) {
     if (onPath(page.slug, chunks)) subnav = <Submenu slug={slug} chunks={chunks} tree={tree} level={level+1} />
     else subnav = null
-    siblings.push(<li key={page.slug}><Link to={page.slug}>{page.title}</Link>{subnav}</li>)
+    siblings.push(<li key={page.slug}><Link to={page.slug} className={slug === page.slug ? 'active' : ''}>{page.title}</Link>{subnav}</li>)
   }
 
   return siblings
 }
-
 const Submenu = ({slug, chunks, tree, level=1}) => <ul className={`level-${level}`}>{getSiblings(slug, tree, chunks, level)}</ul>
 
 const MainMenu = ({ app, pageContext={} }) => {
@@ -79,12 +78,12 @@ const MainMenu = ({ app, pageContext={} }) => {
 
   return (
     <>
-    <ul className='aside-main-menu'>
+    <ul className='aside-main-menu' id='main-menu'>
       {Object.keys(links).map(link => (
         <li key={link}>
           <Link
             to={`/${link}/`}
-            className={link === chunks[0] ? 'active' : ''}
+            className={`/${link}/` === slug ? 'active' : ''}
             title={links[link]}
           >
             {icons[link]}

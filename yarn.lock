@@ -1268,6 +1268,11 @@
   resolved "https://registry.yarnpkg.com/@freesewing/plugin-sprinkle/-/plugin-sprinkle-2.10.8-rc.0.tgz#a96153b8769067dd548ba1d305eaf1c9256fa8ad"
   integrity sha512-SiMJTOe6+NwN4ifY48xhuyzahMuovev7jkDk6ThCHaIe3kGWmBLLb6/CXnXMTW+p3E+TI0LrGKPonBykuoQVAA==
 
+"@freesewing/plugin-theme@^2.10.8-rc.0":
+  version "2.10.8-rc.0"
+  resolved "https://registry.yarnpkg.com/@freesewing/plugin-theme/-/plugin-theme-2.10.8-rc.0.tgz#ca2cc9d2ca05bfb4835b6e23b03b3042f4b85a2d"
+  integrity sha512-0c+Z9iIxHtCYzCvsvJzotEg9iRo5heK2D7/stDGaw6VUNtbf09G0U7hOSWjU0RL2Chyr/TcV07Pb0slxpXSftg==
+
 "@freesewing/plugin-title@^2.10.8-rc.0":
   version "2.10.8-rc.0"
   resolved "https://registry.yarnpkg.com/@freesewing/plugin-title/-/plugin-title-2.10.8-rc.0.tgz#b12f271362cc07dba69a1000047c0f8f02f965a7"

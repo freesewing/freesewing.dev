@@ -8,7 +8,7 @@ const Page = (props) => {
   const app = useApp(false)
 
   return (
-    <AppWrapper app={app} title='search' wide>
+    <AppWrapper app={app} title='Search' wide>
       <Search search='Search'/>
     </AppWrapper>
   )

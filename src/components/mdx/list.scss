@@ -30,24 +30,45 @@ ul.preview-list {
     border-left: 5px solid $oc-pink-5;
   }
   li.developers {
-    border-left: 5px solid $oc-teal-5;
+    border-left: 5px solid $oc-violet-5;
   }
-  li.editors::before {
-    background: $oc-cyan-5;
+  li.editors {
+    border-left: 5px solid $oc-cyan-5;
   }
-  li.translators::before {
-    background: $oc-yellow-5;
+  li.translators {
+    border-left: 5px solid $oc-yellow-5;
   }
   li.contributors:hover {
     background-color: $oc-pink-0;
   }
   li.developers:hover {
-    background-color: $oc-teal-0;
+    background-color: $oc-violet-0;
   }
   li.editors:hover {
     background-color: $oc-cyan-0;
   }
   li.translators:hover {
     background-color: $oc-yellow-0;
+  }
+}
+
+.theme-wrapper.dark ul.preview-list {
+  li.contributors {
+    border-color: $oc-pink-4;
+  }
+  li.developers {
+    border-color: $oc-violet-4;
+  }
+  li.editors {
+    border-color: $oc-cyan-4;
+  }
+  li.translators {
+    border-color: $oc-yellow-4;
+  }
+  li.contributors:hover,
+  li.developers:hover,
+  li.editors:hover,
+  li.translators:hover {
+    background-color: $oc-gray-8;
   }
 }

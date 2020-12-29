@@ -16,6 +16,7 @@ import MobileMenu from '../menus/mobile'
 import useScrolledDown from '../../hooks/useScrolledDown'
 import Bugsnag from './bugsnag'
 import Layout from '../layouts/default'
+import MainMenu from '../menus/main'
 
 /* This component should wrap all page content */
 const AppWrapper = props => {
@@ -60,8 +61,10 @@ const AppWrapper = props => {
     image: props.image || false
   }
   const theme = createMuiTheme(themes[props.app.theme])
+  const mainMenu = <MainMenu app={props.app} pageContext={props.pageContext} />
 
-  if (!props.app.mounted)
+  // FIXME: Currently disabled
+  if (false && !props.app.mounted)
     return (
       <MuiThemeProvider theme={theme}>
         <Meta {...meta} />
@@ -106,10 +109,10 @@ const AppWrapper = props => {
           >
             <UpIcon fontSize="inherit" />
           </Fab>
-          {props.noLayout ? props.children : <Layout {...props}>{props.children}</Layout>}
+          {props.noLayout ? props.children : <Layout {...props} mainMenu={mainMenu}>{props.children}</Layout>}
           {props.app.mobile && (
             <div className="menu" onClick={props.app.closeNav}>
-              <MobileMenu app={props.app} context={props.context} />
+              <MobileMenu app={props.app} context={props.context} mainMenu={mainMenu}/>
             </div>
           )}
           <Footer language={process.env.GATSBY_LANGUAGE} app={props.app} />

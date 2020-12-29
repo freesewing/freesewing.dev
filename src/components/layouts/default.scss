@@ -70,12 +70,30 @@ div.fs-sa {
   > section {
     width: calc(100% - 400px - 4rem);
     max-width: 1000px;
-    margin: auto;
+    margin: 0 auto;
     > div.content {
       max-width: 66ch;
       margin: auto;
     }
+    > div.content.wide {
+      max-width: 100%;
+      margin: auto;
+    }
   }
+}
+.theme-wrapper.dark {
+  header,
+  footer {
+    background-color: darken($oc-gray-9, 3);
+  }
+  div.fs-sa {
+    > aside {
+      width: 400px;
+      background-color: darken($oc-gray-9, 3);
+      border-right: 2px solid $oc-gray-8;
+    }
+  }
+
 }
 
 /* slate */
@@ -107,6 +125,89 @@ div.fs-sa {
     > section {
       width: calc(100% - 0rem);
     }
+  }
+}
+
+
+// Theme overrides
+
+.theme-wrapper.light blockquote.tip {
+  background-color: lighten($oc-green-0, 3);
+  border-color: $oc-green-1;
+  svg.tip {
+    background-color: $oc-green-5;
+  }
+}
+.theme-wrapper.light blockquote.note {
+  background-color: lighten($oc-indigo-0, 3);
+  border-color: $oc-indigo-1;
+  svg.note {
+    background-color: $oc-indigo-5;
+  }
+}
+.theme-wrapper.light blockquote.warning {
+  background-color: lighten($oc-orange-0, 3);
+  border-color: $oc-orange-1;
+  svg.warning {
+    background-color: $oc-orange-5;
+  }
+}
+
+.theme-wrapper.dark blockquote.tip {
+  background-color: darken($oc-green-9, 26);
+  border-color: darken($oc-green-9, 19);
+  svg.icon.tip {
+    background-color: darken($oc-green-9, 9);
+  }
+}
+.theme-wrapper.dark blockquote.note {
+  background-color: darken($oc-indigo-9, 39);
+  border-color: darken($oc-indigo-9, 23);
+  svg.icon.note {
+    background-color: darken($oc-indigo-9, 13);
+  }
+}
+.theme-wrapper.dark blockquote.warning {
+  background-color: darken($oc-orange-9, 36);
+  border-color: darken($oc-orange-9, 16);
+  svg.warning {
+    background-color: darken($oc-orange-9, 6);
+  }
+}
+.theme-wrapper.light ul#main-menu li a svg {
+  color: $oc-violet-5;
+}
+// Fix issues with notches
+g#notch {
+  circle.outer {
+    stroke: $oc-violet-5;
+    fill: none;
+  }
+  circle.inner {
+    fill: $oc-violet-5;
+    stroke: none;
+  }
+}
+g#bnotch {
+  path, circle {
+    stroke: $oc-violet-5;
+    fill: none;
+  }
+}
+g#button {
+  circle.btn {
+    stroke: $oc-violet-5;
+    fill: none;
+  }
+  circle.hole {
+    fill: $oc-violet-5;
+    stroke: none;
+  }
+}
+g#buttonhole {
+  path {
+    stroke: $oc-violet-5;
+    fill: none;
   }
 }
 
