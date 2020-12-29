@@ -71,7 +71,6 @@ const MainMenu = ({ app, pageContext={} }) => {
 
   const {
     slug='/non-mdx/',
-    title,
     tree,
   } = pageContext;
   const chunks = slug.split('/').slice(1, -1)

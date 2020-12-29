@@ -91,7 +91,7 @@ if (process.env.CONTEXT === 'production' && process.env.HEAD === 'main') {
     options: {
       appId: process.env.GATSBY_ALGOLIA_API_ID,
       apiKey: process.env.ALGOLIA_UPDATE_KEY,
-      queries: searchData('en'),
+      queries: searchData(),
       chunkSize: 10000
     }
   })

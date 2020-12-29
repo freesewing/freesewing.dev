@@ -4,8 +4,8 @@ import AppWrapper from '../components/app/wrapper'
 
 import Search from '../components/search'
 
-const Page = (props) => {
-  const app = useApp(false)
+const Page = props => {
+  const app = useApp()
 
   return (
     <AppWrapper app={app} title='Search' wide>

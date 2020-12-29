@@ -33,7 +33,7 @@ const flatten = arr => {
   })
 }
 
-const getSearchData = language => {
+const getSearchData = () => {
   const data = [
     {
       query: getQuery(language),
