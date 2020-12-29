@@ -45,7 +45,7 @@
     "gatsby-plugin-netlify": "2.8.0",
     "gatsby-plugin-netlify-cache": "^1.2.0",
     "gatsby-plugin-nprogress": "2.7.0",
-    "gatsby-plugin-offline": "^3.2.18",
+    "gatsby-plugin-offline": "^3.7.1",
     "gatsby-plugin-react-helmet": "3.7.0",
     "gatsby-plugin-sass": "^2.3.12",
     "gatsby-plugin-sharp": "2.11.2",
