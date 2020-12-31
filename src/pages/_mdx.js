@@ -3,8 +3,7 @@ import useApp from '../hooks/useApp'
 import AppWrapper from '../components/app/wrapper'
 
 import Mdx from '../components/mdx'
-import { graphql, Link } from 'gatsby'
-import UpIcon from '@material-ui/icons/KeyboardArrowUp'
+import { graphql } from 'gatsby'
 import Tutorials from '../components/mdx/tutorials'
 import Guides from '../components/mdx/guides'
 import Howtos from '../components/mdx/howtos'
@@ -22,7 +21,7 @@ const Page = props => {
       pageContext={props.pageContext}
       title={props.pageContext.title}
       description={node.excerpt}
-      crumbs={props.pageContext.crumbs}
+      crumbs={tree.getCrumbs(props.pageContext.slug, props.pageContext.tree)}
       wide={node.frontmatter.wide}
       next={tree.getNext(props.pageContext.slug, props.pageContext.tree)}
       prev={tree.getPrev(props.pageContext.slug, props.pageContext.tree)}

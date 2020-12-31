@@ -115,7 +115,7 @@ const AppWrapper = props => {
           {props.noLayout ? props.children : <Layout {...props} mainMenu={mainMenu}>{props.children}</Layout>}
           {props.app.mobile && (
             <div className="menu" onClick={props.app.closeNav}>
-              <MobileMenu app={props.app} context={props.context} mainMenu={mainMenu}/>
+              <MobileMenu app={props.app} mainMenu={mainMenu}/>
             </div>
           )}
           <Footer language={process.env.GATSBY_LANGUAGE} app={props.app} />

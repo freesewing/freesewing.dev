@@ -16,8 +16,6 @@ function useApp() {
   const [menu, setMenu] = useState(false)
   const [title, setTitle] = useState('FreeSewing')
   const [mounted, setMounted] = useState(false) // false until app is mounted
-  const [context, setContext] = useState([])
-  const [toc, setToc] = useState(false)
 
   // Persist user data to local storage
   const persist = (data) => {
@@ -56,10 +54,6 @@ function useApp() {
     setTitle,
     mounted,
     setMounted,
-    context,
-    setContext,
-    toc,
-    setToc,
 
     // Persistent state
     theme,

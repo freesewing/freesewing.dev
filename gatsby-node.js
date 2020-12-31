@@ -50,6 +50,7 @@ const addToTree = function (slug, page, tree) {
   decorateTree(tree, slugChunks(slug), slug, page)
 }
 
+/*
 const getFromTree = (tree, chunks) => {
   if (chunks.length === 0) return []
   const index = chunks.shift()
@@ -141,7 +142,7 @@ const getDocCrumbs = (slug, docs, crumbs = false) => {
     ? crumbs.reverse()
     : getDocCrumbs(getParentSlug(slug), docs, crumbs)
 }
-
+*/
 const slugFromFilePath = filePath => {
   return (
     '/' +
@@ -196,40 +197,10 @@ const createMdxPages = async function (pages, createPage, graphql) {
         }
       }
     }
-    // Built initial page list, now add info
+    // Built initial page list, now add info and create page
     tree = buildTree(pages)
     for (const slug in pages) {
-      let up = getParentSlug(slug)
-      pages[slug].context.up = {
-        slug: up,
-        title: pages[up] ? pages[up].context.title : 'Docs'
-      }
-      // Children is a special prop in react, so we'll offspring
-      pages[slug].context.offspring = getOffspring(slug, pages, tree)
-      pages[slug].context.orderedOffspring = orderOffspring(pages[slug].context.offspring, pages)
-    }
-    // Only do this after all offspring has been discovered
-    for (const slug in pages) {
-      pages[slug].context.siblings = getSiblings(slug, pages, tree)
-      pages[slug].context.orderedSiblings = orderOffspring(pages[slug].context.siblings, pages)
       pages[slug].context.tree = { offspring: tree }
-    }
-    // Only do this after all offspring and siblings have been discovered
-    let prevs = {}
-    let next
-    for (const slug in pages) {
-      ;[next, pages[slug].context.next] = getNextDoc(slug, pages)
-      prevs[next] = slug
-    }
-    for (const slug in pages) {
-      pages[slug].context.previous = {
-        slug: prevs[slug],
-        title: pages[prevs[slug]] ? pages[prevs[slug]].context.title : prevs[slug]
-      }
-      pages[slug].context.crumbs = getDocCrumbs(slug, pages)
-    }
-
-    for (let slug in pages) {
       promises.push(
         new Promise((resolve, reject) => {
           createPage(pages[slug])

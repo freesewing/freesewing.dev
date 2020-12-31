@@ -1,7 +1,6 @@
 import React from 'react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
-import PrevNext from './prevnext'
 import fromTree from '../../tree'
 
 import Blockquote from '@freesewing/components/Blockquote'

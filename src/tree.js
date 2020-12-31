@@ -79,6 +79,7 @@ function getSelf(slug, tree) {
 }
 
 function order(pages) {
+  if (!pages) return []
   let tmp = {}
   for (let key of Object.keys(pages)) tmp[key] = {
     ...pages[key],
@@ -106,7 +107,20 @@ function getPrev(slug, tree) {
 
   return prev
 }
+
+function getCrumbs(slug, tree) {
+  let crumbs = []
+  let chunks = slug.split('/').slice(1,-1)
+  for (let crumb of chunks) {
+    tree = tree.offspring[crumb]
+    crumbs.push({title: tree.title, slug: tree.slug})
+  }
+
+  return crumbs.slice(0, -1)
+}
+
 export default {
+  getCrumbs,
   getNext,
   getPrev,
   getOffspring,

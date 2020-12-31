@@ -17,8 +17,8 @@ const links = {
   howtos: 'Howtos',
   reference: 'Reference',
  // videos: 'Videos',
-  contributors: 'For contributors',
   developers: 'For developers',
+  contributors: 'For contributors',
   editors: 'For editors',
   translators: 'For translators',
 }

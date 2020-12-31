@@ -1,10 +1,13 @@
 import React from 'react'
-import Logo from '@freesewing/components/Logo'
 import { Link } from 'gatsby'
 
 import './splash.scss'
 
 const groups = {
+  developers: [
+    "The bulk of the documentation here details how things work under the hood.",
+    "Including our core library, patterns, plugins, our websites and backends",
+  ],
   contributors: [
     "Start reading here if you're a new FreeSewing contributor, or would like to become one.",
     "Includes our code of conduct and community guidelines.",
@@ -17,10 +20,6 @@ const groups = {
     "If you would like to help us translate FreeSewing from English to another language, start here.",
     "Currently translating Dutch, French, German & Spanish.",
   ],
-  developers: [
-    "The bulk of the documentation here details how things work under the hood.",
-    "Including our core library, patterns, plugins, our websites and backends",
-  ]
 }
 
 const Splash = ({ app }) => {

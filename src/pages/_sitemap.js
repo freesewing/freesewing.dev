@@ -18,7 +18,6 @@ const Page = (props) => {
 
   const renderTree = tree => {
     let links = []
-    console.log(tree)
     for (let key in tree) {
       let p = tree[key]
       links.push(
@@ -27,7 +26,7 @@ const Page = (props) => {
             {p.title}
             <span style={styles.url}>{p.slug}</span>
           </Link>
-          {p.offspring && renderMdxTree(p.offspring)}
+          {p.offspring && renderTree(p.offspring)}
         </li>
       )
     }
@@ -37,7 +36,7 @@ const Page = (props) => {
 
 
   return (
-    <AppWrapper app={app} title='Sitemap' context={context} text>
+    <AppWrapper app={app} title='Sitemap'>
       {renderTree(props.pageContext.tree)}
     </AppWrapper>
   )
