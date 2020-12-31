@@ -11,16 +11,14 @@ import EditorIcon from '@material-ui/icons/Create'
 import TranslatorIcon from '@material-ui/icons/Translate'
 import DeveloperIcon from '@material-ui/icons/Code'
 
-import './main.scss'
-
 const links = {
   tutorials: 'Tutorials',
   guides: 'Guides',
   howtos: 'Howtos',
   reference: 'Reference',
  // videos: 'Videos',
-  contributors: 'For contributors',
   developers: 'For developers',
+  contributors: 'For contributors',
   editors: 'For editors',
   translators: 'For translators',
 }
@@ -51,13 +49,16 @@ const getSiblings = (slug ,tree, chunks, level=1) => {
   let steps = chunks.slice(0, level)
   let siblings = []
   let branch = {...tree}
-  let first = true
-  for (let step of steps) {
-    branch = first ? branch[step] : branch.offspring[step]
-    first = false
+  for (let step of steps) branch = branch.offspring[step]
+  if (!branch.offspring) return []
+  let tmp = {}
+  for (let key of Object.keys(branch.offspring)) tmp[key] = {
+    ...branch.offspring[key],
+    ordertitle: branch.offspring[key].order + branch.offspring[key].title,
+    key
   }
   let subnav
-  for (let page of orderBy(branch.offspring, ['order'])) {
+  for (let page of orderBy(tmp, ['ordertitle'])) {
     if (onPath(page.slug, chunks)) subnav = <Submenu slug={slug} chunks={chunks} tree={tree} level={level+1} />
     else subnav = null
     siblings.push(<li key={page.slug}><Link to={page.slug} className={slug === page.slug ? 'active' : ''}>{page.title}</Link>{subnav}</li>)
@@ -82,7 +83,7 @@ const MainMenu = ({ app, pageContext={} }) => {
         <li key={link}>
           <Link
             to={`/${link}/`}
-            className={`/${link}/` === slug ? 'active' : ''}
+            className={link === chunks[0] ? 'active' : ''}
             title={links[link]}
           >
             {icons[link]}

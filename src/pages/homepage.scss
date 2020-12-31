@@ -5,20 +5,13 @@
   max-width: 100vw;
   overflow: hidden;
   padding-top: 0;
-  margin-top: -64px;
-  div.content {
-    max-width: 1600px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
   div.news {
     max-width: 1600px;
-    margin: 0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: auto;
+    margin: 0 auto 5rem;
     div.news-article {
       margin: 0.5rem;
       border-radius: 3px;
@@ -30,25 +23,14 @@
       }
     }
   }
-  div.content-cols {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-    > div {
-      width: calc(50% - 0.5rem);
-    }
-  }
 }
 
 
 div.icons {
-  background: $oc-gray-9;
-  color: $oc-gray-0;
+  background: transparent;
   padding: 0;
   text-align: center;
-  margin: 4rem auto;
+  margin: 0 auto;
   div.icon {
     width: 15vw;
     display: inline-block;
@@ -64,7 +46,7 @@ div.icons {
       transition-property: color;
       transition-duration: 300ms;
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
+      font-weight: 500;
       svg {
         height: 64px;
         width: 64px;
@@ -75,21 +57,25 @@ div.icons {
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       }
       span {
-        font-family: 'Roboto Condensed', sans-serif;
         text-transform: uppercase;
         margin: 0 auto;
       }
     }
     a:hover {
-      text-decoration: none !important;
-      color: $oc-violet-2 !important;
+      text-decoration: none;
+      color: $oc-violet-5!important;
       svg {
-        color: $oc-violet-2;
+        color: $oc-violet-5;
       }
     }
   }
 }
-
+.theme-wrapper.dark div.icons a:hover {
+  color: $oc-violet-3!important;
+  svg {
+    color: $oc-violet-3;
+  }
+}
 
 /* mobile and tablet and slate */
 @media (max-width: 1199px) and (min-width: 960px) {
@@ -142,7 +128,7 @@ div.icons {
       a {
         padding: 1rem 0;
         font-size: 100%;
-        font-weight: bold;
+        font-weight: 500;
         min-width: 100px;
         svg {
           height: 64px;

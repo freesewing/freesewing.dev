@@ -16,17 +16,17 @@ const Page = (props) => {
     }
   }
 
-  const renderMdxTree = (pages) => {
+  const renderTree = tree => {
     let links = []
-    for (let slug in pages) {
-      let p = pages[slug]
+    for (let key in tree) {
+      let p = tree[key]
       links.push(
         <li key={p.slug}>
           <Link to={p.slug}>
             {p.title}
             <span style={styles.url}>{p.slug}</span>
           </Link>
-          {p.offspring && renderMdxTree(p.offspring)}
+          {p.offspring && renderTree(p.offspring)}
         </li>
       )
     }
@@ -34,25 +34,10 @@ const Page = (props) => {
     return <ul className="links">{links}</ul>
   }
 
-  const types = ['Tutorials', 'Guides', 'Howtos', 'Reference']
-  const context = [
-    <h5>Sitemap</h5>,
-    <ul>
-      {types.map( Type => <li key={Type}><a href={`#${Type.toLowerCase()}`}>{Type}</a></li>)}
-    </ul>
-  ]
 
   return (
-    <AppWrapper app={app} title='Sitemap' context={context} text>
-      {types.map( Type => {
-        let type = Type.toLowerCase()
-        return (
-          <div key={type}>
-            <h2 id={type}><Link to={`/${type}/`}>{Type}</Link></h2>
-            {renderMdxTree(props.pageContext.tree[type].offspring)}
-          </div>
-        )
-      })}
+    <AppWrapper app={app} title='Sitemap'>
+      {renderTree(props.pageContext.tree)}
     </AppWrapper>
   )
 }

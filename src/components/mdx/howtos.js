@@ -76,13 +76,13 @@ const Howtos = props => {
   </li>
 
   const list = []
-  list.push(<h3>Common code challenges</h3>)
+  list.push(<h2>Common code challenges</h2>)
   list.push(<ul className='preview-list'>{data.code.edges.map(node => renderNode(node))}</ul>)
-  list.push(<h3>Common design challenges</h3>)
+  list.push(<h2>Common design challenges</h2>)
   list.push(<ul className='preview-list'>{data.design.edges.map(node => renderNode(node))}</ul>)
-  list.push(<h3>Setting up your development environment</h3>)
+  list.push(<h2>Setting up your development environment</h2>)
   list.push(<ul className='preview-list'>{data.dev.edges.map(node => renderNode(node))}</ul>)
-  list.push(<h3>Common tasks for editors</h3>)
+  list.push(<h2>Common tasks for editors</h2>)
   list.push(<ul className='preview-list'>{data.editors.edges.map(node => renderNode(node))}</ul>)
 
   return list

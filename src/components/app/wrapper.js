@@ -9,7 +9,10 @@ import UpIcon from '@material-ui/icons/KeyboardArrowUp'
 import CloseIcon from '@material-ui/icons/Close'
 import Fab from '@material-ui/core/Fab'
 import '@freesewing/css-theme'
-import 'typeface-roboto-condensed'
+import 'fontsource-ubuntu/300.css'
+import 'fontsource-ubuntu/500.css'
+import 'fontsource-ubuntu/700.css'
+import "@fontsource/roboto-mono"
 import 'typeface-permanent-marker'
 import Meta from './meta'
 import MobileMenu from '../menus/mobile'
@@ -112,7 +115,7 @@ const AppWrapper = props => {
           {props.noLayout ? props.children : <Layout {...props} mainMenu={mainMenu}>{props.children}</Layout>}
           {props.app.mobile && (
             <div className="menu" onClick={props.app.closeNav}>
-              <MobileMenu app={props.app} context={props.context} mainMenu={mainMenu}/>
+              <MobileMenu app={props.app} mainMenu={mainMenu}/>
             </div>
           )}
           <Footer language={process.env.GATSBY_LANGUAGE} app={props.app} />
