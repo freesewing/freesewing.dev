@@ -13,7 +13,7 @@
     }
   },
   "dependencies": {
-    "@bugsnag/js": "^7.1.1",
+    "@bugsnag/js": "^7.5.4",
     "@bugsnag/plugin-react": "^7.5.4",
     "@fontsource/roboto-mono": "^4.0.1",
     "@freesewing/components": "2.11.0-rc.1",
