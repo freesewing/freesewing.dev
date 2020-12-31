@@ -95,6 +95,7 @@
     "prettier": "npx prettier --write 'src/**'",
     "build": "gatsby build",
     "clean": "gatsby clean",
+    "serve": "gatsby serve",
     "develop": "gatsby develop --verbose"
   }
 }
