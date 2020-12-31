@@ -114,7 +114,7 @@ const AppWrapper = props => {
           </Fab>
           {props.noLayout ? props.children : <Layout {...props} mainMenu={mainMenu}>{props.children}</Layout>}
           {props.app.mobile && (
-            <div className="menu" onClick={props.app.closeNav}>
+            <div className="menu" id="mobile-menu" onClick={props.app.closeNav}>
               <MobileMenu app={props.app} mainMenu={mainMenu}/>
             </div>
           )}
