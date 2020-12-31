@@ -1,8 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Preview from './preview'
-import Icon from '@material-ui/icons/SwapCalls'
-import './preview.scss'
 
 const Guides = props => {
   const data = useStaticQuery(graphql`
@@ -32,12 +30,10 @@ const Guides = props => {
 `)
 
   const list = data.allMdx.edges.map(node => (
-    <Preview key={node.node.fileAbsolutePath} {...node.node} {...props} icon={<Icon />}/>
+    <Preview key={node.node.fileAbsolutePath} {...node.node} {...props} />
   ))
 
-  if (props.list) return list
-
-  return <div className='previews'>{list}</div>
+  return list
 }
 
 export default Guides

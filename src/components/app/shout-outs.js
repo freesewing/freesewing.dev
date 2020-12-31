@@ -23,7 +23,7 @@ const ShoutOuts = props => {
       flexGrow: 2
     },
     intro: {
-      fontFamily: 'Roboto Condensed',
+      fontFamily: 'Ubuntu',
       fontSize: '1rem'
     },
     logo: {

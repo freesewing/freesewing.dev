@@ -41,19 +41,6 @@ const Splash = ({ app }) => {
 
   return (
     <div className="splash">
-      <div className="top">
-        <div className="logo">
-          <Logo size={app.mobile ? 96 : 166} />
-          <div className="name">
-            <span className="free">Free</span>Sewing
-          </div>
-        </div>
-        <div className="slogan">
-          FreeSewing
-          <br />
-          platform documentation
-        </div>
-      </div>
       <div className="groups">{boxes}</div>
     </div>
   )

@@ -212,7 +212,7 @@ const createMdxPages = async function (pages, createPage, graphql) {
     for (const slug in pages) {
       pages[slug].context.siblings = getSiblings(slug, pages, tree)
       pages[slug].context.orderedSiblings = orderOffspring(pages[slug].context.siblings, pages)
-      pages[slug].context.tree = tree
+      pages[slug].context.tree = { offspring: tree }
     }
     // Only do this after all offspring and siblings have been discovered
     let prevs = {}

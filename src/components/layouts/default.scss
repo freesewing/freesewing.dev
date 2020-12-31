@@ -1,39 +1,18 @@
 @import '../../../node_modules/open-color/open-color.scss';
 
-div.mob-menu {
-  padding: 1rem;
-}
-
-.jargon-term {
-  background: $oc-cyan-0;
-  text-decoration: none;
-}
-.jargon-term:after {
-  display: none;
-}
-
-img.gatsby-resp-image-image {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
-    0 2px 1px -1px rgba(0, 0, 0, 0.12);
-}
-
-.scribble {
-  font-family: 'Permanent marker';
-  color: $oc-pink-5;
-}
-
-.theme-wrapper.light section#mdx table tr.hover:hover {
-  background-color: $oc-gray-1;
-}
-.theme-wrapper.dark section#mdx table tr.hover:hover {
-  background-color: $oc-gray-8;
-}
+// Tables in MDX content
 section#mdx table {
+  font-size: 90%;
   border-collapse: collapse;
-  font-family: 'Roboto condensed';
-  margin: 1rem 0;
+  margin: 2rem 0;
   tr {
     margin: 0;
+  }
+  tr:hover {
+    background-color: $oc-gray-2!important;
+  }
+  tr:nth-child(even) {
+    background-color: $oc-gray-1;
   }
   td {
     margin: 0;
@@ -43,27 +22,37 @@ section#mdx table {
     border-bottom: 1px solid $oc-gray-5;
   }
 }
-.theme-wrapper.light section#mdx table tr:nth-child(even) {
-  background-color: $oc-gray-2;
-}
-.theme-wrapper.dark section#mdx table tr:nth-child(even) {
-  background-color: $oc-gray-8;
+.theme-wrapper.dark section#mdx table {
+  tr:nth-child(even) {
+    background-color: $oc-gray-9;
+  }
+  tr:hover {
+    background-color: $oc-gray-8!important;
+  }
 }
 
-div.fs-sa {
+// Main page content layout
+div.layout {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  padding: 0;
+  flex-direction: row;
+  flex-wrap: wrap;
   max-width: none;
   > aside {
-    width: 400px;
+    width: 35%;
+    max-width: 500px;
     background: $oc-gray-1;
     border-right: 2px solid $oc-gray-3;
   }
   > section {
-    width: calc(100% - 400px - 4rem);
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: calc(65% - 6rem);
+    margin: 0 0 0 4rem;
+    padding-bottom: 2rem;
     > div.content {
       max-width: 66ch;
-      margin: auto;
+      min-width: 600px;
     }
     > div.content.wide {
       max-width: 100%;
@@ -73,12 +62,8 @@ div.fs-sa {
 }
 .theme-wrapper.dark {
   header,
-  footer {
-    background-color: darken($oc-gray-9, 3);
-  }
-  div.fs-sa {
+  div.layout {
     > aside {
-      width: 400px;
       background-color: darken($oc-gray-9, 3);
       border-right: 2px solid $oc-gray-8;
     }
@@ -88,117 +73,54 @@ div.fs-sa {
 
 /* slate */
 @media (max-width: 1199px) and (min-width: 960px) {
-  div.fs-sa {
+  div.layout {
     > aside {
-      width: 300px;
+      width: 298px; // 2px border
     }
     > section {
       width: calc(100% - 300px - 4rem);
+      max-width: none;
+      margin: 0 1rem 0 3rem;
     }
   }
 }
 
 /* tablet */
 @media (max-width: 959px) {
-  div.fs-sa {
+  div.layout {
     > aside {
-      width: 220px;
+      width: 218px; // 2px border
     }
     > section {
       width: calc(100% - 220px - 4rem);
+      max-width: none;
+      margin: 0;
+      padding: 0 2rem;
+      div.content {
+        min-width: inherit;
+      }
+
     }
   }
 }
 /* mobile */
 @media (max-width: 599px) {
-  div.fs-sa {
+  div.layout {
+    > aside {
+      display: none;
+    }
     > section {
-      width: calc(100% - 0rem);
+      width: calc(100%);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      max-width: none;
     }
   }
 }
 
 
-// Theme overrides
-
-.theme-wrapper.light blockquote.tip {
-  background-color: lighten($oc-green-0, 3);
-  border-color: $oc-green-1;
-  svg.tip {
-    background-color: $oc-green-5;
-  }
+// Candidates for theme inclusion
+h5+p,
+h6+p {
+  margin-top: -0.5rem;
 }
-.theme-wrapper.light blockquote.note {
-  background-color: lighten($oc-indigo-0, 3);
-  border-color: $oc-indigo-1;
-  svg.note {
-    background-color: $oc-indigo-5;
-  }
-}
-.theme-wrapper.light blockquote.warning {
-  background-color: lighten($oc-orange-0, 3);
-  border-color: $oc-orange-1;
-  svg.warning {
-    background-color: $oc-orange-5;
-  }
-}
-
-.theme-wrapper.dark blockquote.tip {
-  background-color: darken($oc-green-9, 26);
-  border-color: darken($oc-green-9, 19);
-  svg.icon.tip {
-    background-color: darken($oc-green-9, 9);
-  }
-}
-.theme-wrapper.dark blockquote.note {
-  background-color: darken($oc-indigo-9, 39);
-  border-color: darken($oc-indigo-9, 23);
-  svg.icon.note {
-    background-color: darken($oc-indigo-9, 13);
-  }
-}
-.theme-wrapper.dark blockquote.warning {
-  background-color: darken($oc-orange-9, 36);
-  border-color: darken($oc-orange-9, 16);
-  svg.warning {
-    background-color: darken($oc-orange-9, 6);
-  }
-}
-.theme-wrapper.light ul#main-menu li a svg {
-  color: $oc-violet-5;
-}
-
-// Fix issues with notches
-g#notch {
-  circle.outer {
-    stroke: $oc-violet-5;
-    fill: none;
-  }
-  circle.inner {
-    fill: $oc-violet-5;
-    stroke: none;
-  }
-}
-g#bnotch {
-  path, circle {
-    stroke: $oc-violet-5;
-    fill: none;
-  }
-}
-g#button {
-  circle.btn {
-    stroke: $oc-violet-5;
-    fill: none;
-  }
-  circle.hole {
-    fill: $oc-violet-5;
-    stroke: none;
-  }
-}
-g#buttonhole {
-  path {
-    stroke: $oc-violet-5;
-    fill: none;
-  }
-}
-

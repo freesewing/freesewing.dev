@@ -25,7 +25,7 @@ const LatestNews = ({ homepage=false }) => {
           a += '\n' + line
         }
         n.push(a)
-        if (homepage) setNews(n.slice(0,3))
+        if (homepage) setNews(n.slice(0,6))
         else setNews(n)
       })
       .catch((err) => console.log(err))

@@ -25,8 +25,8 @@ export default function ButtonAppBar(props) {
       width: '100%',
       margin: 0,
       padding: 0,
-      background: colors.light,
-      zIndex: 15
+      zIndex: 15,
+      background: '#1a1d21'
     },
     logo: {
       textDecoration: 'none',
@@ -64,7 +64,7 @@ export default function ButtonAppBar(props) {
 
   return (
     <div style={style.wrapper}>
-      <AppBar position="static" color={props.app.theme === 'dark' ? "secondary" : "primary"} elevation={0}>
+      <AppBar position="static" color='transparent' elevation={0}>
         <Toolbar disableGutters={true}>
           <Link to="/" style={style.logo}>
             <Logo embed />

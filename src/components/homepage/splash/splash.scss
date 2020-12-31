@@ -3,121 +3,98 @@
 div.splash {
   margin: 0 auto;
   padding: 0;
-  div.top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    color: $oc-gray-9;
-    padding: 0 1rem;
-    div.logo {
-      text-align: center;
-      div.name {
-        display: block;
-        font-size: 1.5rem;
-        font-weight: 700;
-        font-family: 'Raleway';
-        span.free {
-          font-weight: 900;
-        }
-      }
-    }
-    div.slogan {
-      text-align: right;
-      padding-top: 0rem;
-      font-weight: 300;
-      font-family: 'Raleway';
-      display: block;
-      font-size: 2.5rem;
-      line-height: 1.2;
-    }
-  }
   div.groups {
     max-width: 1600px;
     margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 2rem;
   }
 
-  div.groups > div {
-    margin: 2rem 0.5rem;
-    border: 1px solid $oc-gray-5;
-    padding: 0 2rem 0.5rem;
-    border-radius: 6px;
-    background-repeat: no-repeat;
-    background-position: bottom right;
-    background-size: 52%;
-    width: calc(25% - 5rem);
-    background-color: $oc-gray-1;
-    position: relative;
-    h3 {
-      text-transform: capitalize;
+  div.groups {
+    > div {
+      margin: 2rem 0.5rem;
+      border: 1px solid $oc-gray-5;
+      padding: 0 2rem 0.5rem;
+      border-radius: 6px;
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      background-size: 52%;
+      width: calc(25% - 5rem);
+      background-color: $oc-gray-1;
+      position: relative;
+      h3 {
+        text-transform: capitalize;
+      }
+      a.cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
-    a.cover {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    div p:last-of-type {
+      max-width: 70%;
     }
-  }
-  div.groups div p:last-of-type {
-    max-width: 70%;
-  }
-  div.groups div.contributors {
-    background-image: url('/splash/contributor.png');
-    border-color: $oc-pink-5;
-    background-color: $oc-pink-0;
-    p {
-      text-shadow: 1px  1px 1px $oc-pink-0, -1px  1px 1px $oc-pink-0, 1px -1px 1px $oc-pink-0, -1px -1px 1px $oc-pink-0;
+    div.contributors {
+      background-image: url('/splash/contributor.png');
+      border-color: $oc-pink-5;
+      background-color: $oc-pink-0;
+      p {
+        text-shadow: 1px  1px 1px $oc-pink-0, -1px  1px 1px $oc-pink-0, 1px -1px 1px $oc-pink-0, -1px -1px 1px $oc-pink-0;
+      }
     }
-  }
-  div.groups div.editors {
-    background-image: url('/splash/editor.png');
-    border-color: $oc-cyan-5;
-    background-color: $oc-cyan-0;
-    p {
-      text-shadow: 1px  1px 1px $oc-cyan-0, -1px  1px 1px $oc-cyan-0, 1px -1px 1px $oc-cyan-0, -1px -1px 1px $oc-cyan-0;
+    div.editors {
+      background-image: url('/splash/editor.png');
+      border-color: $oc-cyan-5;
+      background-color: $oc-cyan-0;
+      p {
+        text-shadow: 1px  1px 1px $oc-cyan-0, -1px  1px 1px $oc-cyan-0, 1px -1px 1px $oc-cyan-0, -1px -1px 1px $oc-cyan-0;
+      }
     }
-  }
-  div.groups div.translators {
-    background-image: url('/splash/translator.png');
-    border-color: $oc-yellow-5;
-    background-color: $oc-yellow-0;
-    p {
-      text-shadow: 1px  1px 1px $oc-yellow-0, -1px  1px 1px $oc-yellow-0, 1px -1px 1px $oc-yellow-0, -1px -1px 1px $oc-yellow-0;
+    div.translators {
+      background-image: url('/splash/translator.png');
+      border-color: $oc-yellow-5;
+      background-color: $oc-yellow-0;
+      p {
+        text-shadow: 1px  1px 1px $oc-yellow-0, -1px  1px 1px $oc-yellow-0, 1px -1px 1px $oc-yellow-0, -1px -1px 1px $oc-yellow-0;
+      }
     }
-  }
-  div.groups div.developers {
-    background-image: url('/splash/developer.png');
-    border-color: $oc-violet-5;
-    background-color: $oc-violet-0;
-    p {
-      text-shadow: 1px  1px 1px $oc-violet-0, -1px  1px 1px $oc-violet-0, 1px -1px 1px $oc-violet-0, -1px -1px 1px $oc-violet-0;
+    div.developers {
+      background-image: url('/splash/developer.png');
+      border-color: $oc-violet-5;
+      background-color: $oc-violet-0;
+      p {
+        text-shadow: 1px  1px 1px $oc-violet-0, -1px  1px 1px $oc-violet-0, 1px -1px 1px $oc-violet-0, -1px -1px 1px $oc-violet-0;
+      }
     }
   }
 }
 
-.theme-wrapper.dark div.splash div.groups {
-  div.contributors p,
-  div.editors p,
-  div.translators p,
-  div.developers p {
-    text-shadow: 1px  1px 1px $oc-gray-9, -1px  1px 1px $oc-gray-9, 1px -1px 1px $oc-gray-9, -1px -1px 1px $oc-gray-9;
-  }
-  div.contributors {
-    border-color: $oc-pink-4;
-  }
-  div.editors {
-    border-color: $oc-cyan-4;
-  }
-  div.translators {
-    border-color: $oc-yellow-4;
-  }
-  div.developers {
-    border-color: $oc-violet-4;
+.theme-wrapper.dark div.splash {
+  div.groups {
+    div {
+      background-color: transparent;
+    }
+    div.contributors p,
+    div.editors p,
+    div.translators p,
+    div.developers p {
+      text-shadow: 1px  1px 1px $oc-gray-9, -1px  1px 1px $oc-gray-9, 1px -1px 1px $oc-gray-9, -1px -1px 1px $oc-gray-9;
+    }
+    div.contributors {
+      border-color: $oc-pink-4;
+    }
+    div.editors {
+      border-color: $oc-cyan-4;
+    }
+    div.translators {
+      border-color: $oc-yellow-4;
+    }
+    div.developers {
+      border-color: $oc-violet-4;
+    }
   }
 }
 
@@ -160,18 +137,6 @@ div.splash {
 /* XS screens */
 @media (max-width: 599px) {
   div.splash {
-    div.top {
-      flex-direction: column;
-      div.slogan {
-        text-align: center;
-        font-size: 1.5rem;
-        margin: 2rem auto;
-        font-weight: 500;
-      }
-      div.logo div.name {
-        font-size: 1.25rem;
-      }
-    }
     div.groups {
       flex-wrap: wrap;
       margin-top: 0.5rem;
@@ -189,16 +154,3 @@ div.splash {
   }
 }
 
-.theme-wrapper.dark div.splash {
-  //background: linear-gradient(45deg, rgba(122,31,31,1) 0%, rgba(140,91,32,1) 20%, rgba(143,135,32,1) 40%, rgba(40,107,60,1) 61%, rgba(38,78,172,1) 80%, rgba(100,41,110,1) 100%);
-  div.top {
-    color: $oc-gray-0;
-  }
-  div.groups div {
-    background-color: $oc-gray-9;
-    border-color: $oc-gray-7;
-  }
-  div.details {
-    background-color: $oc-gray-8;
-  }
-}

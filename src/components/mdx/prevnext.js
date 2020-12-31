@@ -13,7 +13,7 @@ const PreviousNext = ({ previous = false, next = false }) => (
       justifyContent: 'space-between',
       padding: '9px',
       borderTop: '1px solid #ccc',
-      fontFamily: 'Roboto condensed'
+      fontFamily: 'Ubuntu'
     }}
   >
     {['prev', 'next'].map((side) => {
