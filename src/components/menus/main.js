@@ -23,16 +23,17 @@ const links = {
   translators: 'For translators',
 }
 
+const iStyle = { style: { maxWidth: '32px' } }
 const icons = {
-  tutorials: <TutorialIcon />,
-  guides: <GuideIcon />,
-  howtos: <HowtoIcon />,
-  reference: <ReferenceIcon />,
-  //videos: <VideoIcon />,
-  contributors: <ContributorIcon />,
-  developers: <DeveloperIcon />,
-  editors: <EditorIcon />,
-  translators: <TranslatorIcon />
+  tutorials: <TutorialIcon {...iStyle}/>,
+  guides: <GuideIcon {...iStyle} />,
+  howtos: <HowtoIcon {...iStyle} />,
+  reference: <ReferenceIcon {...iStyle} />,
+  //videos: <VideoIcon {...iStyle} />,
+  contributors: <ContributorIcon {...iStyle} />,
+  developers: <DeveloperIcon {...iStyle} />,
+  editors: <EditorIcon {...iStyle} />,
+  translators: <TranslatorIcon {...iStyle} />
 }
 
 const onPath = (slug, chunks) => {

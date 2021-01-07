@@ -8,12 +8,13 @@ import Tutorials from '../components/mdx/tutorials'
 import Guides from '../components/mdx/guides'
 import Howtos from '../components/mdx/howtos'
 import Reference from '../components/mdx/reference'
-import tree from '../tree'
 
 const Page = props => {
 
   const app = useApp()
   const node = props.data.allMdx.edges[0].node
+
+  console.log(props.path)
 
   return (
     <AppWrapper
@@ -21,16 +22,10 @@ const Page = props => {
       pageContext={props.pageContext}
       title={props.pageContext.title}
       description={node.excerpt}
-      crumbs={tree.getCrumbs(props.pageContext.slug, props.pageContext.tree)}
       wide={node.frontmatter.wide}
-      next={tree.getNext(props.pageContext.slug, props.pageContext.tree)}
-      prev={tree.getPrev(props.pageContext.slug, props.pageContext.tree)}
+      {...app.treeProps(props.path)}
     >
-      <Mdx
-        node={props.data.allMdx.edges[0].node}
-        tree={props.pageContext.tree}
-        slug={props.pageContext.slug}
-      />
+      <Mdx node={props.data.allMdx.edges[0].node} offspring={app.getOffspring(props.path)} />
       {props.path === '/tutorials/' && <Tutorials list/>}
       {props.path === '/guides/' && <Guides list/>}
       {props.path === '/howtos/' && <Howtos />}

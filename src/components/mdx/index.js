@@ -1,7 +1,6 @@
 import React from 'react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
-import fromTree from '../../tree'
 
 import Blockquote from '@freesewing/components/Blockquote'
 import ReadMore from './readmore'
@@ -19,8 +18,9 @@ const customComponents = {
   Hashtag
 }
 
-const Mdx = ({ node, slug, tree }) => {
-  customComponents.ReadMore = (props) => <ReadMore {...props} pages={fromTree.getOffspring(slug, tree)}/>
+const Mdx = ({ node, offspring }) => {
+  if (!node) return null
+  customComponents.ReadMore = (props) => <ReadMore node={node} pages={offspring} {...props} />
   return (
     <section id="mdx">
       <MDXProvider components={customComponents}>
