@@ -23,57 +23,70 @@ const links = {
   translators: 'For translators',
 }
 
+const iStyle = { style: { maxWidth: '32px' } }
 const icons = {
-  tutorials: <TutorialIcon />,
-  guides: <GuideIcon />,
-  howtos: <HowtoIcon />,
-  reference: <ReferenceIcon />,
-  //videos: <VideoIcon />,
-  contributors: <ContributorIcon />,
-  developers: <DeveloperIcon />,
-  editors: <EditorIcon />,
-  translators: <TranslatorIcon />
+  tutorials: <TutorialIcon {...iStyle}/>,
+  guides: <GuideIcon {...iStyle} />,
+  howtos: <HowtoIcon {...iStyle} />,
+  reference: <ReferenceIcon {...iStyle} />,
+  //videos: <VideoIcon {...iStyle} />,
+  contributors: <ContributorIcon {...iStyle} />,
+  developers: <DeveloperIcon {...iStyle} />,
+  editors: <EditorIcon {...iStyle} />,
+  translators: <TranslatorIcon {...iStyle} />
 }
 
 const onPath = (slug, chunks) => {
-  let compare = slug.split('/').slice(1,-1)
+  if (!slug) return false
+  let compare = slug.split('/').slice(1, -1)
   let match = true
   for (let i in compare) {
-    if(compare[i] !== chunks[i]) match = false
+    if (compare[i] !== chunks[i]) match = false
   }
 
   return match
 }
-const getSiblings = (slug ,tree, chunks, level=1) => {
+const getSiblings = (slug, tree, chunks, level = 1) => {
   if (level > 4) return []
   let steps = chunks.slice(0, level)
   let siblings = []
-  let branch = {...tree}
+  let branch = { ...tree }
   for (let step of steps) branch = branch.offspring[step]
   if (!branch.offspring) return []
   let tmp = {}
-  for (let key of Object.keys(branch.offspring)) tmp[key] = {
-    ...branch.offspring[key],
-    ordertitle: branch.offspring[key].order + branch.offspring[key].title,
-    key
+  for (let key of Object.keys(branch.offspring)) {
+    tmp[key] = {
+      ...branch.offspring[key],
+      key
+    }
+    if (typeof tmp[key].ordertitle === 'undefined')
+      tmp[key].ordertitle = branch.offspring[key].order + branch.offspring[key].title
   }
   let subnav
-  for (let page of orderBy(tmp, ['ordertitle'])) {
-    if (onPath(page.slug, chunks)) subnav = <Submenu slug={slug} chunks={chunks} tree={tree} level={level+1} />
+  let ordered = orderBy(tmp, ['ordertitle'])
+  for (let page of ordered) {
+    if (onPath(page.slug, chunks))
+      subnav = <Submenu slug={slug} chunks={chunks} tree={tree} level={level + 1} />
     else subnav = null
-    siblings.push(<li key={page.slug}><Link to={page.slug} className={slug === page.slug ? 'active' : ''}>{page.title}</Link>{subnav}</li>)
+    siblings.push(
+      <li key={page.slug}>
+        <Link to={page.slug} className={slug === page.slug ? 'active' : ''}>
+          {page.title}
+        </Link>
+        {subnav}
+      </li>
+    )
   }
 
   return siblings
 }
-const Submenu = ({slug, chunks, tree, level=1}) => <ul className={`level-${level}`}>{getSiblings(slug, tree, chunks, level)}</ul>
 
-const MainMenu = ({ app, pageContext={} }) => {
+const Submenu = ({ slug, chunks, tree, level = 1 }) => (
+  <ul className={`level-${level}`}>{getSiblings(slug, tree, chunks, level)}</ul>
+)
 
-  const {
-    slug='/non-mdx/',
-    tree,
-  } = pageContext;
+const MainMenu = ({ app, slug = '/fixme/' }) => {
+
   const chunks = slug.split('/').slice(1, -1)
 
   return (
@@ -89,7 +102,7 @@ const MainMenu = ({ app, pageContext={} }) => {
             {icons[link]}
             <span className="text">{links[link]}</span>
           </Link>
-          {(link === chunks[0]) && <Submenu slug={slug} chunks={chunks} tree={tree} />}
+          {(link === chunks[0]) && <Submenu slug={slug} chunks={chunks} tree={app.tree} />}
         </li>
       ))}
     </ul>

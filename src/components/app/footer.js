@@ -15,11 +15,11 @@ const Footer = (props) => {
     twitter: 'https://twitter.com/freesewing_org'
   }
 
+  // Fixme: Update these links to next once org is updates
   const links = {
-    '/docs/about/': 'About FreeSewing',
-    '/docs/about/faq': 'Frequently asked questions',
-    '/patrons/join/': 'Become a Patron',
-    '/docs/about/pledge': 'Our revenue pledge',
+    'https://next.freesewing.org/docs/guide/what/': 'About FreeSewing',
+    'https://next.freesewing.org/docs/faq': 'Frequently asked questions',
+    'https://next.freesewing.org/community/join/': 'Become a Patron',
     '/contributors/code-of-conduct/': 'Code of conduct',
     '/contributors/help/': 'Where to get help',
   }
@@ -98,4 +98,4 @@ const Footer = (props) => {
   )
 }
 
-export default Footer
+export default React.memo(Footer)

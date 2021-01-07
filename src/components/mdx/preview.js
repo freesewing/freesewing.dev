@@ -6,26 +6,24 @@ import Blockquote from '@freesewing/components/Blockquote'
 
 const Preview = props => (
   <>
-    <Link to={`/${props.parent.relativeDirectory}/`}>
-      <h2>{props.frontmatter.title}</h2>
-    </Link>
+    <blockquote style={{display: 'relative'}}>
+    <h5>{props.frontmatter.title}</h5>
     <Markdown source={props.frontmatter.about} />
-    {!props.brief && props.frontmatter.goals && (
-      <>
-        <Blockquote type='note'>
-        <h5>What you'll learn</h5>
-        <ul className='links'>
-          {props.frontmatter.goals.map( goal => <li key={goal}>{goal}</li>)}
-        </ul>
-        </Blockquote>
-      </>
-    )}
-    <p style={{textAlign: 'right'}}>
-      <Link to={`/${props.parent.relativeDirectory}/`}>
-        <b>{props.frontmatter.title}</b>
-        <NextIcon style={{ marginBottom: '-6px' }} />
-      </Link>
-    </p>
+    <ul className='links'>
+      {props.frontmatter.goals.map( goal => <li key={goal}>{goal}</li>)}
+    </ul>
+    <Link
+      to={`/${props.parent.relativeDirectory}/`}
+      style={{
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        width: '100%',
+        height: '100%'
+      }}
+      title={props.frontmatter.about}
+    />
+    </blockquote>
   </>
 )
 
