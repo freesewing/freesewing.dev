@@ -4,7 +4,6 @@ import IconButton from '@material-ui/core/IconButton'
 import LightModeIcon from '@material-ui/icons/WbSunny'
 import DarkModeIcon from '@material-ui/icons/Brightness3'
 import SearchIcon from '@material-ui/icons/Search'
-import SitemapIcon from '@material-ui/icons/Map'
 
 const NavbarIcons = ({ toggleDarkMode, theme }) => {
   const colors = {
@@ -41,15 +40,6 @@ const NavbarIcons = ({ toggleDarkMode, theme }) => {
         title='Search'
       >
         <SearchIcon style={style.icon} />
-      </IconButton>
-      <IconButton
-        style={style.iconButton}
-        aria-label="menu"
-        color="inherit"
-        href="/sitemap/"
-        title='Sitemap'
-      >
-        <SitemapIcon style={style.icon} />
       </IconButton>
       <IconButton
         style={style.darkModeButton}

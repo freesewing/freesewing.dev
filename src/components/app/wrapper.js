@@ -64,19 +64,7 @@ const AppWrapper = props => {
     image: props.image || false
   }
   const theme = createMuiTheme(themes[props.app.theme])
-  const mainMenu = <MainMenu app={props.app} pageContext={props.pageContext} />
-
-  // FIXME: Currently disabled
-  if (false && !props.app.mounted)
-    return (
-      <MuiThemeProvider theme={theme}>
-        <Meta {...meta} />
-        <div className={wrapperClasses}>
-          {props.noLayout ? props.children : <Layout {...props}>{props.children}</Layout>}
-          <Footer language={process.env.GATSBY_LANGUAGE} app={props.app} />
-        </div>
-      </MuiThemeProvider>
-    )
+  const mainMenu = <MainMenu app={props.app} slug={props.slug} />
 
   return (
     <Bugsnag>

@@ -14,8 +14,6 @@ const Page = props => {
   const app = useApp()
   const node = props.data.allMdx.edges[0].node
 
-  console.log(props.path)
-
   return (
     <AppWrapper
       app={app}
