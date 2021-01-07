@@ -20,7 +20,6 @@ const Page = props => {
       pageContext={props.pageContext}
       title={props.pageContext.title}
       description={node.excerpt}
-      wide={node.frontmatter.wide}
       {...app.treeProps(props.path)}
     >
       <Mdx node={props.data.allMdx.edges[0].node} offspring={app.getOffspring(props.path)} />
@@ -44,7 +43,6 @@ export const pageQuery = graphql`
           excerpt
           frontmatter {
             title
-            wide
           }
         }
       }

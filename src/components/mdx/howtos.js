@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import './list.scss'
 
 const Howtos = props => {
   const data = useStaticQuery(graphql`
@@ -68,22 +67,21 @@ const Howtos = props => {
     }
 `)
 
-  const renderNode = node => <li key={node.node.slug} className={node.node.frontmatter.for}>
+  const renderNode = node => <li key={node.node.slug}>
     <Link to={`/${node.node.slug.slice(0,-2)}`}>
-      <h5>{node.node.frontmatter.title}</h5>
-      <p>{node.node.frontmatter.about}</p>
+      <span className='fw-500'>{node.node.frontmatter.title}</span>
     </Link>
+    <br />
+    <span className='fw-300'>{node.node.frontmatter.about}</span>
   </li>
 
   const list = []
-  list.push(<h2>Common code challenges</h2>)
-  list.push(<ul className='preview-list'>{data.code.edges.map(node => renderNode(node))}</ul>)
-  list.push(<h2>Common design challenges</h2>)
+  list.push(<h5>Common code challenges</h5>)
+  list.push(<ul className='links'>{data.code.edges.map(node => renderNode(node))}</ul>)
+  list.push(<h5>Common design challenges</h5>)
   list.push(<ul className='preview-list'>{data.design.edges.map(node => renderNode(node))}</ul>)
-  list.push(<h2>Setting up your development environment</h2>)
+  list.push(<h5>Setting up your development environment</h5>)
   list.push(<ul className='preview-list'>{data.dev.edges.map(node => renderNode(node))}</ul>)
-  list.push(<h2>Common tasks for editors</h2>)
-  list.push(<ul className='preview-list'>{data.editors.edges.map(node => renderNode(node))}</ul>)
 
   return list
 
