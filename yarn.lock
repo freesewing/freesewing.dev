@@ -1173,10 +1173,10 @@
     ts-node "^9"
     tslib "^2"
 
-"@fontsource/roboto-mono@^4.0.1":
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/@fontsource/roboto-mono/-/roboto-mono-4.0.1.tgz#e00da7e383b2e77f650eb8ea4ce9431ef01eaeaf"
-  integrity sha512-/SIA9VePcn3rRGLbWK34HESFTtAps0cB2tr1XhqtcthhF71J+FtcnOrv/rXcI78lQcOCu19Ra1+VQ91up4Lspg==
+"@fontsource/roboto-mono@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/roboto-mono/-/roboto-mono-4.1.0.tgz#83aac6cce6849d0d943861e21c1b31d7b6dfd724"
+  integrity sha512-KVq0xzjoNLd1EQHNPcL+j8EbPaZoYmXvwZt/0GzZPH578f8CcLvSNm8Yl0IVf6Clvhl3/Svb6sslkbkt+SCmtA==
 
 "@freesewing/components@2.11.0-rc.3":
   version "2.11.0-rc.3"
