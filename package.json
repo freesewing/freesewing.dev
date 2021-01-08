@@ -39,7 +39,7 @@
     "fontsource-roboto-mono": "^4.0.0",
     "fontsource-ubuntu": "^4.0.0",
     "gatsby": "^2.25.4",
-    "gatsby-image": "2.8.0",
+    "gatsby-image": "2.9.0",
     "gatsby-link": "2.8.0",
     "gatsby-plugin-algolia": "0.16.2",
     "gatsby-plugin-catch-links": "2.7.0",
