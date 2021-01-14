@@ -40,7 +40,7 @@
     "dotenv": "8.2.0",
     "fontsource-roboto-mono": "^4.0.0",
     "fontsource-ubuntu": "^4.0.0",
-    "gatsby": "^2.25.4",
+    "gatsby": "^2.30.2",
     "gatsby-image": "2.8.0",
     "gatsby-link": "2.8.0",
     "gatsby-plugin-algolia": "0.16.2",
