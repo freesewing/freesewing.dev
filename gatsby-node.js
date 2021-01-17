@@ -33,12 +33,8 @@ const mdxQuery = function() {
   }`
 }
 
-const mdxList = pages =>
-  Object.keys(pages).map((slug) => ({ slug, title: pages[slug].context.title }))
-
 const createMdxPages = async function (pages, createPage, graphql) {
   let promises = []
-  let tree
   let query = mdxQuery()
   let component = path.resolve(`./src/pages/_mdx.js`)
   await graphql(query).then((res) => {
