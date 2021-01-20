@@ -7279,10 +7279,10 @@ gatsby-cli@^2.16.2:
     yoga-layout-prebuilt "^1.9.6"
     yurnalist "^1.1.2"
 
-gatsby-core-utils@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.7.1.tgz#7e7e6596c228d580ed8ce4a3fc04c56f103cae3f"
-  integrity sha512-hnzQCixp2C4opmSgjido/CQwSt4FL3CcmGwq6fK3PVPTT3hLPz7rvuTMQIUlR8BJjGYai6i5f6V3wfkCJ3VTgQ==
+gatsby-core-utils@^1.7.1, gatsby-core-utils@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.9.0.tgz#ff349cc2013fd06a85099b3aee061b01f64ceabb"
+  integrity sha512-AWq9E+rBY+fWJrhdOx0rn/LlZ0eCjpqLYlDcUmLZ5NjwLARgkEXNf4JsvDETLtThcNlSOibEMQex8arsYatmkA==
   dependencies:
     ci-info "2.0.0"
     configstore "^5.0.1"
@@ -7707,14 +7707,14 @@ gatsby-telemetry@^1.7.1:
     node-fetch "^2.6.1"
     uuid "3.4.0"
 
-gatsby-transformer-remark@2.13.1:
-  version "2.13.1"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.13.1.tgz#a8983ebe1857c896ab171b6c5aa58d5503b5684b"
-  integrity sha512-l1QWWye5l9x009vLNn+tus2cEHO2OICKINJg5jhValw4Frm+XLJz97ffX1Y6s6a8b6tLuEZPQFb/pwk0wgi0UQ==
+gatsby-transformer-remark@2.15.0:
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.15.0.tgz#0e489891e2d3fe19ba61c37652e21f311521b876"
+  integrity sha512-Dtmzit/akVKnQlhERj0HMxJgkZo+DJ6duSIk7nJrk81R+2uJS3sQCdZEBkv5gYJhPd0fMfh0bbr63kuNB5lzlA==
   dependencies:
     "@babel/runtime" "^7.12.5"
     bluebird "^3.7.2"
-    gatsby-core-utils "^1.7.1"
+    gatsby-core-utils "^1.9.0"
     gray-matter "^4.0.2"
     hast-util-raw "^4.0.0"
     hast-util-to-html "^4.0.1"
@@ -16930,21 +16930,6 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
-
-typeface-permanent-marker@1.1.13:
-  version "1.1.13"
-  resolved "https://registry.yarnpkg.com/typeface-permanent-marker/-/typeface-permanent-marker-1.1.13.tgz#4af383b970604b73321786f9d6d75988599f1476"
-  integrity sha512-cZgBXtUMquWlMh4/hhZ3lmBPDWnIwdodGHBMPQOXe1mUsnWBKe46ssOVE5kIEicnDxfmgSCV2/U/SZpDIm/w+Q==
-
-typeface-raleway@1.1.13:
-  version "1.1.13"
-  resolved "https://registry.yarnpkg.com/typeface-raleway/-/typeface-raleway-1.1.13.tgz#5dd44c7029c69991f3e8a66f4434ba62bcf0886a"
-  integrity sha512-iouV4D1dv4Ylm++j2PmPW7HKJH7zTKu5xXsta1hqQ2oG8+9fSpocuF40xCSTckaa1DLYbk1TUiU14wr2nCUBqg==
-
-typeface-roboto-condensed@1.1.13:
-  version "1.1.13"
-  resolved "https://registry.yarnpkg.com/typeface-roboto-condensed/-/typeface-roboto-condensed-1.1.13.tgz#db102baa1f032e14805659a6973fe425882d7c01"
-  integrity sha512-ntjupUqs7yAfp0nbcc30AdDV1OWSnlm5z1wPo2Br2yB8UKM/cLD2NP0DJNX5QomAGg9Q87wlkgT4hUxciqdNYw==
 
 uid-number@0.0.6:
   version "0.0.6"
