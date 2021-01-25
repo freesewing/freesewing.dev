@@ -4,7 +4,6 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Button from '@material-ui/core/Button'
 import Logo from '@freesewing/components/Logo'
 import { Link } from 'gatsby'
-import { FormattedMessage } from 'react-intl'
 import NavbarIcons from './navbar-icons'
 import Icon from '@freesewing/components/Icon'
 // FIXME: The 'Campaign' icon is not (yet) available in material-ui
@@ -26,8 +25,8 @@ export default function ButtonAppBar(props) {
       width: '100%',
       margin: 0,
       padding: 0,
-      background: props.app.theme === 'dark' ? colors.light : colors.dark,
-      zIndex: 15
+      zIndex: 15,
+      background: '#1a1d21'
     },
     logo: {
       textDecoration: 'none',
@@ -35,14 +34,14 @@ export default function ButtonAppBar(props) {
       width: '42px',
       padding: '11px',
       display: 'inline-block',
-      color: colors[props.app.theme]
+      color: colors.dark
     },
     button: {
       height: '64px',
       padding: '0 18px'
     },
     iconButton: {
-      color: colors[props.app.theme]
+      color: colors.dark
     },
     icon: {
       maxWidth: '24px',
@@ -60,31 +59,30 @@ export default function ButtonAppBar(props) {
 
   const iconStyle = {
     marginRight: '0.5rem',
-    color: props.app.theme === 'dark' ? '#b197fc' : '#845ef7'
+    color: '#b197fc'
   }
 
   return (
     <div style={style.wrapper}>
-      <AppBar position="static" color="secondary" elevation={0}>
+      <AppBar position="static" color='transparent' elevation={0}>
         <Toolbar disableGutters={true}>
           <Link to="/" style={style.logo}>
             <Logo embed />
           </Link>
 
-          <Button href="/news/" style={{...style.iconButton}}>
+          <Button href="/news/" style={style.iconButton}>
             <UpdatesIcon style={iconStyle} size={28}/>
-            Recent Updates
+            News & Updates
           </Button>
 
           <span style={style.spacer} />
 
-          <Button href="https://chat.freesewing.org/">
+          <Button href="https://chat.freesewing.org/" style={style.iconButton} >
             <Icon style={{ ...iconStyle }} icon="discord" />
-            <FormattedMessage id="app.chatOnDiscord" />
+            Chat on Discord
           </Button>
 
           <NavbarIcons
-            translate={props.app.translate}
             toggleDarkMode={props.app.toggleDarkMode}
             theme={props.app.theme}
           />

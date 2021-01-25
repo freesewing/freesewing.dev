@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import './list.scss'
 
 const Reference = props => {
   const data = useStaticQuery(graphql`
@@ -23,15 +22,16 @@ const Reference = props => {
     }
 `)
 
-  const renderNode = node => <li key={node.node.slug} className={node.node.frontmatter.for}>
+  const renderNode = node => <li key={node.node.slug}>
     <Link to={`/${node.node.slug.slice(0,-2)}`}>
-      {node.node.frontmatter.title}
-      <span className='about'>{node.node.frontmatter.about}</span>
+      <span className='fw-500'>{node.node.frontmatter.title}</span>
     </Link>
+    <br />
+    <span className='fw-300'>{node.node.frontmatter.about}</span>
   </li>
 
   const list = []
-  list.push(<ul className='preview-list'>{data.core.edges.map(node => renderNode(node))}</ul>)
+  list.push(<ul className='links'>{data.core.edges.map(node => renderNode(node))}</ul>)
 
   return list
 

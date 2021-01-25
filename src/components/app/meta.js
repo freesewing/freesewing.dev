@@ -4,8 +4,8 @@ import { Helmet } from 'react-helmet'
 const Meta = (props) => {
   const dflt = {
     title: 'FreeSewing',
-    description: 'We are a community of makers. We provide made-to-measure sewing patterns',
-    image: 'https://freesewing.org/splash.png'
+    description: 'Come for the sewing patterns, stay for the community',
+    image: 'https://dev.freesewing.org/splash.png'
   }
 
   const title = props.title || dflt.title

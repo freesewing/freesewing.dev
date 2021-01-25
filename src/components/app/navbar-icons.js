@@ -4,9 +4,8 @@ import IconButton from '@material-ui/core/IconButton'
 import LightModeIcon from '@material-ui/icons/WbSunny'
 import DarkModeIcon from '@material-ui/icons/Brightness3'
 import SearchIcon from '@material-ui/icons/Search'
-import SitemapIcon from '@material-ui/icons/Map'
 
-const NavbarIcons = ({ translate, toggleDarkMode, theme }) => {
+const NavbarIcons = ({ toggleDarkMode, theme }) => {
   const colors = {
     light: '#212529',
     dark: '#f8f9fa'
@@ -14,7 +13,7 @@ const NavbarIcons = ({ translate, toggleDarkMode, theme }) => {
 
   const style = {
     iconButton: {
-      color: colors[theme]
+      color: colors.dark
     },
     icon: {
       maxWidth: '24px',
@@ -26,7 +25,8 @@ const NavbarIcons = ({ translate, toggleDarkMode, theme }) => {
     darkModeIcon: {
       transform: 'rotate(26deg)',
       maxWidth: '24px',
-      maxHeight: '24px'
+      maxHeight: '24px',
+      color: '#ffe066'
     }
   }
 
@@ -37,30 +37,20 @@ const NavbarIcons = ({ translate, toggleDarkMode, theme }) => {
         aria-label="menu"
         color="inherit"
         href="/search/"
-        title={translate('app.search')}
+        title='Search'
       >
         <SearchIcon style={style.icon} />
-      </IconButton>
-      <IconButton
-        style={style.iconButton}
-        aria-label="menu"
-        color="inherit"
-        href="/sitemap/"
-        title={translate(`app.sitemap`)}
-      >
-        <SitemapIcon style={style.icon} />
       </IconButton>
       <IconButton
         style={style.darkModeButton}
         aria-label="menu"
         onClick={toggleDarkMode}
-        title={theme === 'dark' ? translate('app.lightMode') : translate('app.darkMode')}
+        title={theme === 'dark' ? 'Light mode' : 'Dark mode'}
       >
-        {theme === 'dark' ? (
-          <LightModeIcon style={style.icon} />
-        ) : (
-          <DarkModeIcon style={style.darkModeIcon} />
-        )}
+        {theme === 'dark'
+          ? <LightModeIcon style={style.darkModeIcon} />
+          : <DarkModeIcon style={style.darkModeIcon} />
+        }
       </IconButton>
     </>
   )

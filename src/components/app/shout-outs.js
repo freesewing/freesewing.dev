@@ -3,9 +3,7 @@ import React from 'react'
 const ShoutOuts = props => {
   const styles = {
     wrapper: {
-      background: '#212529',
       margin: '0',
-      color: '#fffa',
       textAlign: 'center',
       padding: '2rem 1rem'
     },
@@ -25,7 +23,7 @@ const ShoutOuts = props => {
       flexGrow: 2
     },
     intro: {
-      fontFamily: 'Roboto Condensed',
+      fontFamily: 'Ubuntu',
       fontSize: '1rem'
     },
     logo: {
