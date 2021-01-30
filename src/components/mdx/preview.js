@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Markdown from 'react-markdown'
-import NextIcon from '@material-ui/icons/KeyboardArrowRight'
-import Blockquote from '@freesewing/components/Blockquote'
 
 const Preview = props => (
   <>

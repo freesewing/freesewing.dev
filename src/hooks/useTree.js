@@ -27,7 +27,6 @@ const slugChunks = (slug) => {
 }
 
 const decorateTree = (tree, slug, page) => {
-  let index
   let chunks = slugChunks(slug)
   if (chunks.length === 0) return tree
   let title = getTitle(slug, page, chunks)
