@@ -8,6 +8,7 @@ import NavbarIcons from './navbar-icons'
 import Icon from '@freesewing/components/Icon'
 // FIXME: The 'Campaign' icon is not (yet) available in material-ui
 import UpdatesIcon from '../UpdatesIcon'
+import TodoIcon from '@material-ui/icons/AssignmentTurnedIn'
 
 
 export default function ButtonAppBar(props) {
@@ -73,6 +74,11 @@ export default function ButtonAppBar(props) {
           <Button href="/news/" style={style.iconButton}>
             <UpdatesIcon style={iconStyle} size={28}/>
             News & Updates
+          </Button>
+
+          <Button href="https://todo.freesewing.org/" style={style.iconButton}>
+            <TodoIcon style={iconStyle} size={28}/>
+            Project board
           </Button>
 
           <span style={style.spacer} />
