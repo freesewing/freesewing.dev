@@ -1183,10 +1183,10 @@
   resolved "https://registry.yarnpkg.com/@fontsource/roboto-mono/-/roboto-mono-4.1.0.tgz#83aac6cce6849d0d943861e21c1b31d7b6dfd724"
   integrity sha512-KVq0xzjoNLd1EQHNPcL+j8EbPaZoYmXvwZt/0GzZPH578f8CcLvSNm8Yl0IVf6Clvhl3/Svb6sslkbkt+SCmtA==
 
-"@fontsource/ubuntu@^4.1.0":
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/@fontsource/ubuntu/-/ubuntu-4.1.0.tgz#e56656d11bfe915b3b475cbe60719db26615d1d2"
-  integrity sha512-wwH+sY0IpV9ETVMSqIvmkW2LFXz1wIfwvOTSDpVDsukpb8/fnvnhjgTNRO15G5HNjmA+h45Yq0YUzWnieZ18LQ==
+"@fontsource/ubuntu@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@fontsource/ubuntu/-/ubuntu-4.2.2.tgz#34fd12289275bc53eff614e30d355081851d0321"
+  integrity sha512-kKRL7yb5yOOOX901dp0Gz6BQCdfMSUFNbTrpaHZ5W/49w8FaUBeZcI82fIBc8WirIS8cmzmkAfKyQbM9qR8RmQ==
 
 "@freesewing/components@2.11.0-rc.3":
   version "2.11.0-rc.3"
