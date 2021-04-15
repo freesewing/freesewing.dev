@@ -1193,12 +1193,12 @@
   resolved "https://registry.yarnpkg.com/@freesewing/components/-/components-2.11.0-rc.3.tgz#0e93f730081f43ef7d623615cb034d1ce05205ce"
   integrity sha512-Rh+E5aP6SKCmm1aFd3IN9kECqng1SJbsfGU+/D4dQLJ2ipGDsfY2K3GdXgoiEQHbCDqSwTlFqsvHP7VsOpvwYg==
 
-"@freesewing/core@2.11.0-rc.3":
-  version "2.11.0-rc.3"
-  resolved "https://registry.yarnpkg.com/@freesewing/core/-/core-2.11.0-rc.3.tgz#62917e2189dc2897317c35aaa7ce8ae41fe6a3f5"
-  integrity sha512-rJlZFxtD1Rf7tecumU9iGpPuGqzzSUEOiJC8zao8LiPZ1yH7RdU6uZ5gnjlovzxg2H4a0yXFaMZ/c6naRaulLA==
+"@freesewing/core@2.14.0":
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/@freesewing/core/-/core-2.14.0.tgz#10dfc2066a4147f88e6842cda12ad44d564ba571"
+  integrity sha512-tIsW53SHGT2MBGZGMaqZ6QKuCZBOUN/GH9FiH+3zPD7idW61bnP/TZ8krhPl0ss4sKgl1adWcMdt1RR0X9xMEw==
   dependencies:
-    bezier-js "^3.0.1"
+    bezier-js "^4.0.3"
     bin-pack "^1.0.2"
     hooks "^0.3.2"
 
@@ -3373,10 +3373,10 @@ better-queue@^3.8.10:
     node-eta "^0.9.0"
     uuid "^3.0.0"
 
-bezier-js@^3.0.1:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/bezier-js/-/bezier-js-3.1.0.tgz#bd9219bf15ecd8bd1bb15f57d85fb81b8db3fb0e"
-  integrity sha512-Mvx9eojw9MkFaDNGn4PoOQgxXGrur1jM/qHEcNwbyBwGnk3lTUS/2zcZxErnx4YsQtFejExBu7uuzdPw/iyJiQ==
+bezier-js@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/bezier-js/-/bezier-js-4.0.3.tgz#9e076d66f609bca9fc08dd22201596d52d3cc49d"
+  integrity sha512-w85AFcZ7EkszFgxuHYQ2/BI2G7H5bEotZD9vcg8+Hx4S8zF2odJBoFSFvGbcFDH5ScSxG27/IhW03SigVmkXNQ==
 
 big.js@^5.2.2:
   version "5.2.2"
