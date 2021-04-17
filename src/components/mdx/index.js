@@ -14,7 +14,7 @@ const customComponents = {
   Warning: ({ children }) => <Blockquote type="warning">{children}</Blockquote>,
   Fixme: ({ children }) => <Blockquote type="fixme">{children}</Blockquote>,
   YouTube,
-  Example: props => <Example {...props} design={props.design ? true : false} />,
+  Example: props => <Example {...props} />,
   Hashtag
 }
 
