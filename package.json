@@ -74,7 +74,7 @@
     "react-helmet": "6.1.0",
     "react-instantsearch-dom": "6.10.3",
     "react-markdown": "^5.0.3",
-    "remark-jargon": "2.10.7",
+    "remark-jargon": "2.14.0",
     "sharp": "^0.27.0",
     "styled-components": "^5.2.3",
     "tlds": "1.219.0"
