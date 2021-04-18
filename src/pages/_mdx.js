@@ -21,6 +21,7 @@ const Page = props => {
       title={props.pageContext.title}
       description={node.excerpt}
       {...app.treeProps(props.path)}
+      edit={props.data.allMdx.edges[0].node.parent.relativeDirectory}
     >
       <Mdx node={props.data.allMdx.edges[0].node} offspring={app.getOffspring(props.path)} />
       {props.path === '/tutorials/' && <Tutorials list/>}
@@ -39,6 +40,7 @@ export const pageQuery = graphql`
     allMdx(filter: { fileAbsolutePath: { eq: $file } }) {
       edges {
         node {
+        parent { ... on File { relativeDirectory } }
           body
           excerpt
           frontmatter {
