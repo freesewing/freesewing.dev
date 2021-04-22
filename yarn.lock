@@ -14329,14 +14329,7 @@ remark-html@13.0.1:
     hast-util-to-html "^7.0.0"
     mdast-util-to-hast "^10.0.0"
 
-remark-jargon@2.10.7:
-  version "2.10.7"
-  resolved "https://registry.yarnpkg.com/remark-jargon/-/remark-jargon-2.10.7.tgz#92aaaecd3287b8f006aeedfffb8d888fef33c13c"
-  integrity sha512-ykhzFCSfrObkfJwSalQ6ezdWzVOQueZ54tvgybgb3fVSUQtkl9JFYG6TdF5rssludJyG1dAfrYjP2fz8SoTXVg==
-  dependencies:
-    unist-util-visit "^2.0.3"
-
-remark-jargon@^2.15.0:
+remark-jargon@2.15.0, remark-jargon@^2.15.0:
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/remark-jargon/-/remark-jargon-2.15.0.tgz#9675719aa997969191e4c182329fb74fed598ac2"
   integrity sha512-h/X9UJ5ecUQEQMJRlA4I0H60J3KzAOxDV5Le/zRXsn8VWQ+q0std2EzFO+43FkBSTEGFuIQ70h0Yx5KMcCciFA==
