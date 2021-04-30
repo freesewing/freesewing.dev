@@ -37,7 +37,7 @@
     "@material-ui/lab": "4.0.0-alpha.57",
     "@mdx-js/mdx": "1.6.22",
     "@mdx-js/react": "1.6.22",
-    "algoliasearch": "4.8.6",
+    "algoliasearch": "4.9.1",
     "dotenv": "8.2.0",
     "fontsource-roboto-mono": "^4.0.0",
     "fontsource-ubuntu": "^4.0.0",
