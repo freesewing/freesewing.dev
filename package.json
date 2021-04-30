@@ -47,7 +47,7 @@
     "gatsby-plugin-algolia": "0.16.5",
     "gatsby-plugin-catch-links": "2.10.0",
     "gatsby-plugin-manifest": "^2.12.1",
-    "gatsby-plugin-mdx": "1.7.1",
+    "gatsby-plugin-mdx": "2.4.0",
     "gatsby-plugin-netlify": "2.11.0",
     "gatsby-plugin-netlify-cache": "^1.2.0",
     "gatsby-plugin-nprogress": "2.10.0",
