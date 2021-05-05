@@ -36,7 +36,7 @@ const LatestNews = ({ homepage=false }) => {
   return news ? (
     news.map((a, i) => (
       <div className={`news-article ${homepage ? 'shadow' : '' }`} key={`article${i}`}>
-        <Markdown source={a} />
+        <Markdown>{a}</Markdown>
       </div>
     ))
   ) : (
