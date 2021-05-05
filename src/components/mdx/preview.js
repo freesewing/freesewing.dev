@@ -6,7 +6,7 @@ const Preview = props => (
   <>
     <blockquote style={{display: 'relative'}}>
     <h5>{props.frontmatter.title}</h5>
-    <Markdown source={props.frontmatter.about} />
+    <Markdown>{props.frontmatter.about}</Markdown>
     <ul className='links'>
       {props.frontmatter.goals.map( goal => <li key={goal}>{goal}</li>)}
     </ul>
