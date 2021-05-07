@@ -1284,10 +1284,10 @@
   resolved "https://registry.yarnpkg.com/@freesewing/mui-theme/-/mui-theme-2.15.2.tgz#00c79bdd8fe69367fd1af911e4c37d8fa65288c4"
   integrity sha512-+T+zdTc9PY1emz78gqKlJI6ymLMzRpL/OlFewvH+p2hVmi/oEZ9CPsoSka0Dc/+DsZvi4HIwgom3gim9WU89DQ==
 
-"@freesewing/pattern-info@2.15.2":
-  version "2.15.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/pattern-info/-/pattern-info-2.15.2.tgz#a49e44a31daca54989da967852907a6a3e3261fd"
-  integrity sha512-tkoBF520mllKsFR+G2+NoY29T6+5hYyPo4Viu7B78Y7LJPTftzw3Sd+TNslhtnbVH7nzBMaS9gNoCp2tP/dhIw==
+"@freesewing/pattern-info@2.15.3":
+  version "2.15.3"
+  resolved "https://registry.yarnpkg.com/@freesewing/pattern-info/-/pattern-info-2.15.3.tgz#1666cfdbb6f43ea8dd53f234462734701c3a7e1b"
+  integrity sha512-bgawSdQO97LdXACQL3gbS/wl56KWkPtbOGWqpcZ1CGCOoAoQ5gDobXeXsEqLmQom/sZ5Ei9BHpCHCF30TEXgcg==
 
 "@freesewing/plugin-bundle@2.15.2":
   version "2.15.2"

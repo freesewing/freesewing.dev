@@ -25,7 +25,7 @@
     "@freesewing/i18n": "^2.15.2",
     "@freesewing/models": "2.15.2",
     "@freesewing/mui-theme": "2.15.2",
-    "@freesewing/pattern-info": "2.15.2",
+    "@freesewing/pattern-info": "2.15.3",
     "@freesewing/plugin-bundle": "2.15.2",
     "@freesewing/plugin-buttons": "2.15.2",
     "@freesewing/plugin-theme": "^2.15.2",
