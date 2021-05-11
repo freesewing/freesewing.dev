@@ -17,7 +17,7 @@
     "@bugsnag/plugin-react": "^7.9.2",
     "@fontsource/permanent-marker": "^4.2.2",
     "@fontsource/roboto-mono": "^4.2.2",
-    "@fontsource/ubuntu": "^4.2.2",
+    "@fontsource/ubuntu": "^4.3.0",
     "@freesewing/components": "2.15.2",
     "@freesewing/core": "2.15.2",
     "@freesewing/css-theme": "2.15.2",

@@ -1235,7 +1235,12 @@
   resolved "https://registry.yarnpkg.com/@fontsource/roboto-mono/-/roboto-mono-4.2.2.tgz#deb736753e9680e94a11d6e162badf8636310942"
   integrity sha512-qBEDhPHwN0m6VXSS1EGSAkmKT3gqfQZJyynSkSDQZNPRLeDVq7CTcmJWhjIqAFgVqJ4PNfMUIEl9+bqeBtlvhQ==
 
-"@fontsource/ubuntu@^4.2.2", "@fontsource/ubuntu@latest":
+"@fontsource/ubuntu@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/ubuntu/-/ubuntu-4.3.0.tgz#45de1af27874b8acc970078d26f572514d9d48eb"
+  integrity sha512-vEK01Kcl7oodfuymz6geG27XY1rftJ6S+TWm3o59vULjBO8KHLt3go3N5g6VYRmkXTgp0fWqDqRGtb5o4GNdMg==
+
+"@fontsource/ubuntu@latest":
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/@fontsource/ubuntu/-/ubuntu-4.2.2.tgz#34fd12289275bc53eff614e30d355081851d0321"
   integrity sha512-kKRL7yb5yOOOX901dp0Gz6BQCdfMSUFNbTrpaHZ5W/49w8FaUBeZcI82fIBc8WirIS8cmzmkAfKyQbM9qR8RmQ==
