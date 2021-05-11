@@ -38,7 +38,7 @@
     "@mdx-js/mdx": "1.6.22",
     "@mdx-js/react": "1.6.22",
     "algoliasearch": "4.9.1",
-    "dotenv": "8.6.0",
+    "dotenv": "9.0.2",
     "fontsource-roboto-mono": "^4.0.0",
     "fontsource-ubuntu": "^4.0.0",
     "gatsby": "^3.4.1",
