@@ -1259,10 +1259,10 @@
     bin-pack "^1.0.2"
     hooks "^0.3.2"
 
-"@freesewing/css-theme@2.15.2":
-  version "2.15.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/css-theme/-/css-theme-2.15.2.tgz#9207880360219055a059dc57e761e1fcd2f8e632"
-  integrity sha512-SyX09Z/xhST8y1KEhrLtzeF8EBsxa7RR5RLdnAEFWXS8sO1BdVu7tzP4hrT3s6A2k4P8Jl1XEE0CxgqtpIv3Bw==
+"@freesewing/css-theme@2.15.4":
+  version "2.15.4"
+  resolved "https://registry.yarnpkg.com/@freesewing/css-theme/-/css-theme-2.15.4.tgz#f199e57cb035e05d2ca069691126741030811085"
+  integrity sha512-uLdZVTrVu9joVnrZVnMouGe5n0zDhZWZ1/e0yk7uVqko+TDcaAmjtmhhPF/S7K5u3I/KfElCjccycstnVBgKHg==
   dependencies:
     "@fontsource/permanent-marker" latest
     "@fontsource/roboto-mono" latest
