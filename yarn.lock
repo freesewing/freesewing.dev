@@ -1250,10 +1250,10 @@
   resolved "https://registry.yarnpkg.com/@freesewing/components/-/components-2.15.2.tgz#71b49da09db5f1831bd5a5c710d96fcb20a34a23"
   integrity sha512-9e51xKASPrDNQAhlFml4gosYmIhgUi2h8O19rj1LwNP2Gjs3Lx7XtG7P0dm3s+SzuXofEx3IyimpLZ7tIBv1QA==
 
-"@freesewing/core@2.15.2":
-  version "2.15.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/core/-/core-2.15.2.tgz#ebeb8dc7d2a426317bcc582ab8398dbaeb0b6087"
-  integrity sha512-YRT0uZi03e+yUvpFMaC8m0khvGEvdRsorMtv54VUlfb7bwnbTDdSP0GKDmWBiLkgK0gJSN6TYhssqvvrzH+Kxg==
+"@freesewing/core@2.15.4":
+  version "2.15.4"
+  resolved "https://registry.yarnpkg.com/@freesewing/core/-/core-2.15.4.tgz#9894cc9c31ed2b277f61114f2b02eff4462c6b4f"
+  integrity sha512-0CeOd0w0HkOLuq+Dfw6+XeCxxQ1m1xneN5siUywEbkuAHNQfFBMoyxBN7t0bw4pgJ1FA3Xa4V0lxDb/Ss36Pww==
   dependencies:
     bezier-js "^4.0.3"
     bin-pack "^1.0.2"
