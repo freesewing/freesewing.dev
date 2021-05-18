@@ -21,7 +21,7 @@
     "@freesewing/components": "2.15.2",
     "@freesewing/core": "2.15.2",
     "@freesewing/css-theme": "2.15.2",
-    "@freesewing/examples": "2.15.2",
+    "@freesewing/examples": "2.15.4",
     "@freesewing/i18n": "^2.15.2",
     "@freesewing/models": "2.15.2",
     "@freesewing/mui-theme": "2.15.4",

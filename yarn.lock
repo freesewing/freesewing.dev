@@ -1269,10 +1269,10 @@
     "@fontsource/ubuntu" latest
     open-color "^1.7.0"
 
-"@freesewing/examples@2.15.2":
-  version "2.15.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/examples/-/examples-2.15.2.tgz#3edbf6d73ed75ee65c3d9f508d2941bc28416e98"
-  integrity sha512-l+uO5NJj8u7f8XGDkofmrpmmLPXCr8IYHODl9jwnCjw1z90XFjAxRM0x1XUIdjWQ9CPqaZWvTVSzIHA4abwNBw==
+"@freesewing/examples@2.15.4":
+  version "2.15.4"
+  resolved "https://registry.yarnpkg.com/@freesewing/examples/-/examples-2.15.4.tgz#9c790028eb146fc662d01b51c665e9ab69cf73eb"
+  integrity sha512-PXJ7RhurpLudiiO313XsBFo5zNzIcb/E1aMupYTfzcxgx09ZvGRR5TTauVEMzXN6gY3+5vmqYv+2U61drxudSQ==
 
 "@freesewing/i18n@^2.15.2":
   version "2.15.2"
