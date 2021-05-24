@@ -19,8 +19,16 @@ const Page = props => {
       noLayout
     >
       <div id="homepage">
+        <div style={{maxWidth: '500px', margin: '2rem auto'}}>
+          <h5 style={{textAlign: 'center', marginBottom: '-1.5rem', padding: 0}}>TL;DR</h5>
+          <div className="gatsby-highlight" data-language="bash">
+            <pre class="language-bash">
+              <code className="language-bash">npx create-freesewing-pattern</code>
+            </pre>
+          </div>
+        </div>
         <Iconbar />
-        <Splash app={app} />
+        <Splash />
         <div className="news">
           <LatestNews homepage />
         </div>

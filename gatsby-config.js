@@ -4,9 +4,6 @@ const searchData = require('./src/algolia')
 
 const plugins = [
   `gatsby-plugin-sass`,
-  // Automatically restores your cache and caches new files within the Netlify cache folder.
-  //   To reset the cache, hit the Clear build cache checkbox in the Netlify app.
-  'gatsby-plugin-netlify-cache',
   {
     resolve: 'gatsby-plugin-nprogress',
     options: {
