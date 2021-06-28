@@ -1245,10 +1245,10 @@
   resolved "https://registry.yarnpkg.com/@freesewing/components/-/components-2.16.0.tgz#e45b5e4f2a070089d3db447da91c3ad216a6e920"
   integrity sha512-qRefIRhL71jhxSO4rwcB8uNNKoljKLlSZyCloZWnZqjQ9ivqUz0+hbmhuqsV+6s3gagvrz3L/FXTiJktfPEtGQ==
 
-"@freesewing/core@2.16.0":
-  version "2.16.0"
-  resolved "https://registry.yarnpkg.com/@freesewing/core/-/core-2.16.0.tgz#afc28ed7657734b52ca78e5718ee34547bb9c3ef"
-  integrity sha512-gpjpimDCdkYSevjMZGSEL8IEjT4DJdRG82ZhwZLu5smkr+CMWx9g+Bu0I22V5PEQ2pAihF9m0gqdxXFGWpZKug==
+"@freesewing/core@2.16.1":
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/@freesewing/core/-/core-2.16.1.tgz#b94dfd42f130305e6d953922439aa7ece07f5b13"
+  integrity sha512-ACEBY8J4h6YBtgZd+yvgiemV0APfHf+P9wImKB2n0pc3LVb7TmUxl+g6TZ4MCuxl4Iy0t2+40jHI/MpZh0uAgg==
   dependencies:
     bezier-js "^4.1.1"
     bin-pack "^1.0.2"
@@ -1284,10 +1284,10 @@
   resolved "https://registry.yarnpkg.com/@freesewing/mui-theme/-/mui-theme-2.16.0.tgz#14aec6ec336d07d49389821734f47c55d215a800"
   integrity sha512-U4VqQliVaBbsC5Qkr1CcdSoMdu18jD2Fpjr7PYdGYs8LwAtp7SFdQhCmenKSRNlAP8SE0Y85HAguQnp5ISwK1g==
 
-"@freesewing/pattern-info@2.16.0":
-  version "2.16.0"
-  resolved "https://registry.yarnpkg.com/@freesewing/pattern-info/-/pattern-info-2.16.0.tgz#8884f1b1e38ba669233877fe0ecd6d35d784120a"
-  integrity sha512-qsLf7F4Cieqg10Tic7uC8799rOGaJ++XiPPiL2/LW7cCPL0sGoU8nRT8Xh8/EI6VZmrmPvQFPpz3/y8vVwNSqQ==
+"@freesewing/pattern-info@2.16.1":
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/@freesewing/pattern-info/-/pattern-info-2.16.1.tgz#003ad15cac36a6101d0410e3a11223651a694ef0"
+  integrity sha512-HJ7wZMi4gBvTXlMsdxqfjmKZEY1VMLCMNJ9wjBjxTrmsgdg9t/l2ycFX+zyUijNBpRUazBbwZTKagKOXb4FsOA==
 
 "@freesewing/plugin-bundle@2.16.0":
   version "2.16.0"
@@ -7078,15 +7078,6 @@ fs-extra@^4.0.2:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
-fs-extra@^7.0.0:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-7.0.1.tgz#4f189c44aa123b895f722804f55ea23eadc348e9"
-  integrity sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
-  dependencies:
-    graceful-fs "^4.1.2"
-    jsonfile "^4.0.0"
-    universalify "^0.1.0"
-
 fs-extra@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
@@ -7346,14 +7337,6 @@ gatsby-plugin-mdx@2.4.0:
     unist-util-remove "^1.0.3"
     unist-util-visit "^1.4.1"
 
-gatsby-plugin-netlify-cache@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify-cache/-/gatsby-plugin-netlify-cache-1.2.0.tgz#e68db9c5bd4ae103b4589f9be2a3cb9958750788"
-  integrity sha512-unt4mAVpC0JzwZSo8KQV4P/trDHkr3PeTWDF5Hijw9jGfNQIWXbcj9nYljAVg7HCich6E6b27Q+zuf53InwpDQ==
-  dependencies:
-    babel-runtime "^6.26.0"
-    fs-extra "^7.0.0"
-
 gatsby-plugin-netlify@3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-netlify/-/gatsby-plugin-netlify-3.4.0.tgz#492e002acfe11bf2aad78ff6d130f3855a8640ca"
@@ -7583,12 +7566,12 @@ gatsby-remark-images@5.1.0:
     unist-util-select "^3.0.4"
     unist-util-visit-parents "^3.1.1"
 
-gatsby-remark-jargon@2.16.0:
-  version "2.16.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-jargon/-/gatsby-remark-jargon-2.16.0.tgz#ca8ce70fe4f7e440fb4bcb790908f4e11b0d2479"
-  integrity sha512-4wCxpK9goqctoWwRttEpBYlBYNF6osIVdwY+J1GMVaNku9IXSdq5V65tRUOi2n4clJC+wArHDUF//FW3miyVmg==
+gatsby-remark-jargon@2.16.1:
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-jargon/-/gatsby-remark-jargon-2.16.1.tgz#b4523d8ad7caa1fd45196f181c8278729c42a535"
+  integrity sha512-aoiXjIEkDbo/sutY+Nj/OWmpdT9ofMt+KE7p1c5e0FkvBcw7UvRgFaPypQf5QI/vTtX3jc8RN1jlj5vwk7f2UQ==
   dependencies:
-    remark-jargon "^2.16.0"
+    remark-jargon "^2.16.1"
 
 gatsby-remark-prismjs@5.1.0:
   version "5.1.0"
@@ -14369,10 +14352,10 @@ remark-html@13.0.1:
     hast-util-to-html "^7.0.0"
     mdast-util-to-hast "^10.0.0"
 
-remark-jargon@2.16.0, remark-jargon@^2.16.0:
-  version "2.16.0"
-  resolved "https://registry.yarnpkg.com/remark-jargon/-/remark-jargon-2.16.0.tgz#e87c8040f1ef264723d6a931f6ce040f9c76a471"
-  integrity sha512-Eb2G+9gPEZoKBbrsD3e/4nArkM9GIbB9zRnybmojVSC6edaWguGQxxuc3YO1dcPn/tx94M7qW+4GZyf8BhDmEA==
+remark-jargon@2.16.1, remark-jargon@^2.16.1:
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/remark-jargon/-/remark-jargon-2.16.1.tgz#01dbf9d9e02fee246b09d211031ac7a56574cad8"
+  integrity sha512-av6XZPzeERcL4rhaXVhGhww/IoCBmjrlZfiaBTjZ8qFc0YcriTux4Q7GOdipKuO/HMvC6Qz8McW/RjfHAUMtZA==
   dependencies:
     unist-util-visit "^3.1.0"
 
