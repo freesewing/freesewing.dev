@@ -1363,10 +1363,10 @@
   resolved "https://registry.yarnpkg.com/@freesewing/tutorial/-/tutorial-2.16.2.tgz#170f12cb3249119a718f30467c8fe646f96cf9b0"
   integrity sha512-uPQgWf2WhkDRlTrQJuUIjGaKNh48J83cRQoJmZSYWuM09iCRA0KHQvYYL0k9HefzIxluosVHKTCkvotpSZCawA==
 
-"@freesewing/utils@2.16.2":
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/utils/-/utils-2.16.2.tgz#1ea20d8a9ddf3d5a17d5fb69c25f2311cd10ba1a"
-  integrity sha512-Bh17rH1n+6sTV2C2kBIbw2WZqRopboVnrXQZQK2fHkhtkO89e0wrRsx1LzeMPNBY8+GUuPuJ2U3Q7ZrYY2dbbQ==
+"@freesewing/utils@2.17.0":
+  version "2.17.0"
+  resolved "https://registry.yarnpkg.com/@freesewing/utils/-/utils-2.17.0.tgz#81ad9287aa97e47ea42652e85a6105e21d9485ad"
+  integrity sha512-S32m/JM4qgytPpWERBz1uIEZIfjy4ThStdz8tCnmfBPr8vqWVT4BAvcBbRdvBWDVQuTMaBtBcHjLwNe2ECFCUQ==
 
 "@gatsbyjs/reach-router@^1.3.6":
   version "1.3.6"
