@@ -67,7 +67,7 @@
     "lodash.orderby": "^4.6.0",
     "lodash.set": "^4.3.2",
     "node-sass": "^5.0.0",
-    "prismjs": "1.23.0",
+    "prismjs": "1.24.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "6.1.0",
