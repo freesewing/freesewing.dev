@@ -1289,69 +1289,20 @@
   resolved "https://registry.yarnpkg.com/@freesewing/pattern-info/-/pattern-info-2.16.1.tgz#003ad15cac36a6101d0410e3a11223651a694ef0"
   integrity sha512-HJ7wZMi4gBvTXlMsdxqfjmKZEY1VMLCMNJ9wjBjxTrmsgdg9t/l2ycFX+zyUijNBpRUazBbwZTKagKOXb4FsOA==
 
-"@freesewing/plugin-bundle@2.16.2":
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/plugin-bundle/-/plugin-bundle-2.16.2.tgz#b6e549a9df07c78d458c599c4767ad82bd025354"
-  integrity sha512-hu+Lje5S77HHpFeS/yEQRLyPN+dhq6IoTQb0oNRgox8eHSMj9LXvwEG+o86+7EBRuPz4sQDfoUtqgDDG3CuBBA==
-  dependencies:
-    "@freesewing/plugin-cutonfold" "^2.16.2"
-    "@freesewing/plugin-dimension" "^2.16.2"
-    "@freesewing/plugin-grainline" "^2.16.2"
-    "@freesewing/plugin-logo" "^2.16.2"
-    "@freesewing/plugin-round" "^2.16.2"
-    "@freesewing/plugin-scalebox" "^2.16.2"
-    "@freesewing/plugin-sprinkle" "^2.16.2"
-    "@freesewing/plugin-title" "^2.16.2"
+"@freesewing/plugin-bundle@2.17.2":
+  version "2.17.2"
+  resolved "https://registry.yarnpkg.com/@freesewing/plugin-bundle/-/plugin-bundle-2.17.2.tgz#fc7724ae2670170734b4a1b44a1f22fc2330f382"
+  integrity sha512-RoezDbSps1nUXmeA3OCoOgshK/GLYswjrbT6+qB7FLW4KUsjUOD/co8NzABUqh2dBwXXCzy8bHYEA/ULkZ3eLA==
 
 "@freesewing/plugin-buttons@2.16.2":
   version "2.16.2"
   resolved "https://registry.yarnpkg.com/@freesewing/plugin-buttons/-/plugin-buttons-2.16.2.tgz#9ac3926b57987374bee0523e23575adc610f5bbe"
   integrity sha512-MYlM5OuEAPOvZwVlxPm4jefxZLucQKW46wDEUBESzgYT8uYLydxA6T11CFOhUL8Bm94LtjIyk1BZLkZuQSo9dA==
 
-"@freesewing/plugin-cutonfold@^2.16.2":
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/plugin-cutonfold/-/plugin-cutonfold-2.16.2.tgz#b85e03a40f273e1af6fa25669ee3cb69a544d5c8"
-  integrity sha512-r+cmU+wzvF6dtVA4GB/RuJgn73yDm7vx0B9o4/lM8Xh1RTBQawImKyZKVKhNarGTmRuemwyTVYrZajW+Fnd6iQ==
-
-"@freesewing/plugin-dimension@^2.16.2":
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/plugin-dimension/-/plugin-dimension-2.16.2.tgz#d923ef1f66125276b9181730d7ae8823fa50b26c"
-  integrity sha512-uiazX2piLdqW5Tucw2f63PzfD3GTECe2Kr7837ZeTj5fQsdU3d3afToTv5hk71BSVXs7MowAycaN1ef6hXDIyQ==
-
-"@freesewing/plugin-grainline@^2.16.2":
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/plugin-grainline/-/plugin-grainline-2.16.2.tgz#edc2f2ee7011193944ed2b301f0336c0370aaadf"
-  integrity sha512-Y80HSnYI41Lrk1jhPgpcTxbyYnn8wDIt881SLfm76OLJ3K0g2CR9NwtUNTzatDUG3FveCFV7vRvQruy8piHYew==
-
-"@freesewing/plugin-logo@^2.16.2":
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/plugin-logo/-/plugin-logo-2.16.2.tgz#3365cbf673a8aff2514faaf0989ea5073fc1b581"
-  integrity sha512-cPcN3kbaXkl4CIAfIJsdPjJlLuSyhNqSmPdQwKUjZOOoUch1QhafjJsKhtw6gSoRyT8+E1YME7MBBSD2a4SCdw==
-
-"@freesewing/plugin-round@^2.16.2":
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/plugin-round/-/plugin-round-2.16.2.tgz#d97d878c945b595e4f1f34cdffbd2dace3420132"
-  integrity sha512-6+VDwyrv85l1/FOMZ104MKLriofa/Vy/9ODKMxRtJfTR7kw4b1xip35f35QfrT5RuibQ4EdyMslHDvrSMxGNYg==
-
-"@freesewing/plugin-scalebox@^2.16.2":
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/plugin-scalebox/-/plugin-scalebox-2.16.2.tgz#0ecefb22adf9b03d893056fa089d1e504e79d827"
-  integrity sha512-VZzImZjuJRgtTOVlct5LlVm2lZngVBTDpkkNBxjf/lmfBA07h4zrOcrOYauS1I8//InWbkKNvB4rwoZAYw9mBg==
-
-"@freesewing/plugin-sprinkle@^2.16.2":
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/plugin-sprinkle/-/plugin-sprinkle-2.16.2.tgz#e150714ce681fb205a176880c21aededbdebe223"
-  integrity sha512-N+zq+cbZDkqPEDOJAmHHMHe8KyJwSTICuhYGH5D4FB2/Z/hWCQjQygfpkmjbyCuJH7/IAsSKOqzsFusLOf6L7Q==
-
 "@freesewing/plugin-theme@^2.16.2":
   version "2.16.2"
   resolved "https://registry.yarnpkg.com/@freesewing/plugin-theme/-/plugin-theme-2.16.2.tgz#810e637c1cb6e371653bf5a254b14523f799ad6e"
   integrity sha512-0NpB6ASLry+//1sIDRAq+kH2lmlxcQvW9AHIKYoaqAiY4lGXA8yIzGyPk0kzPVgum1S5rmeCSTv9lejNdB10Iw==
-
-"@freesewing/plugin-title@^2.16.2":
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/plugin-title/-/plugin-title-2.16.2.tgz#9bf6a63dbb56a8a297758addc7a87ca337e7e0c9"
-  integrity sha512-ACMMtiaIaOuwhE3dnrmDOWZnzHVdEgAcb45ds6iMg+3+ZTzTa1b1yifauIg2GgnMt3xDagyJvdbF0NYm44bEmw==
 
 "@freesewing/rendertest@2.16.2":
   version "2.16.2"
