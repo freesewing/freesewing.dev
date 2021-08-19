@@ -1,13 +1,9 @@
 require('dotenv').config()
 const searchData = require('./src/algolia')
-const jargon = require('@freesewing/i18n').jargon.en
 
 
 const plugins = [
   `gatsby-plugin-sass`,
-  // Automatically restores your cache and caches new files within the Netlify cache folder.
-  //   To reset the cache, hit the Clear build cache checkbox in the Netlify app.
-  'gatsby-plugin-netlify-cache',
   {
     resolve: 'gatsby-plugin-nprogress',
     options: {
@@ -38,7 +34,8 @@ const plugins = [
           options: {
             maxWidth: 800,
             showCaptions: ['title', 'alt'],
-            markdownCaptions: true
+            markdownCaptions: true,
+            backgroundColor: `, 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12)`
           }
         }
       ],
@@ -47,6 +44,8 @@ const plugins = [
           resolve: 'gatsby-remark-images',
           options: {
             maxWidth: 800,
+            showCaptions: ['title', 'alt'],
+            backgroundColor: `transparent`,
           }
         },
         {
@@ -58,12 +57,13 @@ const plugins = [
           }
         },
         'gatsby-remark-copy-linked-files',
-        'gatsby-remark-autolink-headers',
-        'gatsby-remark-smartypants',
         {
-          resolve: 'gatsby-remark-jargon',
-          options: { jargon }
-        }
+          resolve: 'gatsby-remark-autolink-headers',
+          options: {
+            elements: ['h2','h3']
+          }
+        },
+        'gatsby-remark-smartypants',
       ]
     }
   },
@@ -90,16 +90,16 @@ const plugins = [
 
 // Only update the Algolia indices when having the ALGOLIA_UPDATE_KEY set.
 //   Most likely on deployment to production only
-//if (process.env.CONTEXT === 'production' && process.env.HEAD === 'master') {
-//  plugins.push({
-//    resolve: 'gatsby-plugin-algolia',
-//    options: {
-//      appId: process.env.GATSBY_ALGOLIA_API_ID,
-//      apiKey: process.env.GATSBY_ALGOLIA_UPDATE_KEY,
-//      queries: searchData('en'),
-//      chunkSize: 10000
-//    }
-//  })
-//}
+if (process.env.CONTEXT === 'production' && process.env.HEAD === 'main') {
+  plugins.push({
+    resolve: 'gatsby-plugin-algolia',
+    options: {
+      appId: process.env.GATSBY_ALGOLIA_API_ID,
+      apiKey: process.env.ALGOLIA_UPDATE_KEY,
+      queries: searchData(),
+      chunkSize: 10000
+    }
+  })
+}
 
 module.exports = { plugins: plugins }

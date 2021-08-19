@@ -13,14 +13,14 @@ const customComponents = {
   Tip: ({ children }) => <Blockquote type="tip">{children}</Blockquote>,
   Warning: ({ children }) => <Blockquote type="warning">{children}</Blockquote>,
   Fixme: ({ children }) => <Blockquote type="fixme">{children}</Blockquote>,
-  ReadMore: props => <ReadMore {...props} />,
   YouTube,
-  Example: props => <Example {...props} design={props.design ? true : false} />,
+  Example: props => <Example {...props} />,
   Hashtag
 }
 
-const Mdx = ({ node, offspring, orderedOffspring }) => {
-  customComponents.ReadMore = (props) => <ReadMore {...props} offspring={offspring} orderedOffspring={orderedOffspring} />
+const Mdx = ({ node, offspring }) => {
+  if (!node) return null
+  customComponents.ReadMore = (props) => <ReadMore node={node} pages={offspring} {...props} />
   return (
     <section id="mdx">
       <MDXProvider components={customComponents}>

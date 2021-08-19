@@ -1,31 +1,39 @@
 import React from 'react'
 import BreadCrumbs from '../breadcrumbs'
-import MainAside from '../menus/main-aside'
+import PrevNext from '../prev-next'
+import EditIcon from '@material-ui/icons/Edit'
+import IconButton from '@material-ui/core/IconButton'
 import './default.scss'
+
+const EditLink = ({edit=false}) => edit
+  ?  <IconButton
+      className='editpencil'
+      href={`https://github.com/freesewing/markdown/edit/develop/dev/${edit}/en.md`}
+      target='_BLANK'
+      rel='nofollow'
+      size='small'
+      title='Edit this page'
+    ><EditIcon /></IconButton>
+  : null
 
 const DefaultLayout = (props) => {
   return (
-    <div className="fs-sa" dataLayout="docs">
-      <aside>
-        <div className="sticky">
-          <MainAside app={props.app} active={props.active} />
-          <div className="aside-context">{props.context || null}</div>
-        </div>
-      </aside>
-      <section>
-        {!props.noCrumbs && <BreadCrumbs crumbs={props.crumbs} pageTitle={props.title} />}
-        {!props.noTitle && <h1>{props.title}</h1>}
-        {(props.toc && !props.wide) ? (
-          <div className="text-toc-wrapper">
-            <div className="text">{props.children}</div>
-            <div className="toc">{props.toc}</div>
+    <div className="layout-wrapper">
+      <div className="layout" dataLayout="docs">
+        <aside>
+          <div className="sticky">
+            {props.mainMenu}
           </div>
-        ) : props.text ? (
-          <div style={{ maxWidth: '80ch' }}>{props.children}</div>
-        ) : (
-          props.children
-        )}
-      </section>
+        </aside>
+        <section>
+          {!props.noCrumbs && <BreadCrumbs crumbs={props.crumbs} pageTitle={props.title} />}
+          {!props.noTitle && <h1>{props.title}<EditLink edit={props.edit}/></h1>}
+          <div className={`content ${props.wide ? 'wide' : ''}`}>
+            {props.children}
+            <PrevNext prev={props.prev} next={props.next} />
+          </div>
+        </section>
+      </div>
     </div>
   )
 }

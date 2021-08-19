@@ -12,6 +12,7 @@ const YouTube = (props) => {
       }}
     >
       <iframe
+        title='Embedded YouTube video'
         style={{
           position: 'absolute',
           top: 0,

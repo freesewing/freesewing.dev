@@ -10,8 +10,8 @@ const Page = (props) => {
   return (
     <AppWrapper
       app={app}
-      title={app.translate('errors.404')}
-      description={'404: ' + app.translate('errors.404')}
+      title='Page not found'
+      description='The page your requested could not be found'
     >
       <div style={{ textAlign: 'center' }}>
         <Robot size={300} pose="shrug" />

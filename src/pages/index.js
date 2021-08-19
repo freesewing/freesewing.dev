@@ -2,15 +2,11 @@ import React from 'react'
 import useApp from '../hooks/useApp'
 import AppWrapper from '../components/app/wrapper'
 
-import withLanguage from '../components/withLanguage'
-import Button from '@material-ui/core/Button'
-import { FormattedMessage } from 'react-intl'
+import LatestNews from '../components/LatestNews'
+import Splash from '../components/homepage/splash'
+import Iconbar from '../components/homepage/iconbar'
+
 import './homepage.scss'
-import Pinned from '../components/mdx/pinned'
-import Tutorials from '../components/mdx/tutorials'
-import Guides from '../components/mdx/guides'
-import Howtos from '../components/mdx/howtos'
-import Reference from '../components/mdx/reference'
 
 const Page = props => {
 
@@ -20,51 +16,25 @@ const Page = props => {
     <AppWrapper
       app={app}
       title='FreeSewing documentation for contributors & developers'
-      noCrumbs
-      noTitle
+      noLayout
     >
       <div id="homepage">
-        <h1>
-          FreeSewing documentation
-          <span>For contributors & developers</span>
-        </h1>
-        <div className='previews'>
-          <Pinned list />
-          <Tutorials list brief />
-          <Guides list brief />
-        </div>
-
-        {/* Support banner */}
-        <div className="stripe">
-          <div className='stripe-content'>
-            <h1>
-              <FormattedMessage id="app.supportFreesewing" />
-            </h1>
-            <h2>
-              <FormattedMessage id="app.txt-tiers" />
-            </h2>
-            <p>
-              <FormattedMessage id="app.patronPitch" />
-            </p>
-            <Button
-              className="btn-primary"
-              variant="contained"
-              href="https://freesewing.org/patrons/join/"
-            >
-              Join the FreeSewing patrons
-            </Button>
+        <div style={{maxWidth: '500px', margin: '2rem auto'}}>
+          <h5 style={{textAlign: 'center', marginBottom: '-1.5rem', padding: 0}}>TL;DR</h5>
+          <div className="gatsby-highlight" data-language="bash">
+            <pre class="language-bash">
+              <code className="language-bash">npx create-freesewing-pattern</code>
+            </pre>
           </div>
         </div>
-
-        <h2>Howtos</h2>
-        <Howtos />
-
-        <h2>Reference</h2>
-        <Reference />
-
+        <Iconbar />
+        <Splash />
+        <div className="news">
+          <LatestNews homepage />
+        </div>
       </div>
     </AppWrapper>
   )
 }
 
-export default withLanguage(Page)
+export default Page
