@@ -8,7 +8,7 @@ import './default.scss'
 const EditLink = ({edit=false}) => edit
   ?  <IconButton
       className='editpencil'
-      href={`https://github.com/freesewing/markdown/edit/develop/dev/${edit}/en.md`}
+      href={`https://github.com/freesewing/freesewing/edit/develop/markdown/dev/${edit}/en.md`}
       target='_BLANK'
       rel='nofollow'
       size='small'

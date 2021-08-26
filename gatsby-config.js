@@ -13,7 +13,7 @@ const plugins = [
   {
     resolve: 'gatsby-source-filesystem',
     options: {
-      path: `${__dirname}/markdown/dev`,
+      path: `${__dirname}/monorepo/markdown/dev`,
       name: 'markdown',
       ignore: [
         '**/nl.md',
