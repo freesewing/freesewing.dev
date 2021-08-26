@@ -4,7 +4,7 @@ function useUiMdx() {
   // Static query
   const data = useStaticQuery(graphql`
     {
-      allMdx(filter: { fileAbsolutePath: { glob: "**/markdown/dev/ui/**/*.md" } }) {
+      allMdx(filter: { fileAbsolutePath: { glob: "**/monorepo/markdown/dev/ui/**/*.md" } }) {
         edges {
           node {
             frontmatter {
@@ -20,7 +20,7 @@ function useUiMdx() {
   let uiMdx = {}
   for (let node of data.allMdx.edges) {
     let id = node.node.fileAbsolutePath
-      .split('markdown/dev/ui/')
+      .split('monorepo/markdown/dev/ui/')
       .pop()
       .slice(0, -6)
     uiMdx[id] = {
