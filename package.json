@@ -45,7 +45,7 @@
     "gatsby-image": "3.11.0",
     "gatsby-link": "3.4.0",
     "gatsby-plugin-algolia": "0.19.0",
-    "gatsby-plugin-catch-links": "3.4.0",
+    "gatsby-plugin-catch-links": "3.14.0",
     "gatsby-plugin-manifest": "^3.4.0",
     "gatsby-plugin-mdx": "2.4.0",
     "gatsby-plugin-netlify": "3.4.0",
