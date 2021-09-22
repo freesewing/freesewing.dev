@@ -1230,7 +1230,12 @@
   resolved "https://registry.yarnpkg.com/@fontsource/permanent-marker/-/permanent-marker-4.2.2.tgz#4e84483ab63e1bf42d29abb39eca6c125dfd676f"
   integrity sha512-vTovRaO/fAnaEDwrzSaV02CP+KtWEkL/nFyc5J2r6MJi39cDmD2f23ExTwL8Nqb8bybK00DrEWplcDVyEUzpjQ==
 
-"@fontsource/roboto-mono@^4.2.2", "@fontsource/roboto-mono@latest":
+"@fontsource/roboto-mono@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/roboto-mono/-/roboto-mono-4.5.0.tgz#27e44fbb1d86a9ef14501493a37eef1d73e60d02"
+  integrity sha512-/6Gm6fJjBHZiFNyvzIKGJkVuyifoc1aoTel+pkzdhxNh7yNhFyokCoChdbbqZEpGKpqs5uld74G5TJthUVFyjw==
+
+"@fontsource/roboto-mono@latest":
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/@fontsource/roboto-mono/-/roboto-mono-4.2.2.tgz#deb736753e9680e94a11d6e162badf8636310942"
   integrity sha512-qBEDhPHwN0m6VXSS1EGSAkmKT3gqfQZJyynSkSDQZNPRLeDVq7CTcmJWhjIqAFgVqJ4PNfMUIEl9+bqeBtlvhQ==
