@@ -1279,10 +1279,10 @@
   resolved "https://registry.yarnpkg.com/@freesewing/i18n/-/i18n-2.16.2.tgz#a89ba5ea3ab7233758a3aeac586055d4cdd1281a"
   integrity sha512-i23e2ZNRH48hveP5aPfvDXMYpApcmpCfUG0kUab6S5hoUSSyhZCwpgCuowSfKcji+qvQqcOOCj/EgkwNCn9tTQ==
 
-"@freesewing/models@2.16.2":
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/models/-/models-2.16.2.tgz#9c107e995e70405223b2d6379480699cfe3fd36a"
-  integrity sha512-FVfhmD0OrACqmF7uqe7WTCeDPARDNgt8efT4RBg5cK1FfuC0uPE8FX4g/DwGPp6mb5i65UFhc/re8uzw4kIxXg==
+"@freesewing/models@2.17.1":
+  version "2.17.1"
+  resolved "https://registry.yarnpkg.com/@freesewing/models/-/models-2.17.1.tgz#0cbaca3e4a05ec5b6bda9c2f9cbd2f4e2e31acce"
+  integrity sha512-Q2f5Wpr7z8wOePapyDHM9SDvUJdg+LKBT3KZpq4MAtBtlh42/U9ssfSLy7F3fbFYRGzjXzfaprkVc9nVMO/WxQ==
 
 "@freesewing/mui-theme@2.16.2":
   version "2.16.2"
