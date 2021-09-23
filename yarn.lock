@@ -1304,10 +1304,10 @@
   resolved "https://registry.yarnpkg.com/@freesewing/plugin-buttons/-/plugin-buttons-2.16.2.tgz#9ac3926b57987374bee0523e23575adc610f5bbe"
   integrity sha512-MYlM5OuEAPOvZwVlxPm4jefxZLucQKW46wDEUBESzgYT8uYLydxA6T11CFOhUL8Bm94LtjIyk1BZLkZuQSo9dA==
 
-"@freesewing/plugin-theme@^2.16.2":
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/plugin-theme/-/plugin-theme-2.16.2.tgz#810e637c1cb6e371653bf5a254b14523f799ad6e"
-  integrity sha512-0NpB6ASLry+//1sIDRAq+kH2lmlxcQvW9AHIKYoaqAiY4lGXA8yIzGyPk0kzPVgum1S5rmeCSTv9lejNdB10Iw==
+"@freesewing/plugin-theme@^2.18.0":
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/@freesewing/plugin-theme/-/plugin-theme-2.18.0.tgz#663fc05376db617df4f83e63a9d79c01333f3cfa"
+  integrity sha512-qrjfLMHVRb2Q27RR0/hO77l5SHBF8NnGQwii3qsWVJdpFDLfq/R2MmBqN8PkdHHca/JB6YGkI/ljSUJ1yKqWKg==
 
 "@freesewing/rendertest@2.16.2":
   version "2.16.2"
