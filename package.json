@@ -60,7 +60,7 @@
     "gatsby-remark-images": "5.11.0",
     "gatsby-remark-jargon": "2.18.0",
     "gatsby-remark-prismjs": "5.11.0",
-    "gatsby-remark-smartypants": "4.1.0",
+    "gatsby-remark-smartypants": "4.11.0",
     "gatsby-source-filesystem": "3.4.0",
     "gatsby-transformer-remark": "4.7.0",
     "gatsby-transformer-sharp": "3.4.0",
