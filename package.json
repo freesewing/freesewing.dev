@@ -15,7 +15,7 @@
   "dependencies": {
     "@bugsnag/js": "^7.9.2",
     "@bugsnag/plugin-react": "^7.9.2",
-    "@fontsource/permanent-marker": "^4.2.2",
+    "@fontsource/permanent-marker": "^4.5.0",
     "@fontsource/roboto-mono": "^4.5.0",
     "@fontsource/ubuntu": "^4.5.0",
     "@freesewing/components": "2.16.2",

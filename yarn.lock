@@ -1246,7 +1246,12 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@fontsource/permanent-marker@^4.2.2", "@fontsource/permanent-marker@latest":
+"@fontsource/permanent-marker@^4.5.0":
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/@fontsource/permanent-marker/-/permanent-marker-4.5.0.tgz#b8cd62e60efaf76c5ed049cd1e1f2a453b5ce927"
+  integrity sha512-pQD7//FSAXNShAa8AfY5B9SKP3CiLLepx8iQlBfp3QdUNbQ4q8vVMrx8le7y6nrhr3+5peeNPYf9bin9+ZYkow==
+
+"@fontsource/permanent-marker@latest":
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/@fontsource/permanent-marker/-/permanent-marker-4.2.2.tgz#4e84483ab63e1bf42d29abb39eca6c125dfd676f"
   integrity sha512-vTovRaO/fAnaEDwrzSaV02CP+KtWEkL/nFyc5J2r6MJi39cDmD2f23ExTwL8Nqb8bybK00DrEWplcDVyEUzpjQ==
