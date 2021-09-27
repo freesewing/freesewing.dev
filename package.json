@@ -63,7 +63,7 @@
     "gatsby-remark-smartypants": "4.11.0",
     "gatsby-source-filesystem": "3.14.0",
     "gatsby-transformer-remark": "4.7.0",
-    "gatsby-transformer-sharp": "3.4.0",
+    "gatsby-transformer-sharp": "3.14.0",
     "lodash.orderby": "^4.6.0",
     "lodash.set": "^4.3.2",
     "node-sass": "^5.0.0",
