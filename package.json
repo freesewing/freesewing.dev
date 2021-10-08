@@ -76,7 +76,7 @@
     "remark-jargon": "2.16.1",
     "sharp": "^0.29.1",
     "styled-components": "^5.3.1",
-    "tlds": "1.221.1"
+    "tlds": "1.223.0"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.13.2",
