@@ -1141,17 +1141,17 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@bugsnag/browser@^7.9.2":
-  version "7.9.2"
-  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-7.9.2.tgz#3200ebad36f0d8387b6fb66d05311c61e9f86cd5"
-  integrity sha512-vD0UEpInqoOWxqSdXhDN7wbt8hUnaqmHF/nyQK6pVYlPmBOaseexwjGBWQ1BCa4QWwK1CDDBy6sS9onUvWKsnw==
+"@bugsnag/browser@^7.11.0":
+  version "7.11.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/browser/-/browser-7.11.0.tgz#21866da8a4699ec87a2c908e228af938a3a3c312"
+  integrity sha512-iOKXJcZzdl9XsjJnL62S+T4OQZJ21mUMCXXOiMRlLnDCrw30BwD4BoAZ5s3oQ0VE0azrv/CUsXQzU63NUcsb+Q==
   dependencies:
-    "@bugsnag/core" "^7.9.2"
+    "@bugsnag/core" "^7.11.0"
 
-"@bugsnag/core@^7.9.2":
-  version "7.9.2"
-  resolved "https://registry.yarnpkg.com/@bugsnag/core/-/core-7.9.2.tgz#76f2c7954a85ebb21517395500f4a7ec5226e488"
-  integrity sha512-iz18qkEhrF0Bra0lpEP4VC0EJa48R+3QDDiTtfHW9fiZGKw+ADrUhwW7pHJn+LDqWfq4kMqJNuQC+8s4dV3MYg==
+"@bugsnag/core@^7.11.0":
+  version "7.11.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/core/-/core-7.11.0.tgz#61181c082d2407611b53308fe66f001287e794a4"
+  integrity sha512-xCaaONqQEAewifrvHC8v+yqN+Is4WNUcmK+sdeLcSb+ghLQ52y3BQ9nEDYzQxGuJRpv1zW3edCVIB4RN5eunSQ==
   dependencies:
     "@bugsnag/cuid" "^3.0.0"
     "@bugsnag/safe-json-stringify" "^6.0.0"
@@ -1164,20 +1164,20 @@
   resolved "https://registry.yarnpkg.com/@bugsnag/cuid/-/cuid-3.0.0.tgz#2ee7642a30aee6dc86f5e7f824653741e42e5c35"
   integrity sha512-LOt8aaBI+KvOQGneBtpuCz3YqzyEAehd1f3nC5yr9TIYW1+IzYKa2xWS4EiMz5pPOnRPHkyyS5t/wmSmN51Gjg==
 
-"@bugsnag/js@^7.9.2":
-  version "7.9.2"
-  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-7.9.2.tgz#771143e966ca4a67ca30b685fc9ff246dc403363"
-  integrity sha512-RkajX7cnlYKm4uWclf4oQKZL69A9Vo5jNyQiE7u8uFXhotHoDyHi5QLkdHOSIOZHkBGkgoRV9tkbPAJKcnJSuQ==
+"@bugsnag/js@^7.11.0":
+  version "7.11.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/js/-/js-7.11.0.tgz#ce76b261a0a31e631c79c04b235c17db19be58cb"
+  integrity sha512-2KQZdiBUQRayrTweMrH8LuT+YFcZSYxPVb+RaAx5J1z3vWWFar7Lw3II34zA4e+zs/7wMSTKll5p+O7Wuz60/A==
   dependencies:
-    "@bugsnag/browser" "^7.9.2"
-    "@bugsnag/node" "^7.9.2"
+    "@bugsnag/browser" "^7.11.0"
+    "@bugsnag/node" "^7.11.0"
 
-"@bugsnag/node@^7.9.2":
-  version "7.9.2"
-  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-7.9.2.tgz#190ce372139935a26d11693ce9b8461ef9e62d50"
-  integrity sha512-e+tEyUBQ6e5z4WJlPAi962rnbR0f+0wxPjSoUHV5uVFg5Dkjg3ioXDdzKVbxfOEv3nVpXlMD8DrQqYe5g0O6sA==
+"@bugsnag/node@^7.11.0":
+  version "7.11.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/node/-/node-7.11.0.tgz#47a97c45706b7cecd681d7c86860d9d5f4242303"
+  integrity sha512-hwIG7LTE2lwaIjAes1JxYbjSoih9Eu07MSf+QJoMILY6tJoHMgxJ6v0/8AfldJeEAb753qBtlQLO8Rtr2LKHBA==
   dependencies:
-    "@bugsnag/core" "^7.9.2"
+    "@bugsnag/core" "^7.11.0"
     byline "^5.0.0"
     error-stack-parser "^2.0.2"
     iserror "^0.0.2"
