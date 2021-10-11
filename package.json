@@ -19,7 +19,7 @@
     "@fontsource/roboto-mono": "^4.5.0",
     "@fontsource/ubuntu": "^4.5.0",
     "@freesewing/components": "2.16.2",
-    "@freesewing/core": "2.16.1",
+    "@freesewing/core": "2.18.0",
     "@freesewing/css-theme": "2.18.0",
     "@freesewing/examples": "2.16.2",
     "@freesewing/i18n": "^2.18.0",
