@@ -13859,14 +13859,7 @@ remark-html@13.0.2:
     hast-util-to-html "^7.0.0"
     mdast-util-to-hast "^10.0.0"
 
-remark-jargon@2.16.1:
-  version "2.16.1"
-  resolved "https://registry.yarnpkg.com/remark-jargon/-/remark-jargon-2.16.1.tgz#01dbf9d9e02fee246b09d211031ac7a56574cad8"
-  integrity sha512-av6XZPzeERcL4rhaXVhGhww/IoCBmjrlZfiaBTjZ8qFc0YcriTux4Q7GOdipKuO/HMvC6Qz8McW/RjfHAUMtZA==
-  dependencies:
-    unist-util-visit "^3.1.0"
-
-remark-jargon@^2.18.0:
+remark-jargon@2.18.0, remark-jargon@^2.18.0:
   version "2.18.0"
   resolved "https://registry.yarnpkg.com/remark-jargon/-/remark-jargon-2.18.0.tgz#991e14124a28e6ec26811bb5e7f3e3af6398caac"
   integrity sha512-hnzqYdj7PF4X9gKdjN9xlyQt8y6z5tdWY2CZ80YTrHB3CjdP3D8loOHwEYJ8OYRG0Lt67Sp3Xk3tSErcggw8Yw==
@@ -16456,14 +16449,6 @@ unist-util-visit-parents@^3.0.0, unist-util-visit-parents@^3.1.1:
     "@types/unist" "^2.0.0"
     unist-util-is "^4.0.0"
 
-unist-util-visit-parents@^4.0.0:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/unist-util-visit-parents/-/unist-util-visit-parents-4.1.1.tgz#e83559a4ad7e6048a46b1bdb22614f2f3f4724f2"
-  integrity sha512-1xAFJXAKpnnJl8G7K5KgU7FY55y3GcLIXqkzUj5QF/QVP7biUm0K0O2oqVkYsdjzJKifYeWn9+o6piAK2hGSHw==
-  dependencies:
-    "@types/unist" "^2.0.0"
-    unist-util-is "^5.0.0"
-
 unist-util-visit-parents@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/unist-util-visit-parents/-/unist-util-visit-parents-5.0.0.tgz#5ae2440f8710a0c18a2b4ba0c4471d18e1090494"
@@ -16487,15 +16472,6 @@ unist-util-visit@^1.1.0, unist-util-visit@^1.4.1:
   integrity sha512-AvGNk7Bb//EmJZyhtRUnNMEpId/AZ5Ph/KUpTI09WHQuDZHKovQ1oEv3mfmKpWKtoMzyMC4GLBm1Zy5k12fjIw==
   dependencies:
     unist-util-visit-parents "^2.0.0"
-
-unist-util-visit@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-3.1.0.tgz#9420d285e1aee938c7d9acbafc8e160186dbaf7b"
-  integrity sha512-Szoh+R/Ll68QWAyQyZZpQzZQm2UPbxibDvaY8Xc9SUtYgPsDzx5AWSk++UUt2hJuow8mvwR+rG+LQLw+KsuAKA==
-  dependencies:
-    "@types/unist" "^2.0.0"
-    unist-util-is "^5.0.0"
-    unist-util-visit-parents "^4.0.0"
 
 unist-util-visit@^4.0.0:
   version "4.0.0"
