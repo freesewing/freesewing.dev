@@ -7784,12 +7784,12 @@ gatsby-remark-images@5.11.0:
     unist-util-select "^3.0.4"
     unist-util-visit-parents "^3.1.1"
 
-gatsby-remark-jargon@2.18.0:
-  version "2.18.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-jargon/-/gatsby-remark-jargon-2.18.0.tgz#c68ebe7352b744cc321809f35da2b095a626aae7"
-  integrity sha512-xzc2fVpX5Xg7crJBJoJW0LE942TQqQMuAbAqvz2YNk8AayY7ok4EVM1upb/NmG4axe1M3B1yhz5tLEmQPyOFwQ==
+gatsby-remark-jargon@2.19.4:
+  version "2.19.4"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-jargon/-/gatsby-remark-jargon-2.19.4.tgz#4fb43085185a5885819fa83be1311f65632c0dcc"
+  integrity sha512-dK0HU2LduHRmkKQFCqLbhI6HaRVre6kf5MyC2tkGFUCUL77kIED+7u2qzKSPHcKsMOWMCQw4aJuKRVJfrD5dYw==
   dependencies:
-    remark-jargon "^2.18.0"
+    remark-jargon "^2.19.4"
 
 gatsby-remark-prismjs@5.11.0:
   version "5.11.0"
@@ -13911,10 +13911,17 @@ remark-html@13.0.2:
     hast-util-to-html "^7.0.0"
     mdast-util-to-hast "^10.0.0"
 
-remark-jargon@2.19.0, remark-jargon@^2.18.0:
+remark-jargon@2.19.0:
   version "2.19.0"
   resolved "https://registry.yarnpkg.com/remark-jargon/-/remark-jargon-2.19.0.tgz#59ba6ea4f3a9dbcf1bf7b1da866cac1cab5aae8a"
   integrity sha512-lfyUF6KNRZHDoibMcWCV04z4qT9fSYzNtfgNnTFWBT5AF7RSAAl1AgSasdoXNe7ogsZ9QB462Onv9wjnD+pi9g==
+  dependencies:
+    unist-util-visit "^4.0.0"
+
+remark-jargon@^2.19.4:
+  version "2.19.4"
+  resolved "https://registry.yarnpkg.com/remark-jargon/-/remark-jargon-2.19.4.tgz#8e25cd02e7b83afb394caeaffdb902fbe0c2dc99"
+  integrity sha512-L6uvlY+igfhqZjqQQ8/rpmaNOcw7d6I6qaRMUV83n70IMRud96V1OTaKbPQ+7B+MiA1A8kCTTQX8wVGGABogJQ==
   dependencies:
     unist-util-visit "^4.0.0"
 
