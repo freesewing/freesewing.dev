@@ -1474,10 +1474,10 @@
     "@fontsource/ubuntu" latest
     open-color "^1.7.0"
 
-"@freesewing/examples@2.16.2":
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/examples/-/examples-2.16.2.tgz#e57426be028e927ad7748238501f681eb91fe0a1"
-  integrity sha512-KbHsWZa0MmfEdNogRA1TbqDA3+3/Bbb7Pn4f23XDQxJO31HNwwYlPsnhz5LM6ETK8JBZ5C14GUSQNaMorn2e2A==
+"@freesewing/examples@2.17.4":
+  version "2.17.4"
+  resolved "https://registry.yarnpkg.com/@freesewing/examples/-/examples-2.17.4.tgz#ddd8d48009edf9efc202f985cb10ab8013b2ceb9"
+  integrity sha512-AzN7ZtJeVM6cJ+lnTkViHaISaYybgDuFXOHPajnW7EIGlUQqy6IOksXdjeTI41JWBvOiL7Qe1osjoS3R2KhoPQ==
 
 "@freesewing/i18n@^2.18.0":
   version "2.18.0"
