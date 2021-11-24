@@ -1497,10 +1497,10 @@
   resolved "https://registry.yarnpkg.com/@freesewing/plugin-bundle/-/plugin-bundle-2.18.0.tgz#e20a19627e5d5f6a1859c70af72c608c07ba8214"
   integrity sha512-HBg58Alle+rHgpZ1NMGf5+BAlKmLjLh4T/L40zl93bcibjIue6YU8h2AggckUxuU9YnRFnVmNKV/kunKvRdIbg==
 
-"@freesewing/plugin-buttons@2.16.2":
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/plugin-buttons/-/plugin-buttons-2.16.2.tgz#9ac3926b57987374bee0523e23575adc610f5bbe"
-  integrity sha512-MYlM5OuEAPOvZwVlxPm4jefxZLucQKW46wDEUBESzgYT8uYLydxA6T11CFOhUL8Bm94LtjIyk1BZLkZuQSo9dA==
+"@freesewing/plugin-buttons@2.18.0":
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/@freesewing/plugin-buttons/-/plugin-buttons-2.18.0.tgz#823fd9edfdb200090b3a5b0631f1a297384fd0ea"
+  integrity sha512-1Z7drX0H/9JtN4o1lc2mlNm0vUd7OE+RbOEVxUPOiWbLCC2+ggRMtiT6YGkAOsPMEo1Ml/tjZMCX0opkFMu3Fg==
 
 "@freesewing/plugin-theme@^2.18.0":
   version "2.18.0"
