@@ -34,7 +34,7 @@
     "@freesewing/utils": "2.19.0",
     "@material-ui/core": "4.12.3",
     "@material-ui/icons": "4.11.2",
-    "@material-ui/lab": "4.0.0-alpha.58",
+    "@material-ui/lab": "4.0.0-alpha.60",
     "@mdx-js/mdx": "1.6.22",
     "@mdx-js/react": "1.6.22",
     "algoliasearch": "4.10.5",
