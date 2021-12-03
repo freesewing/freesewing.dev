@@ -1351,10 +1351,10 @@
     pump "^3.0.0"
     stack-generator "^2.0.3"
 
-"@bugsnag/plugin-react@^7.11.0":
-  version "7.11.0"
-  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-react/-/plugin-react-7.11.0.tgz#e077554365e51e75df21cd1c7f9b93b00a0d55fa"
-  integrity sha512-YFs5lNAAmwOTvZ6WOzhZI75o4V2+fIUedxVfXOjUGB6wCBfYGvM6+pqcVSXXO+0OWm4trmwmkpkNvb8sbqteIg==
+"@bugsnag/plugin-react@^7.14.0":
+  version "7.14.0"
+  resolved "https://registry.yarnpkg.com/@bugsnag/plugin-react/-/plugin-react-7.14.0.tgz#066e9e28b18db3141daff34e14da81b5f36ef901"
+  integrity sha512-bCrCb+6DeWQjnjHp9mk923b30m9Uz0ritNaFbLC6WqpX1KmWJJ6YebP/McqxsV8DXzX7qf3W4qzCWdatkaOeKA==
 
 "@bugsnag/safe-json-stringify@^6.0.0":
   version "6.0.0"
@@ -1482,15 +1482,15 @@
   resolved "https://registry.yarnpkg.com/@freesewing/models/-/models-2.17.1.tgz#0cbaca3e4a05ec5b6bda9c2f9cbd2f4e2e31acce"
   integrity sha512-Q2f5Wpr7z8wOePapyDHM9SDvUJdg+LKBT3KZpq4MAtBtlh42/U9ssfSLy7F3fbFYRGzjXzfaprkVc9nVMO/WxQ==
 
-"@freesewing/mui-theme@2.16.2":
-  version "2.16.2"
-  resolved "https://registry.yarnpkg.com/@freesewing/mui-theme/-/mui-theme-2.16.2.tgz#4f7553b88af18ec4e46ed49188dd59a586c36dca"
-  integrity sha512-kAHkuWuL5BQ8dA7eGci31clcxcaoFGQV1HnTRTE3ALV07Vr7+Zzp/t54SQqVtbCGAFgB6RlVEqARVtwCAaJdkQ==
+"@freesewing/mui-theme@2.19.5":
+  version "2.19.5"
+  resolved "https://registry.yarnpkg.com/@freesewing/mui-theme/-/mui-theme-2.19.5.tgz#26c1990bad9474ce673c20005e8860f687d35bd2"
+  integrity sha512-+PHcQhkE3MEGs96N3wSaYlpAxlUjcUdt3kxjIpOpJdAqsPYFYZx10KC328bQtAzxMHjLUZVMH0rIm8erxA4JOQ==
 
-"@freesewing/pattern-info@2.18.0":
-  version "2.18.0"
-  resolved "https://registry.yarnpkg.com/@freesewing/pattern-info/-/pattern-info-2.18.0.tgz#9f6a45f69c4a08c6ec797359df381be07a91afd4"
-  integrity sha512-1guHENoP40TjaeYZbECPI/yMOrudjNRp9sZR+YoCaCJiuGqxPZDOo9AyDoHuS97ibvnZgdhFC3LOyoSz+OAfPw==
+"@freesewing/pattern-info@2.19.5":
+  version "2.19.5"
+  resolved "https://registry.yarnpkg.com/@freesewing/pattern-info/-/pattern-info-2.19.5.tgz#c2c96474a10c36ee82a071f75fe2d4eda6f0af1d"
+  integrity sha512-85oG4M8l6TH2HFOA84GCCi+TJ8jNv9iFuvAzqyblfN4BWJ4V4+zedrW4ClJw2NgzcfoL6Wb+IO5E5f49bnrzxQ==
 
 "@freesewing/plugin-bundle@2.18.0":
   version "2.18.0"
